@@ -1,24 +1,20 @@
 <script>
-  import { Router, Link, Route } from "svelte-routing";
+  import { Router, Route } from "svelte-routing";
   import Background from "./Background.svelte";
   import Home from "./Home.svelte";
+  import HeartFairy from "./HeartFairy.svelte";
 
   export let url = "";
 </script>
 
-<Background/>
-<Router url="{url}">
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to="about">About</Link>
-    <Link to="blog">Blog</Link>
-  </nav>
+<Background />
+<HeartFairy />
+<Router {url}>
   <div class="route-container">
     <!-- <Route path="blog/:id" component="{BlogPost}" /> -->
     <Route path="*">
-      <Home description="# BestGirl" 
-      name="亚历二〇"></Home>
-      </Route>
+      <Home description="# BestGirl" name="亚历二〇" />
+    </Route>
   </div>
 </Router>
 
