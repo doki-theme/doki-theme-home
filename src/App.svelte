@@ -1,10 +1,9 @@
 <script lang="ts">
   import marked from "marked";
-	import Background from './Background.svelte'
+  import Background from "./Background.svelte";
 
   export let name: string;
   export let description: string;
-
 </script>
 
 <Background />
@@ -29,15 +28,18 @@
 <style>
   main {
     text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background: url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/zero_two_dark.png")
+      center fixed;
+    background-size: cover;
   }
 
   h1 {
     color: #ff3e00;
     text-transform: uppercase;
     font-size: 4em;
+    margin: 0 auto;
     font-weight: 100;
   }
 
