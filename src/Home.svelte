@@ -4,6 +4,10 @@
 
   export let name: string;
   export let description: string;
+
+  $: document.documentElement.style.setProperty('--theme-wallpaper', 
+  `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${$currentTheme.stickers.default.name}") center fixed`);
+
 </script>
 
 <main>
@@ -29,8 +33,7 @@
     text-align: center;
     width: 100%;
     height: 100%;
-    background: url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/zero_two_dark.png")
-      center fixed;
+    background: var(--theme-wallpaper);
     background-size: cover;
   }
 
