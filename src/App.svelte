@@ -16,8 +16,8 @@
 <main>
   <Background />
   <HeartFairy />
-  <Header />
   <Router {url}>
+    <Header />
     <div class="route-container">
       <!-- <Route path="blog/:id" component="{BlogPost}" /> -->
       <Route path="*">

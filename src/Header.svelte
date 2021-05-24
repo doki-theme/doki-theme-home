@@ -1,16 +1,22 @@
 <script>
-
-import DokiLogo from "./DokiLogo.svelte";
-
+  import { Link } from "svelte-routing";
+  import DokiLogo from "./DokiLogo.svelte";
 </script>
+
 <div class="menu">
-  <div class="nav-container">
-    <DokiLogo size=52 />
-    <div class="logo-title">
-      The Doki Theme
+  <nav class="nav-container">
+    <div class="home-link">
+      <DokiLogo size="25" />
+      <div class="nav-links">
+        <Link to="/">
+          <div class="logo-title">The Doki Theme</div>
+        </Link>
+        <Link to="about">About</Link>
+        <div class="expando" />
+        <Link to="blog">Blog</Link>
+      </div>
     </div>
-    <div class="expando" />
-  </div>
+  </nav>
 </div>
 
 <style>
@@ -24,9 +30,21 @@ import DokiLogo from "./DokiLogo.svelte";
     padding: 1rem;
   }
 
-  .logo-title {
-    margin: auto 0 auto 0.5rem
+  .home-link {
+    display: flex;
+    width: 100%;
+  }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100% ;
+    margin: auto 0 auto 0.5rem;
   }
 
   .expando {
