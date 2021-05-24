@@ -131,7 +131,7 @@ evaluateTemplates(
             "ui",
             "icons",
           ]),
-          colors: dokiTheme.appThemeDefinition.colors,
+          colors: dokiTheme.definition.colors,
           stickers: dokiTheme.stickers,
         };
       })

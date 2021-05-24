@@ -1,41 +1,47 @@
 <script lang="ts">
-    import { onMount, afterUpdate, tick } from "svelte";
+  import { onMount, afterUpdate, tick, onDestroy } from "svelte";
 
-// let backgroundCanvas: HTMLCanvasElement;
-let width: number;
-let height: number;
+  import { currentTheme } from "./ThemeStore";
 
-const drawBackground = () => {
-  const backgroundCanvas = document.getElementById(
-    "backgroundImage"
-  ) as HTMLCanvasElement;
-  const ctx = backgroundCanvas.getContext("2d");
-  console.log(ctx);
+  // let backgroundCanvas: HTMLCanvasElement;
+  let width: number;
+  let height: number;
 
-  if (!ctx) return;
+  const drawBackground = () => {
+    const backgroundCanvas = document.getElementById(
+      "backgroundImage"
+    ) as HTMLCanvasElement;
+    const ctx = backgroundCanvas.getContext("2d");
 
-  const w = width;
-  const h = height;
+    if (!ctx) return;
 
-  ctx.clearRect(0, 0, w, h);
-  ctx.beginPath();
-  ctx.moveTo(0, h * 0.85);
-  ctx.quadraticCurveTo(w / 1.85, h, w, 0);
-  ctx.lineTo(w, h);
-  ctx.lineTo(0, h);
-  ctx.fillStyle = "#363b3d";
-  ctx.strokeStyle = "#363b3d";
-  ctx.fill();
-  ctx.closePath();
-  ctx.stroke();
-};
+    const w = width;
+    const h = height;
 
-const draw = async () => {
-  await tick();
-  drawBackground();
-};
-afterUpdate(draw);
-onMount(draw);
+    ctx.clearRect(0, 0, w, h);
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.85);
+    ctx.quadraticCurveTo(w / 1.85, h, w, 0);
+    ctx.lineTo(w, h);
+    ctx.lineTo(0, h);
+    ctx.fillStyle = $currentTheme.colors.headerColor;
+    ctx.strokeStyle = $currentTheme.colors.headerColor;
+    ctx.fill();
+    ctx.closePath();
+    ctx.stroke();
+  };
+
+  const draw = async () => {
+    await tick();
+    drawBackground();
+  };
+  afterUpdate(draw);
+  onMount(draw);
+  const unsubscribe = currentTheme.subscribe(() => {
+    draw();
+  });
+
+  onDestroy(unsubscribe);
 </script>
 
 <div id="main" bind:clientWidth={width} bind:clientHeight={height}>
@@ -43,7 +49,7 @@ onMount(draw);
 </div>
 
 <style>
-    #main {
+  #main {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -53,5 +59,4 @@ onMount(draw);
   #backgroundImage {
     z-index: -2;
   }
-
 </style>
