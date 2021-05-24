@@ -1,11 +1,10 @@
 <script lang="ts">
   import marked from "marked";
+  import { currentTheme } from "./ThemeStore";
 
   export let name: string;
   export let description: string;
-  
 </script>
-
 
 <main>
   <h1>{name}好!</h1>
@@ -19,7 +18,7 @@
   <div style="align: center;">
     <img
       alt="Best Girl"
-      src="https://doki.assets.unthrottled.io/backgrounds/zero_two_dark.png"
+      src={`https://doki.assets.unthrottled.io/backgrounds/${$currentTheme.stickers.default.name}`}
       height="512"
     />
   </div>
