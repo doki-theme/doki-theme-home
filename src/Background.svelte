@@ -3,14 +3,18 @@
 
   import { currentTheme } from "./ThemeStore";
 
-  // let backgroundCanvas: HTMLCanvasElement;
+  $: document.documentElement.style.setProperty(
+    "--theme-wallpaper",
+    `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
+      $currentTheme.stickers.default.name
+    }") ${$currentTheme.backgrounds?.default?.anchor || "center"} fixed`
+  );
+
+  let backgroundCanvas: HTMLCanvasElement;
   let width: number;
   let height: number;
 
   const drawBackground = () => {
-    const backgroundCanvas = document.getElementById(
-      "backgroundImage"
-    ) as HTMLCanvasElement;
     const ctx = backgroundCanvas.getContext("2d");
 
     if (!ctx) return;
@@ -41,13 +45,17 @@
     draw();
   });
 
-  $: document.documentElement.style.setProperty('--bk-color', $currentTheme.colors.baseBackground)
+  $: document.documentElement.style.setProperty(
+    "--bk-color",
+    $currentTheme.colors.baseBackground
+  );
 
   onDestroy(unsubscribe);
 </script>
 
 <div id="main" bind:clientWidth={width} bind:clientHeight={height}>
-  <canvas id="backgroundImage" {width} {height} />
+  <canvas bind:this={backgroundCanvas} id="backgroundImage" {width} {height} />
+  <div class="wallpaper"/>
 </div>
 
 <style>
@@ -57,6 +65,17 @@
     height: 100%;
     z-index: -3;
     background-color: var(--bk-color);
+  }
+
+  .wallpaper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background: var(--theme-wallpaper);
+    background-size: cover;
   }
 
   #backgroundImage {

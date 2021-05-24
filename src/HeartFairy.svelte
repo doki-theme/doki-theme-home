@@ -4,7 +4,7 @@
 
   const defaultHeartSize = 20;
   const coords = spring(
-    { x: defaultHeartSize, y: defaultHeartSize },
+    { x: window.innerWidth - defaultHeartSize * 2, y: defaultHeartSize },
     {
       stiffness: 0.02,
     }

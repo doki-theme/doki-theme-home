@@ -3,25 +3,46 @@
   import Background from "./Background.svelte";
   import Home from "./Home.svelte";
   import HeartFairy from "./HeartFairy.svelte";
+  import Header from "./Header.svelte";
+  import { currentTheme } from "./ThemeStore";
 
-  export let url = "";
- 
+  let url = ""
+
+  $: document.documentElement.style.setProperty(
+    "--foreground-color", $currentTheme.colors.foregroundColor
+    );
 </script>
 
-<Background />
-<HeartFairy />
-<Router {url}>
-  <div class="route-container">
-    <!-- <Route path="blog/:id" component="{BlogPost}" /> -->
-    <Route path="*">
-      <Home description="# BestGirl" name="亚历二〇" />
-    </Route>
-  </div>
-</Router>
+<main>
+  <Background />
+  <HeartFairy />
+  <Header />
+  <Router {url}>
+    <div class="route-container">
+      <!-- <Route path="blog/:id" component="{BlogPost}" /> -->
+      <Route path="*">
+        <Home />
+      </Route>
+    </div>
+  </Router>
+</main>
 
 <style>
+  main {
+    color: var(--foreground-color);
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
+
   .route-container {
     width: 100%;
     height: 100%;
+    background: none;
   }
 </style>

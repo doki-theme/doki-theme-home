@@ -21,10 +21,12 @@
     );
   }
 
+  export let size: number = 200;
+
   // todo: accent contrast color
 </script>
 
-<svg width="200" height="200" viewBox="0 0 52.915 52.915">
+<svg width={size} height={size} viewBox="0 0 52.915 52.915">
   <path
     d="m49.495 13.229c1.7198 2.9788 1.7198 23.48 0 26.457-1.7198 2.9784-19.475 13.229-22.914 13.229-3.4396 0-21.195-10.251-22.914-13.229-1.7198-2.9788-1.7198-23.48 0-26.457 1.7198-2.9788 19.475-13.229 22.914-13.229 3.4396 0 21.195 10.251 22.914 13.229z"
     fill={$currentTheme.colors.accentColor}
