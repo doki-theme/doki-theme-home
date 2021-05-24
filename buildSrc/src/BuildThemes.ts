@@ -9,6 +9,8 @@ import {
   StringDictionary,
 } from "doki-build-source";
 
+import omit from 'lodash/omit';
+
 type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
 
 const fs = require("fs");
@@ -21,7 +23,7 @@ const {
 } = resolvePaths(__dirname);
 
 // todo: dis
-type DokiThemeJupyter = {
+type DokiThemeHome = {
   [k: string]: any;
 };
 
@@ -30,7 +32,7 @@ function buildTemplateVariables(
   dokiThemeDefinition: MasterDokiThemeDefinition,
   masterTemplateDefinitions: DokiThemeDefinitions,
   dokiThemeAppDefinition: AppDokiThemeDefinition,
-): DokiThemeJupyter {
+): DokiThemeHome {
   const namedColors: StringDictionary<string> = constructNamedColorTemplate(
     dokiThemeDefinition,
     masterTemplateDefinitions
@@ -101,6 +103,7 @@ const getStickers = (
         secondary: {
           path: resolveStickerPath(themePath, secondary),
           name: secondary,
+
         },
       }
       : {}),
@@ -108,34 +111,38 @@ const getStickers = (
 };
 
 console.log("Preparing to generate themes.");
-const themesDirectory = path.resolve(repoDirectory, "src", "dokithemejupyter");
 
 evaluateTemplates(
   {
-    appName: 'jupyter',
+    appName: 'home',
     currentWorkingDirectory: __dirname,
   },
   createDokiTheme
 )
   .then((dokiThemes) => {
-
+    // write things for extension
+    const dokiThemeDefinitions = dokiThemes
+      .map((dokiTheme) => {
+        const dokiDefinition = dokiTheme.definition;
+        return {
+          information: omit(dokiDefinition, [
+            "colors",
+            "overrides",
+            "ui",
+            "icons",
+          ]),
+          colors: dokiTheme.appThemeDefinition.colors,
+          stickers: dokiTheme.stickers,
+        };
+      })
+      .reduce((accum: StringDictionary<any>, definition) => {
+        accum[definition.information.id] = definition;
+        return accum;
+      }, {});
+    const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
-      path.resolve(themesDirectory, "themes.json"),
-      JSON.stringify(
-        dokiThemes.reduce((accum, dokiTheme) => ({
-          ...accum,
-          [getDisplayName(dokiTheme)]: {
-            id: dokiTheme.definition.id,
-            colors: dokiTheme.templateVariables,
-            name: dokiTheme.definition.displayName,
-          }
-        }), {}),
-        null,
-        2
-      ),
-      {
-        encoding: "utf-8",
-      }
+      path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
+      `export default ${finalDokiDefinitions};`
     );
   })
   .then(() => {
