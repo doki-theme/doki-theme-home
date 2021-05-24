@@ -2,13 +2,13 @@
   import { spring } from "svelte/motion";
   import {currentTheme} from "./ThemeStore";
 
+  const defaultHeartSize = 20;
   const coords = spring(
-    { x: 50, y: 50 },
+    { x: defaultHeartSize, y: defaultHeartSize },
     {
       stiffness: 0.02,
     }
   );
-  const defaultHeartSize = 20;
   const bigHeartSize = 50;
   const size = spring(defaultHeartSize);
 

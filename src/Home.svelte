@@ -8,7 +8,9 @@
 
   $: document.documentElement.style.setProperty(
     "--theme-wallpaper",
-    `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${$currentTheme.stickers.default.name}") center fixed`
+    `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${$currentTheme.stickers.default.name}") ${
+      $currentTheme.backgrounds?.default?.anchor || 'center'
+    } fixed`
   );
 </script>
 

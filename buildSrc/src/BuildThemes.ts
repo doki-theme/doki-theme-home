@@ -133,6 +133,7 @@ evaluateTemplates(
           ]),
           colors: dokiTheme.definition.colors,
           stickers: dokiTheme.stickers,
+          backgrounds: dokiTheme.appThemeDefinition.backgrounds
         };
       })
       .reduce((accum: StringDictionary<any>, definition) => {
