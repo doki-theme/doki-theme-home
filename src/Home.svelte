@@ -1,16 +1,19 @@
 <script lang="ts">
   import marked from "marked";
+  import DokiLogo from "./DokiLogo.svelte";
   import { currentTheme } from "./ThemeStore";
 
   export let name: string;
   export let description: string;
 
-  $: document.documentElement.style.setProperty('--theme-wallpaper', 
-  `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${$currentTheme.stickers.default.name}") center fixed`);
-
+  $: document.documentElement.style.setProperty(
+    "--theme-wallpaper",
+    `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${$currentTheme.stickers.default.name}") center fixed`
+  );
 </script>
 
 <main>
+  <DokiLogo />
   <h1>{name}好!</h1>
   <p>
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
