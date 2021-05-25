@@ -1,6 +1,12 @@
 <script>
   import { Link } from "svelte-routing";
   import DokiLogo from "./DokiLogo.svelte";
+
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "themes", label: "Themes" },
+    { path: "supporters", label: "Supporters" },
+  ];
 </script>
 
 <div class="menu">
@@ -8,12 +14,11 @@
     <div class="home-link">
       <DokiLogo size="25" />
       <div class="nav-links">
-        <Link to="/">
-          <div class="logo-title">The Doki Theme</div>
-        </Link>
-        <Link to="about">About</Link>
-        <div class="expando" />
-        <Link to="blog">Blog</Link>
+        {#each navLinks as navLink}
+          <div class="nav-link">
+            <Link to={navLink.path}>{navLink.label}</Link>
+          </div>
+        {/each}
       </div>
     </div>
   </nav>
@@ -35,19 +40,13 @@
     width: 100%;
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
   .nav-links {
     display: flex;
-    justify-content: space-between;
-    width: 100% ;
-    margin: auto 0 auto 0.5rem;
+    width: 100%;
+    margin: auto 0 auto 1rem;
   }
 
-  .expando {
-    flex-grow: 1;
+  .nav-link {
+    margin-right: 1rem;
   }
 </style>

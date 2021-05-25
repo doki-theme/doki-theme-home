@@ -2,7 +2,7 @@
   import { spring } from "svelte/motion";
   import {currentTheme} from "./ThemeStore";
 
-  const defaultHeartSize = 20;
+  const defaultHeartSize = 15;
   const coords = spring(
     { x: window.innerWidth - defaultHeartSize * 2, y: defaultHeartSize },
     {
@@ -14,7 +14,7 @@
 
   const move = (x, y, size) =>
     `transform: translate(${x - size / 2}px, ${
-      y - size / 2
+      y + size
     }px); position: fixed; z-index: 2;`;
 </script>
 

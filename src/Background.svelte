@@ -46,7 +46,7 @@
   });
 
   $: document.documentElement.style.setProperty(
-    "--bk-color",
+    "--base-background",
     $currentTheme.colors.baseBackground
   );
 
@@ -64,7 +64,7 @@
     width: 100%;
     height: 100%;
     z-index: -3;
-    background-color: var(--bk-color);
+    background-color: var(--base-background);
   }
 
   .wallpaper {

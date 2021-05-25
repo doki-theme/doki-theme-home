@@ -6,11 +6,22 @@
   import Header from "./Header.svelte";
   import { currentTheme } from "./ThemeStore";
 
-  let url = ""
+  let url = "";
 
   $: document.documentElement.style.setProperty(
-    "--foreground-color", $currentTheme.colors.foregroundColor
-    );
+    "--foreground-color",
+    $currentTheme.colors.foregroundColor
+  );
+
+  $: document.documentElement.style.setProperty(
+    "--accent-color",
+    $currentTheme.colors.accentColor
+  );
+
+  $: document.documentElement.style.setProperty(
+    "--accent-color-transparent",
+    `${$currentTheme.colors.accentColor}88`
+  );
 </script>
 
 <main>
