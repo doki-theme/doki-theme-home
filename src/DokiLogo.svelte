@@ -22,8 +22,6 @@
   }
 
   export let size: number = 200;
-
-  // todo: accent contrast color
 </script>
 
 <svg width={size} height={size} viewBox="0 0 52.915 52.915">

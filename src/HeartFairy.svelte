@@ -1,6 +1,6 @@
 <script lang="ts">
   import { spring } from "svelte/motion";
-  import {currentTheme} from "./ThemeStore";
+  import { currentTheme } from "./ThemeStore";
 
   const defaultHeartSize = 15;
   const coords = spring(
@@ -9,24 +9,23 @@
       stiffness: 0.02,
     }
   );
-  const bigHeartSize = 50;
   const size = spring(defaultHeartSize);
 
-  const move = (x, y, size) =>
-    `transform: translate(${x - size / 2}px, ${
-      y + size
-    }px); position: fixed; z-index: 2;`;
+  const move = (x, y, size) => {
+    const xTransform = x - size / 2;
+    const yTranform = y + size;
+
+    return `transform: translate(${xTransform}px, ${yTranform}px); position: fixed; z-index: 2;`;
+  };
 </script>
 
 <svelte:window
   on:mousemove={(e) => coords.set({ x: e.clientX, y: e.clientY })}
-  on:mousedown={() => size.set(bigHeartSize)}
-  on:mouseup={() => size.set(defaultHeartSize)}
 />
 
 <svg
   style={move($coords.x, $coords.y, $size)}
-  height={`${$size}px`}
+  height={defaultHeartSize}
   viewBox="0 0 2.1266 1.7328"
 >
   <path
