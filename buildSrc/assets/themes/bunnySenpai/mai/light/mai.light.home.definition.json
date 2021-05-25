@@ -6,5 +6,8 @@
       "anchor": "right"
     }
   },
-  "content": {}
+  "content": {},
+  "colors": {
+    "iconContrastColor": "&headerColor&"
+  }
 }

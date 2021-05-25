@@ -3,13 +3,13 @@ import {
   constructNamedColorTemplate,
   DokiThemeDefinitions,
   evaluateTemplates,
-  getDisplayName,
   MasterDokiThemeDefinition,
+  resolveColor,
   resolvePaths,
   StringDictionary,
 } from "doki-build-source";
 
-import omit from 'lodash/omit';
+import omit from "lodash/omit";
 
 type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
 
@@ -17,37 +17,42 @@ const fs = require("fs");
 
 const path = require("path");
 
-const {
-  repoDirectory,
-  masterThemeDefinitionDirectoryPath,
-} = resolvePaths(__dirname);
+const { repoDirectory, masterThemeDefinitionDirectoryPath } =
+  resolvePaths(__dirname);
 
 // todo: dis
 type DokiThemeHome = {
   [k: string]: any;
 };
 
-
 function buildTemplateVariables(
   dokiThemeDefinition: MasterDokiThemeDefinition,
   masterTemplateDefinitions: DokiThemeDefinitions,
-  dokiThemeAppDefinition: AppDokiThemeDefinition,
+  dokiThemeAppDefinition: AppDokiThemeDefinition
 ): DokiThemeHome {
   const namedColors: StringDictionary<string> = constructNamedColorTemplate(
     dokiThemeDefinition,
     masterTemplateDefinitions
   );
-  const colorsOverride =
-    dokiThemeAppDefinition.overrides.theme?.colors || {};
-  const cleanedColors = Object.entries(namedColors)
-    .reduce((accum, [colorName, colorValue]) => ({
+  const colorsOverride = dokiThemeAppDefinition?.colors || {};
+  const cleanedColors = Object.entries(namedColors).reduce(
+    (accum, [colorName, colorValue]) => ({
       ...accum,
       [colorName]: colorValue,
-    }), {});
-  return {
+    }),
+    {}
+  );
+  const namedColorsWithOverrides = {
     ...cleanedColors,
     ...colorsOverride,
   };
+  return Object.entries<string>(namedColorsWithOverrides).reduce(
+    (accum, [colorName, colorValue]) => ({
+      ...accum,
+      [colorName]: resolveColor(colorValue, namedColorsWithOverrides),
+    }),
+    {}
+  );
 }
 
 function createDokiTheme(
@@ -55,7 +60,7 @@ function createDokiTheme(
   masterThemeDefinition: MasterDokiThemeDefinition,
   appTemplateDefinitions: DokiThemeDefinitions,
   appThemeDefinition: AppDokiThemeDefinition,
-  masterTemplateDefinitions: DokiThemeDefinitions,
+  masterTemplateDefinitions: DokiThemeDefinitions
 ) {
   try {
     return {
@@ -65,7 +70,7 @@ function createDokiTheme(
       templateVariables: buildTemplateVariables(
         masterThemeDefinition,
         masterTemplateDefinitions,
-        appThemeDefinition,
+        appThemeDefinition
       ),
       theme: {},
       appThemeDefinition: appThemeDefinition,
@@ -100,12 +105,11 @@ const getStickers = (
     },
     ...(secondary
       ? {
-        secondary: {
-          path: resolveStickerPath(themePath, secondary),
-          name: secondary,
-
-        },
-      }
+          secondary: {
+            path: resolveStickerPath(themePath, secondary),
+            name: secondary,
+          },
+        }
       : {}),
   };
 };
@@ -114,7 +118,7 @@ console.log("Preparing to generate themes.");
 
 evaluateTemplates(
   {
-    appName: 'home',
+    appName: "home",
     currentWorkingDirectory: __dirname,
   },
   createDokiTheme
@@ -131,9 +135,9 @@ evaluateTemplates(
             "ui",
             "icons",
           ]),
-          colors: dokiTheme.definition.colors,
+          colors: dokiTheme.templateVariables,
           stickers: dokiTheme.stickers,
-          backgrounds: dokiTheme.appThemeDefinition.backgrounds
+          backgrounds: dokiTheme.appThemeDefinition.backgrounds,
         };
       })
       .reduce((accum: StringDictionary<any>, definition) => {
