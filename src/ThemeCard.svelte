@@ -3,6 +3,8 @@
   import { currentTheme } from "./ThemeStore";
 
   export let dokiTheme: DokiTheme;
+
+  // TODO: Smallify all the stickers
 </script>
 
 <div
@@ -69,8 +71,9 @@
   }
 
   .sticker-container {
-    position: relative;
-    right: 0;
+    position: absolute;
+    right: 7px;
+    bottom: 5px;
   }
   .sticker {
     max-height: 150px;
@@ -215,6 +218,7 @@
     flex-grow: 1;
     background: var(--theme-wallpaper);
     background-size: cover;
+    position:relative;
   }
 
   /* window END */
