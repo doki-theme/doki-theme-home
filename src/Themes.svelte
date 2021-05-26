@@ -1,30 +1,31 @@
 <script>
   import DokiThemeDefinitions from "./DokiThemeDefinitions";
-import ThemeCard from "./ThemeCard.svelte";
+  import ThemeCard from "./ThemeCard.svelte";
 
   const dokiThemes = Object.values(DokiThemeDefinitions).sort((a, b) => {
-    const aName = (a.information.dark ? "dark" : "light") + a.information.name
-    const bName = (b.information.dark ? "dark" : "light") + b.information.name
-    return aName.localeCompare(bName)
-  }
-  );
+    const aName = (a.information.dark ? "dark" : "light") + a.information.name;
+    const bName = (b.information.dark ? "dark" : "light") + b.information.name;
+    return aName.localeCompare(bName);
+  });
+
+  // TODO: don't load all this stuff at once
 </script>
 
-<div class="container">
-  {#each dokiThemes as dokiTheme}
-    <ThemeCard dokiTheme={dokiTheme} />
-  {/each}
+<div style="margin: 0 2rem;">
+  <div class="container">
+    {#each dokiThemes as dokiTheme}
+      <ThemeCard {dokiTheme} />
+    {/each}
+  </div>
 </div>
 
 <style>
   .container {
     display: grid;
     grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    margin: 1rem auto;
+    align-items: center;
+    max-width: 1200px;
   }
-
-  .theme {
-    padding: 1rem;
-    text-align: center;
-  }
-
 </style>

@@ -1,11 +1,24 @@
 <script lang="ts">
   import type { DokiTheme } from "./Types";
+  import { currentTheme } from "./ThemeStore";
 
   export let dokiTheme: DokiTheme;
 </script>
 
-<div class="code-container">
-  <div class="window" style={`border: 1px solid ${dokiTheme.colors.borderColor}`}>
+<div
+  class="code-container"
+  on:mouseup={() => currentTheme.setTheme(dokiTheme.information.id)}
+>
+  <div
+    class="window"
+    style={`border: 1px solid ${dokiTheme.colors.borderColor}; 
+    --custom-hover: ${dokiTheme.colors.accentColorTransparent};
+  ${
+    $currentTheme.information.id == dokiTheme.information.id
+      ? "box-shadow: 0px 0px 20px" + dokiTheme.colors.accentColorTransparent
+      : ""
+  }`}
+  >
     <div
       class="titlebar"
       style={`background-color: ${dokiTheme.colors.headerColor};
@@ -15,17 +28,15 @@
     >
       <div class="buttons">
         <div class="close">
-          <a class="closebutton" href="#"><span><strong>x</strong></span></a>
+          <a class="closebutton"><span><strong>x</strong></span></a>
           <!-- close button link -->
         </div>
         <div class="minimize">
-          <a class="minimizebutton" href="#"
-            ><span><strong>&ndash;</strong></span></a
-          >
+          <a class="minimizebutton"><span><strong>&ndash;</strong></span></a>
           <!-- minimize button link -->
         </div>
         <div class="zoom">
-          <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+          <a class="zoombutton"><span><strong>+</strong></span></a>
           <!-- zoom button link -->
         </div>
       </div>
@@ -42,18 +53,22 @@
       <!-- window content -->
 
       <div class="sticker-container">
-        <img 
-        class={'sticker'}
-        alt={`${dokiTheme.information.name}'s Sticker`}
-        src={`https://doki.assets.unthrottled.io/stickers/jetbrains/v2${dokiTheme.stickers.default.path}`} />
+        <img
+          class={"sticker"}
+          alt={`${dokiTheme.information.name}'s Sticker`}
+          src={`https://doki.assets.unthrottled.io/stickers/jetbrains/v2${dokiTheme.stickers.default.path}`}
+        />
       </div>
     </div>
   </div>
 </div>
 
 <style>
+  :root {
+    --code-window-height: 400px;
+  }
 
-.sticker-container {
+  .sticker-container {
     position: relative;
     right: 0;
   }
@@ -63,7 +78,7 @@
   }
 
   .code-container {
-    padding: 1rem;
+    height: var(--code-window-height);
   }
 
   a {
@@ -76,8 +91,15 @@
   }
 
   .window {
+    cursor: pointer;
     border-radius: 6px;
-    /* box-shadow: 0px 0px 20px #acacac; */
+    height: var(--code-window-height);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .window:hover {
+    box-shadow: 0px 0px 20px var(--custom-hover);
   }
 
   .titlebar {
@@ -94,6 +116,8 @@
     -ms-user-select: none;
     -o-user-select: none;
     cursor: default;
+    background: var(--theme-wallpaper);
+    background-size: cover;
   }
 
   .buttons {
@@ -188,6 +212,9 @@
 
   .content {
     padding: 10px;
+    flex-grow: 1;
+    background: var(--theme-wallpaper);
+    background-size: cover;
   }
 
   /* window END */
