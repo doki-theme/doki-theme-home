@@ -1,10 +1,11 @@
 <script>
-  import { Link } from "svelte-routing";
+  import { Link } from "svelte-navigator";
   import DokiLogo from "./DokiLogo.svelte";
 
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "themes", label: "Themes" },
+    { path: "products", label: "Products" },
     { path: "supporters", label: "Supporters" },
   ];
 </script>

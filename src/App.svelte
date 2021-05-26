@@ -1,5 +1,5 @@
 <script>
-  import { Router, Route } from "svelte-routing";
+  import { Router, Route } from "svelte-navigator";
   import Background from "./Background.svelte";
   import Home from "./Home.svelte";
   import HeartFairy from "./HeartFairy.svelte";

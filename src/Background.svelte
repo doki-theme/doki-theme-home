@@ -1,4 +1,5 @@
 <script lang="ts">
+
   import { onMount, afterUpdate, tick, onDestroy } from "svelte";
 
   import { currentTheme } from "./ThemeStore";
