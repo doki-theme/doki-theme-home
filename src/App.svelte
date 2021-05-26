@@ -5,6 +5,11 @@
   import HeartFairy from "./HeartFairy.svelte";
   import Header from "./Header.svelte";
   import { currentTheme } from "./ThemeStore";
+import Themes from "./Themes.svelte";
+import Supporters from "./Supporters.svelte";
+import ProductUpdate from "./ProductUpdate.svelte";
+import Product from "./Product.svelte";
+import Products from "./Products.svelte";
 
   let url = "";
 
@@ -30,7 +35,11 @@
   <Router {url}>
     <Header />
     <div class="route-container">
-      <!-- <Route path="blog/:id" component="{BlogPost}" /> -->
+      <Route path="themes" component="{Themes}" />
+      <Route path="supporters" component="{Supporters}" />
+      <Route path="products/:id/updates/:version" component="{ProductUpdate}" />
+      <Route path="products/:id" component="{Product}" />
+      <Route path="products" component="{Products}" />
       <Route path="*">
         <Home />
       </Route>
