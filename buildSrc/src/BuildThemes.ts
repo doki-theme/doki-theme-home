@@ -45,6 +45,8 @@ function buildTemplateVariables(
   const namedColorsWithOverrides = {
     ...cleanedColors,
     ...colorsOverride,
+    editorAccentColor: dokiThemeDefinition.overrides?.editorScheme?.colors?.accentColor ||
+    dokiThemeDefinition.colors.accentColor
   };
   return Object.entries<string>(namedColorsWithOverrides).reduce(
     (accum, [colorName, colorValue]) => ({
