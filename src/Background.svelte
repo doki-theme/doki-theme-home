@@ -26,7 +26,7 @@
     ctx.clearRect(0, 0, w, h);
     ctx.beginPath();
     ctx.moveTo(0, h * 0.85);
-    ctx.quadraticCurveTo(w / 1.85, h, w, 0);
+    ctx.quadraticCurveTo(w / 1.85, h, w, h / 2);
     ctx.lineTo(w, h);
     ctx.lineTo(0, h);
     ctx.fillStyle = $currentTheme.colors.headerColor;
@@ -49,6 +49,11 @@
   $: document.documentElement.style.setProperty(
     "--base-background",
     $currentTheme.colors.baseBackground
+  ); 
+  
+  $: document.documentElement.style.setProperty(
+    "--header-color",
+    $currentTheme.colors.headerColor
   );
 
   onDestroy(unsubscribe);
