@@ -63,21 +63,22 @@
         <div class="tab">package.json</div>
       </div>
       <div class="code">
-        <span>&lt;</span><span class="html-tag-color">script</span> <span class="key-color">lang</span><span>=</span><span class="string-color">&quot;ts&quot;</span><span>&gt;</span> 
-    <span class="keyword-color">import type</span> <span>&lbrace;</span> <span>DokiTheme</span> <span>&rbrace;</span> <span class="keyword-color">from</span> <span class="string-color">&quot;./Types&quot;;</span> <br/>
-    <span class="keyword-color">export let</span> <span>dokiTheme:</span> <span class="key-color">DokiTheme</span><span>;</span> <span>&lt;/</span><span class="html-tag-color">script</span><span>&gt;</span>
-<span>&lt;</span><span class="html-tag-color">div</span> <span class="key-color"></span> <span class="editor-accent-color">class</span><span>=</span><span class="string-color">&quot;sticker-container&quot;<span>&gt;</span> 
-<span>&lt;</span><span class="html-tag-color">img</span>
-<span class="editor-accent-color">class</span><span>=</span><span class="string-color">&quot;sticker&quot;</span><br/>
-<span class="editor-accent-color">alt</span><span>=</span><span>&lbrace;</span><span class="string-color">`</span><span>$</span><span>&lbrace;</span><span class="key-color">dokiTheme</span>.<span class="key-color">information</span><span class="foreground-color">.name</span><span>&rbrace;</span><span class="string-color">&#39;s Sticker`</span><span>&rbrace;</span>
-<span class="editor-accent-color">src</span><span>=</span><span>&lbrace;</span><span class="key-color">dokiTheme</span>.<span class="key-color">stickers</span>.<span class="key-color">default</span><span class="foreground-color">.path</span><span>&rbrace;</span>/<span>&gt;</span> 
-<span><span>&lt;</span>/</span><span class="html-tag-color">div</span><span>&gt;</span>
-        <span>&lt;</span><span class="html-tag-color">style</span><span>&gt;</span> 
-        <span class="editor-accent-color">:root</span> <span>&lbrace;</span> <span class="class-name-color">--code-window-height</span><span>:</span> <span class="constant-color">400</span><span class="keyword-color">px</span><span>;</span> <span>&rbrace;</span>
-        <span class="editor-accent-color">.sticker</span> <span>&lbrace;</span> 
-        <span class="editor-accent-color">max-height</span><span>:</span> <span class="constant-color">150</span><span class="keyword-color">px</span><span>;</span>
-        <span class="editor-accent-color">max-width</span><span>:</span> <span class="constant-color">150</span><span class="keyword-color">px</span><span>;</span> <span>&rbrace;</span>
-        <span>&lt;/</span><span class="html-tag-color">style</span><span>&gt;</span>
+         <div><span>&lt;</span><span class="html-tag-color">script</span> <span class="key-color">lang</span><span>=</span><span class="string-color">&quot;ts&quot;</span><span>&gt;</span> </div>
+         <div style="margin-left: 1rem"><span class="keyword-color">import type</span> <span>&lbrace;</span> <span>DokiTheme</span> <span>&rbrace;</span> <span class="keyword-color">from</span> <span class="string-color">&quot;./Types&quot;;</span></div>
+         <div style="margin-left: 1rem"><span class="keyword-color">export let</span> <span>dokiTheme:</span> <span class="key-color">DokiTheme</span><span>;</span> <span>&lt;/</span><span class="html-tag-color">script</span><span>&gt;</span></div>
+         <div><span>&lt;</span><span class="html-tag-color">div</span> <span class="key-color"></span> <span class="editor-accent-color">class</span><span>=</span><span class="string-color">&quot;sticker-container&quot;<span>&gt;</span> </div>
+         <div><span>&lt;</span><span class="html-tag-color">img</span></div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color">class</span><span>=</span><span class="string-color">&quot;sticker&quot;</span><br/></div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color">alt</span><span>=</span><span>&lbrace;</span><span class="string-color">`</span><span>$</span><span>&lbrace;</span><span class="key-color">dokiTheme</span><span>.</span><span class="key-color">information</span><span class="foreground-color">.name</span><span>&rbrace;</span><span class="string-color">&#39;s Sticker`</span><span>&rbrace;</span></div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color">src</span><span>=</span><span>&lbrace;</span><span class="key-color">dokiTheme</span><span>.</span><span class="key-color">stickers</span><span>.</span><span class="key-color">default</span><span class="foreground-color">.path</span><span>&rbrace;</span><span>/</span><span>&gt;</span> </div>
+         <div><span>&lt;/</span><span class="html-tag-color">div</span><span>&gt;</span></div>
+         <div><span>&lt;</span><span class="html-tag-color">style</span><span>&gt;</span> </div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color">:root</span> <span>&lbrace;</span> <span class="class-name-color">--code-window-height</span><span>:</span> <span class="constant-color">400</span><span class="keyword-color">px</span><span>;</span> <span>&rbrace;</span></div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color">.sticker</span> <span>&lbrace;</span> </div>
+         <div style="margin-left: 2rem"><span class="key-color">max-height</span><span>:</span> <span class="constant-color">150</span><span class="keyword-color">px</span><span>;</span></div>
+         <div style="margin-left: 2rem"><span class="key-color">max-width</span><span>:</span> <span class="constant-color">150</span><span class="keyword-color">px</span><span>;</span> </div>
+         <div style="margin-left: 1rem"><span>&rbrace;</span></div>
+         <div><span>&lt;/</span><span class="html-tag-color">style</span><span>&gt;</span></div>
         <div class="sticker-container">
           <img
             class={"sticker"}
@@ -291,6 +292,8 @@
 
   .code {
     padding: 0.5rem;
+    display: grid;
+    grid-gap: 0.15rem;
     white-space: pre;
   }
 
