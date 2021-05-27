@@ -8,6 +8,11 @@
 </script>
 
 <div
+  style={`
+  --highlight-color: ${dokiTheme.colors.highlightColor};
+  --accent-color: ${dokiTheme.colors.accentColor};
+  
+  `}
   class="code-container"
   on:mouseup={() => currentTheme.setTheme(dokiTheme.information.id)}
 >
@@ -31,35 +36,35 @@
       <div class="buttons">
         <div class="close">
           <a class="closebutton"><span><strong>x</strong></span></a>
-          <!-- close button link -->
         </div>
         <div class="minimize">
           <a class="minimizebutton"><span><strong>&ndash;</strong></span></a>
-          <!-- minimize button link -->
         </div>
         <div class="zoom">
           <a class="zoombutton"><span><strong>+</strong></span></a>
-          <!-- zoom button link -->
         </div>
       </div>
       {dokiTheme.information.name}
-      <!-- window title -->
     </div>
     <div
       class="content"
       style={`background-color: ${dokiTheme.colors.textEditorBackground};
       color: ${dokiTheme.colors.foregroundColor}`}
     >
-      <h3>Hey! What's up?</h3>
-      I'm a simple OS X Yosemite style window.
-      <!-- window content -->
-
-      <div class="sticker-container">
-        <img
-          class={"sticker"}
-          alt={`${dokiTheme.information.name}'s Sticker`}
-          src={`https://doki.assets.unthrottled.io/stickers/jetbrains/v2${dokiTheme.stickers.default.path}`}
-        />
+      <div class="tabs">
+        <div class="tab active">DokiThemePreview.svelte</div>
+        <div class="tab">package.json</div>
+      </div>
+      <div class="code">
+        <h3>Hey! What's up?</h3>
+        I'm a simple OS X Yosemite style window.
+        <div class="sticker-container">
+          <img
+            class={"sticker"}
+            alt={`${dokiTheme.information.name}'s Sticker`}
+            src={`https://doki.assets.unthrottled.io/stickers/jetbrains/v2${dokiTheme.stickers.default.path}`}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -68,6 +73,25 @@
 <style>
   :root {
     --code-window-height: 400px;
+  }
+
+  .tabs {
+    display: flex;
+  }
+
+  .active {
+    background-color: var(--highlight-color);
+    border-bottom: 2px solid var(--accent-color);
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
+  }
+
+  .tab::after {
+    content: "x";
+    position: relative;
+    margin-left: 1rem;
   }
 
   .sticker-container {
@@ -213,12 +237,15 @@
     cursor: default;
   }
 
+  .code {
+    padding: 0.5rem;
+  }
+
   .content {
-    padding: 10px;
     flex-grow: 1;
     background: var(--theme-wallpaper);
     background-size: cover;
-    position:relative;
+    position: relative;
   }
 
   /* window END */
