@@ -11,7 +11,13 @@
   style={`
   --highlight-color: ${dokiTheme.colors.highlightColor};
   --accent-color: ${dokiTheme.colors.accentColor};
-  
+  --html-tag-color: ${dokiTheme.colors.htmlTagColor};
+  --editor-accent-color: ${dokiTheme.colors.editorAccentColor};
+  --keyword-color: ${dokiTheme.colors.keywordColor};
+  --string-color: ${dokiTheme.colors.stringColor};
+  --key-color: ${dokiTheme.colors.keyColor};
+  --class-name-color: ${dokiTheme.colors.classNameColor};
+  --constant-color: ${dokiTheme.colors.constantColor};
   `}
   class="code-container"
   on:mouseup={() => currentTheme.setTheme(dokiTheme.information.id)}
@@ -56,8 +62,22 @@
         <div class="tab">package.json</div>
       </div>
       <div class="code">
-        <h3>Hey! What's up?</h3>
-        I'm a simple OS X Yosemite style window.
+        <span>&lt;</span><span class="html-tag-color">script</span> <span class="key-color">lang</span>=<span class="string-color">&quot;ts&quot;</span>&gt; 
+    <span class="keyword-color">import type</span> &lbrace; DokiTheme &rbrace; <span class="keyword-color">from</span> <span class="string-color">&quot;./Types&quot;;</span> <br/>
+    <span class="keyword-color">export let</span> dokiTheme: DokiTheme; &lt;/<span class="html-tag-color">script</span>&gt;
+&lt;<span class="html-tag-color">div</span> class=&quot;sticker-container&quot;&gt; 
+&lt;<span class="html-tag-color">img</span>
+<span class="key-color">class</span>=<span class="string-color">&quot;sticker&quot;</span><br/>
+<span class="key-color">alt</span>=&lbrace;<span class="string-color">`</span>$&lbrace;dokiTheme.information.name&rbrace;<span class="string-color">&#39;s Sticker`</span>&rbrace;
+<span class="key-color">src</span>=&lbrace;dokiTheme.stickers.default.path&rbrace;/&gt; 
+&lt;/<span class="html-tag-color">div</span>&gt;
+        &lt;<span class="html-tag-color">style</span>&gt; 
+        <span class="key-color">:root</span> &lbrace; <span class="class-name-color">--code-window-height</span>: <span class="constant-color">400</span><span class="keyword-color">px</span>; &rbrace;
+        <span class="key-color">.sticker</span> &lbrace; 
+    max-height: <span class="constant-color">150</span><span class="keyword-color">px</span>;
+    max-width: <span class="constant-color">150</span><span class="keyword-color">px</span>; &rbrace;
+        &lt;/
+        <span class="html-tag-color">style</span>&gt;
         <div class="sticker-container">
           <img
             class={"sticker"}
@@ -73,6 +93,34 @@
 <style>
   :root {
     --code-window-height: 400px;
+  }
+
+  .highlight-color {
+    color: var(--highlight-color);
+  }
+  .accent-color {
+    color: var(--accent-color);
+  }
+  .html-tag-color {
+    color: var(--html-tag-color);
+  }
+  .editor-accent-color {
+    color: var(--editor-accent-color);
+  }
+  .keyword-color {
+    color: var(--keyword-color);
+  }
+  .string-color {
+    color: var(--string-color);
+  }
+  .key-color {
+    color: var(--key-color);
+  }
+  .class-name-color {
+    color: var(--class-name-color);
+  }
+  .constant-color {
+    color: var(--constant-color);
   }
 
   .tabs {
@@ -239,6 +287,7 @@
 
   .code {
     padding: 0.5rem;
+    white-space: pre;
   }
 
   .content {
