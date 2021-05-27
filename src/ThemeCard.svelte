@@ -83,7 +83,7 @@
           <img
             class={"sticker"}
             alt={`${dokiTheme.information.name}'s Sticker`}
-            src={`https://doki.assets.unthrottled.io/stickers/jetbrains/v2${dokiTheme.stickers.default.path}`}
+            src={`https://doki.assets.unthrottled.io/stickers/smol${dokiTheme.stickers.default.path}`}
           />
         </div>
       </div>
