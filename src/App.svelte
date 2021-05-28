@@ -42,6 +42,8 @@
     "--accent-color-transparent",
     `${$currentTheme.colors.accentColor}88`
   );
+
+  // TODO: fix focus color outline on routing
 </script>
 
 <main>
