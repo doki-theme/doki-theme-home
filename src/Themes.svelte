@@ -12,6 +12,8 @@
 </script>
 
 <div style="margin: 0 2rem;">
+  <div style="width: 100%; text-align: center">Code Font: <a class="victor-mono-link" href="https://rubjo.github.io/victor-mono/" 
+    target="_blank">Victor Mono</a></div>
   <div class="container">
     {#each dokiThemes as dokiTheme}
       <ThemeCard {dokiTheme} />

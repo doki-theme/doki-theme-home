@@ -22,6 +22,11 @@
     "--accent-color",
     $currentTheme.colors.accentColor
   );
+  
+  $: document.documentElement.style.setProperty(
+    "--editor-accent-color",
+    $currentTheme.colors.editorAccentColor
+  );
 
   $: document.documentElement.style.setProperty(
     "--accent-color-transparent",
