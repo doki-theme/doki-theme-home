@@ -1,19 +1,21 @@
 <script lang="ts">
   // import marked from "marked";
 
+  import ContentContainer from "./ContentContainer.svelte";
   import DokiLogo from "./DokiLogo.svelte";
 </script>
 
-<div class="container">
+<ContentContainer>
   <h1>The Doki Theme</h1>
   <DokiLogo size="145" />
   <h3 class="editor-accent-color">
     A large collection of themes built with love and care.
   </h3>
   <p>
-    Build software, push boundaries, and deliver happiness along side your waifu.
+    Build software, push boundaries, and deliver happiness along side your
+    waifu.
   </p>
-</div>
+</ContentContainer>
 
 <!-- {@html marked(description)} -->
 <style>
@@ -26,14 +28,7 @@
     padding-top: 1rem;
     font-weight: 500;
     font-size: 1.25rem;
-    font-family: "Victor Mono", 'Courier New', Courier, monospace;
+    font-family: "Victor Mono", "Courier New", Courier, monospace;
     font-style: italic;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-    padding: 1rem;
   }
 </style>
