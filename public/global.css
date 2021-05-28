@@ -46,6 +46,18 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+.info-foreground {
+  color: var(--info-foreground);
+}
+
+.string-color {
+  color: var(--string-color);
+}
+
+.editor-accent-color {
+  color: var(--editor-accent-color);
+}
+
 a,
 a:visited {
 	position: relative;

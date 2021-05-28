@@ -7,8 +7,11 @@
 <div class="container">
   <h1>The Doki Theme</h1>
   <DokiLogo size="145" />
+  <h3 class="editor-accent-color">
+    A large collection of themes built with love and care.
+  </h3>
   <p>
-    A large collection of multi-platform themes built with love.
+    Build software, push boundaries, and deliver happiness along side your waifu.
   </p>
 </div>
 
@@ -17,6 +20,14 @@
   h1 {
     font-size: 3rem;
     font-weight: 300;
+  }
+
+  h3 {
+    padding-top: 1rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    font-family: "Victor Mono", 'Courier New', Courier, monospace;
+    font-style: italic;
   }
 
   .container {

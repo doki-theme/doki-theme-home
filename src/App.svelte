@@ -27,6 +27,16 @@
     "--editor-accent-color",
     $currentTheme.colors.editorAccentColor
   );
+  
+  $: document.documentElement.style.setProperty(
+    "--info-foreground",
+    $currentTheme.colors.infoForeground
+  );
+
+  $: document.documentElement.style.setProperty(
+    "--string-color",
+    $currentTheme.colors.stringColor
+  );
 
   $: document.documentElement.style.setProperty(
     "--accent-color-transparent",
