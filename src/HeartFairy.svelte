@@ -15,7 +15,7 @@
     const xTransform = x - size / 2;
     const yTranform = y + size;
 
-    return `transform: translate(${xTransform}px, ${yTranform}px); position: fixed; z-index: 2;`;
+    return `transform: translate(${xTransform}px, ${yTranform}px); position: fixed; z-index: 2; pointer-events: none;`;
   };
 </script>
 

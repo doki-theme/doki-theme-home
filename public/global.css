@@ -116,3 +116,12 @@ button:focus {
 *::-webkit-scrollbar {
 	width: 0.5em;
 }
+
+::-moz-selection { 
+  background: var(--selection-background); 
+  color: var(--selection-foreground); 
+}
+::selection { 
+  background: var(--selection-background); 
+  color: var(--selection-foreground); 
+}

@@ -16,6 +16,16 @@
   $: document.documentElement.style.setProperty(
     "--foreground-color",
     $currentTheme.colors.foregroundColor
+  ); 
+  
+  $: document.documentElement.style.setProperty(
+    "--button-color",
+    $currentTheme.colors.buttonColor,
+  ); 
+  
+  $: document.documentElement.style.setProperty(
+    "--button-font",
+    $currentTheme.colors.buttonFont,
   );
 
   $: document.documentElement.style.setProperty(
@@ -41,6 +51,15 @@
   $: document.documentElement.style.setProperty(
     "--accent-color-transparent",
     `${$currentTheme.colors.accentColor}88`
+  );
+  $: document.documentElement.style.setProperty(
+    "--selection-foreground",
+    `${$currentTheme.colors.selectionForeground}`
+  );
+  
+  $: document.documentElement.style.setProperty(
+    "--selection-background",
+    `${$currentTheme.colors.selectionBackground}`
   );
 
   // TODO: fix focus color outline on routing
