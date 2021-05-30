@@ -7,7 +7,6 @@
 <div class="menu">
   <nav class="nav-container">
     <div class="home-link">
-      <DokiLogo size="25" />
       <div class="nav-links">
         {#each navLinks as navLink}
           <div class="nav-link">
@@ -17,12 +16,15 @@
       </div>
     </div>
   </nav>
+  <DokiLogo size="25" />
 </div>
 
 <style>
   .menu {
+    text-align: center;
     height: 64px;
     width: 100%;
+    padding-bottom: 3rem;
   }
 
   .nav-container {
@@ -37,6 +39,7 @@
 
   .nav-links {
     display: flex;
+    justify-content: center;
     width: 100%;
     margin: auto 0 auto 1rem;
   }

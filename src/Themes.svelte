@@ -1,5 +1,6 @@
 <script>
   import DokiThemeDefinitions from "./DokiThemeDefinitions";
+import Footer from "./Footer.svelte";
   import ThemeCard from "./ThemeCard.svelte";
 
   const dokiThemes = Object.values(DokiThemeDefinitions).sort((a, b) => {
@@ -20,6 +21,8 @@
     {/each}
   </div>
 </div>
+
+<Footer/>
 
 <style>
   .container {
