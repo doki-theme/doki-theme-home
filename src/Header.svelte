@@ -1,7 +1,7 @@
 <script>
-  import { Link } from "svelte-navigator";
   import DokiLogo from "./DokiLogo.svelte";
   import { navLinks } from "./Constants";
+  import FakeLink from "./FakeLink.svelte";
 </script>
 
 <div class="menu">
@@ -11,7 +11,7 @@
       <div class="nav-links">
         {#each navLinks as navLink}
           <div class="nav-link">
-            <Link to={navLink.path}>{navLink.label}</Link>
+            <FakeLink to={navLink.path}>{navLink.label}</FakeLink>
           </div>
         {/each}
       </div>

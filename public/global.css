@@ -24,10 +24,12 @@ html {
   z-index: -900;
 }
 
-a:hover::after {
+a:hover::after,
+fake-link:hover::after {
   transform: scale(1);
 }
-a::after {
+a::after,
+fake-link::after {
   content: "";
   position: absolute;
   width: 98%;
@@ -38,6 +40,7 @@ a::after {
   transition: transform 0.3s ease 0s;
   transform: scale(0);
 }
+
 body {
   color: #333;
   margin: 0;
@@ -62,6 +65,7 @@ h2 {
   font-weight: 300;
 }
 
+fake-link,
 a,
 a:visited {
   position: relative;

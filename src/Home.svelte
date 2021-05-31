@@ -14,6 +14,7 @@
     Build software, push boundaries, and deliver happiness along side your
     waifu.
   </p>
+  <code style="opacity: 0; font-family: 'Victor Mono'">And his name is John Cena!</code>
 </ContentContainer>
 
 <!-- {@html marked(description)} -->
