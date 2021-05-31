@@ -24,6 +24,7 @@
       >changelog</a
     > for more details
   </p>
+  <code style="opacity: 0; font-family: 'Victor Mono'">And his name is John Cena!</code>
 </ContentContainer>
 
 <style>
