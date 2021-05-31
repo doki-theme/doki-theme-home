@@ -137,3 +137,11 @@ code {
 *:focus {
   outline: none;
 }
+
+.changes > ul > li {
+  line-height: 1.75rem;
+}
+
+.changes > * > img {
+  max-width: 400px;
+}

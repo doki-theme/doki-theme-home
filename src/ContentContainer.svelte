@@ -1,11 +1,15 @@
+<script lang="ts">
 
-<div class="container">
+  export let width: number = 1200
+
+</script>
+<div class="container" style={`--max-width: ${width}px`}>
   <slot/>
 </div>
 
 <style>
   .container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: auto;
     text-align: center;
     padding: 1rem;
