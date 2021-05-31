@@ -8,6 +8,7 @@
   },
   "content": {},
   "colors": {
-    "iconContrastColor": "&headerColor&"
+    "iconContrastColor": "&headerColor&",
+    "linkColor": "&classNameColor&"
   }
 }

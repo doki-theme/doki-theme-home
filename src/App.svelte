@@ -20,12 +20,12 @@
   
   $: document.documentElement.style.setProperty(
     "--button-color",
-    $currentTheme.colors.buttonColor,
+    $currentTheme.colors.selectionBackground,
   ); 
   
   $: document.documentElement.style.setProperty(
     "--button-font",
-    $currentTheme.colors.buttonFont,
+    $currentTheme.colors.selectionForeground,
   );
 
   $: document.documentElement.style.setProperty(
