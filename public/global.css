@@ -109,6 +109,14 @@ button:focus {
   border-color: #666;
 }
 
+.italic {
+  font-style: italic;
+}
+
+code {
+  font-family: "Victor Mono", 'Courier New', Courier, monospace;
+}
+
 *::-webkit-scrollbar-thumb {
 	background-color: var(--accent-color-transparent);
 }

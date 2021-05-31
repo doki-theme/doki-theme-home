@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import marked from "marked";
 
   import ContentContainer from "./ContentContainer.svelte";
   import DokiLogo from "./DokiLogo.svelte";
@@ -7,7 +6,7 @@
 
 <ContentContainer>
   <h1>The Doki Theme</h1>
-  <DokiLogo size="145" />
+  <DokiLogo size={145} />
   <h3 class="editor-accent-color">
     A large collection of themes built with love and care.
   </h3>

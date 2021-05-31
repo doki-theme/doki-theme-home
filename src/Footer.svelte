@@ -16,7 +16,7 @@
       </div>
     </div>
   </nav>
-  <DokiLogo size="25" />
+  <DokiLogo size={25} />
 </div>
 
 <style>
