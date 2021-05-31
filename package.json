@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "buildThemes": "ts-node --project buildSrc/tsconfig.json buildSrc/src/BuildThemes.ts",
+    "sync": "ts-node --project buildSrc/tsconfig.json buildSrc/src/AssetUpload.ts",
     "build": "rollup -c",
+    "release": "npm run buildThemes && npm run build && npm run sync",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear -s",
     "validate": "svelte-check"

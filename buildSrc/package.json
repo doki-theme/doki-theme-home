@@ -25,7 +25,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "aws-sdk": "^2.784.0",
+    "aws-sdk": "^2.918.0",
     "file-type": "^16.0.1",
     "xml2js": "^0.4.23"
   },
