@@ -1,11 +1,5 @@
 <script>
   import ContentContainer from "./ContentContainer.svelte";
-
-  let buttonText = "Donate";
-
-  const donateAction = () => {
-    window.open("https://paypal.me/alexsimons9999?locale.x=en_US", "_blank");
-  };
 </script>
 
 <ContentContainer>
@@ -21,8 +15,8 @@
 
   <div class="preachy-speachy">
     <p>
-      Nothing like taking inspiration from a late 2017 internet meme and running
-      with it for more than three years.
+      Nothing like taking inspiration from a late 2017 internet meme and a bit
+      of dyslexia, then running with that idea for more than three years.
     </p>
 
     <p>
@@ -32,18 +26,29 @@
     </p>
 
     <p>
-      However, I also recognize that I have built something that others enjoy as
-      well. So, if you want it known that you are a serious hacker weeb or if
-      you just want to feel good. Then you can send a few dollars my way. Let me
-      know if you want your name and pretty face displayed for others to see.
+      I also recognize that I have built something that others enjoy as
+      well. You can always just send me a <a
+        href="https://saythanks.io/to/alexsimons9999%40gmail.com"
+        >nice thank you message</a
+      >, your gratitude is enough for me.
+    </p>
+    <p>
+      However, if you want it known that you are a serious hacker weeb or if you
+      just got spare cash to burn. Then you can send a few dollars my way. Let
+      me know if you want your name and pretty face displayed for others to see.
     </p>
 
     <div style="padding: 1rem 0; width: 100%;">- Alex</div>
   </div>
 
-  <button class="donate-button" on:click={donateAction}>
-    {buttonText}
-  </button>
+  <div style="padding: 0.5rem" />
+  <a
+    class="donate-button"
+    href="https://paypal.me/alexsimons9999?locale.x=en_US"
+    target="_blank"
+  >
+    Donate
+  </a>
 </ContentContainer>
 
 <style>
@@ -51,7 +56,7 @@
     margin: 0 auto;
   }
 
-  button {
+  .donate-button {
     border-radius: 0;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -60,9 +65,13 @@
     color: var(--button-font);
   }
 
-  button:active {
+  .donate-button:hover {
     background-color: var(--selection-background);
     color: var(--selection-foreground);
+  }
+
+  .donate-button::after {
+    display: none;
   }
 
   blockquote {

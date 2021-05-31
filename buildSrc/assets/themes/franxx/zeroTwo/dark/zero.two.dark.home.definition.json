@@ -3,6 +3,7 @@
   "overrides": {},
   "content": {},
   "colors": {
-    "iconContrastColor": "&headerColor&"
+    "iconContrastColor": "&headerColor&",
+    "linkColor": "&editorAccentColor&"
   }
 }

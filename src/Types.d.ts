@@ -71,6 +71,7 @@ export interface Colors {
   accentColorMoreTransparent: string;
   accentColor: string;
   editorAccentColor: string;
+  linkColor?: string;
   accentContrastColor: string;
   stopColor: string;
   testScopeColor: string;

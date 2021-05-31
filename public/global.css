@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Victor Mono';
-  src: url('victor-mono/VictorMono-MediumItalic.woff') format('woff');
+  font-family: "Victor Mono";
+  src: url("victor-mono/VictorMono-MediumItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Victor Mono';
-  src: url('victor-mono/VictorMono-Medium.woff') format('woff');
+  font-family: "Victor Mono";
+  src: url("victor-mono/VictorMono-Medium.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -28,15 +28,15 @@ a:hover::after {
   transform: scale(1);
 }
 a::after {
-	content: "";
-    position: absolute;
-    width: 98%;
-    height: 2px;
-    bottom: -5px;
-    left: 0px;
-    background: var(--accent-color);
-    transition: transform 0.3s ease 0s;
-    transform: scale(0);
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 2px;
+  bottom: -5px;
+  left: 0px;
+  background: var(--link-color);
+  transition: transform 0.3s ease 0s;
+  transform: scale(0);
 }
 body {
   color: #333;
@@ -64,8 +64,8 @@ h2 {
 
 a,
 a:visited {
-	position: relative;
-  color: var(--accent-color);
+  position: relative;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -114,24 +114,24 @@ button:focus {
 }
 
 code {
-  font-family: "Victor Mono", 'Courier New', Courier, monospace;
+  font-family: "Victor Mono", "Courier New", Courier, monospace;
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: var(--accent-color-transparent);
+  background-color: var(--accent-color-transparent);
 }
 
 *::-webkit-scrollbar {
-	width: 0.5em;
+  width: 0.5em;
 }
 
-::-moz-selection { 
-  background: var(--selection-background); 
-  color: var(--selection-foreground); 
+::-moz-selection {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
 }
-::selection { 
-  background: var(--selection-background); 
-  color: var(--selection-foreground); 
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
 }
 
 *:focus {

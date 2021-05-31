@@ -60,6 +60,11 @@
   $: document.documentElement.style.setProperty(
     "--selection-background",
     `${$currentTheme.colors.selectionBackground}`
+  ); 
+  
+  $: document.documentElement.style.setProperty(
+    "--link-color",
+    `${$currentTheme.colors.linkColor || $currentTheme.colors.accentColor}`
   );
 </script>
 
