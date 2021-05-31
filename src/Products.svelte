@@ -20,8 +20,9 @@
           y="0px"
           viewBox="0 0 2350 2314.8"
           xml:space="preserve"
-          fill={$currentTheme.information.dark ? '#fff' : '#000'}
+          fill={$currentTheme.information.dark ? "#fff" : "#000"}
         >
+          <title>GitHub</title>
           <path
             d="M1175,0C525.8,0,0,525.8,0,1175c0,552.2,378.9,1010.5,890.1,1139.7c-5.9-14.7-8.8-35.3-8.8-55.8v-199.8H734.4
 c-79.3,0-152.8-35.2-185.1-99.9c-38.2-70.5-44.1-179.2-141-246.8c-29.4-23.5-5.9-47,26.4-44.1c61.7,17.6,111.6,58.8,158.6,120.4
@@ -52,6 +53,7 @@ C2021,2123.8,2350,1689.1,2350,1175C2350,525.8,1824.2,0,1175,0L1175,0z"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           y="0px"
         >
+          <title>JetBrains Software</title>
           <g>
             <g>
               <linearGradient
@@ -183,25 +185,15 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
           version="2.0"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          xmlns:figma="http://www.figma.com/figma/ns"
         >
-          <title>Group.svg</title>
-          <desc>Created using Figma 0.90</desc>
-          <g id="Canvas" transform="translate(-1640 -2453)" figma:type="canvas">
-            <g id="Group" style="mix-blend-mode:normal;" figma:type="group">
-              <g id="Group" style="mix-blend-mode:normal;" figma:type="group">
-                <g id="Group" style="mix-blend-mode:normal;" figma:type="group">
-                  <g id="g" style="mix-blend-mode:normal;" figma:type="group">
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path9 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+          <title>Jupyter</title>
+          <g id="Canvas" transform="translate(-1640 -2453)">
+            <g id="Group" style="mix-blend-mode:normal;">
+              <g id="Group" style="mix-blend-mode:normal;">
+                <g id="Group" style="mix-blend-mode:normal;">
+                  <g id="g" style="mix-blend-mode:normal;">
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path9 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path0_fill"
                           transform="translate(1640.54 2474.36)"
@@ -210,16 +202,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                         />
                       </g>
                     </g>
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path10 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path10 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path1_fill"
                           transform="translate(1645.68 2474.37)"
@@ -228,16 +212,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                         />
                       </g>
                     </g>
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path11 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path11 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path2_fill"
                           transform="translate(1653.39 2474.26)"
@@ -246,16 +222,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                         />
                       </g>
                     </g>
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path12 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path12 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path3_fill"
                           transform="translate(1660.43 2474.39)"
@@ -264,16 +232,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                         />
                       </g>
                     </g>
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path13 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path13 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path4_fill"
                           transform="translate(1667.55 2472.54)"
@@ -282,16 +242,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                         />
                       </g>
                     </g>
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path14 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path14 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path5_fill"
                           transform="translate(1672.47 2474.29)"
@@ -300,16 +252,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                         />
                       </g>
                     </g>
-                    <g
-                      id="path"
-                      style="mix-blend-mode:normal;"
-                      figma:type="group"
-                    >
-                      <g
-                        id="path15 fill"
-                        style="mix-blend-mode:normal;"
-                        figma:type="vector"
-                      >
+                    <g id="path" style="mix-blend-mode:normal;">
+                      <g id="path15 fill" style="mix-blend-mode:normal;">
                         <use
                           xlink:href="#path6_fill"
                           transform="translate(1679.98 2474.24)"
@@ -320,17 +264,9 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                     </g>
                   </g>
                 </g>
-                <g id="g" style="mix-blend-mode:normal;" figma:type="group">
-                  <g
-                    id="path"
-                    style="mix-blend-mode:normal;"
-                    figma:type="group"
-                  >
-                    <g
-                      id="path16 fill"
-                      style="mix-blend-mode:normal;"
-                      figma:type="vector"
-                    >
+                <g id="g" style="mix-blend-mode:normal;">
+                  <g id="path" style="mix-blend-mode:normal;">
+                    <g id="path16 fill" style="mix-blend-mode:normal;">
                       <use
                         xlink:href="#path7_fill"
                         transform="translate(1673.48 2453.69)"
@@ -339,16 +275,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                       />
                     </g>
                   </g>
-                  <g
-                    id="path"
-                    style="mix-blend-mode:normal;"
-                    figma:type="group"
-                  >
-                    <g
-                      id="path17 fill"
-                      style="mix-blend-mode:normal;"
-                      figma:type="vector"
-                    >
+                  <g id="path" style="mix-blend-mode:normal;">
+                    <g id="path17 fill" style="mix-blend-mode:normal;">
                       <use
                         xlink:href="#path8_fill"
                         transform="translate(1643.21 2484.27)"
@@ -357,16 +285,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                       />
                     </g>
                   </g>
-                  <g
-                    id="path"
-                    style="mix-blend-mode:normal;"
-                    figma:type="group"
-                  >
-                    <g
-                      id="path18 fill"
-                      style="mix-blend-mode:normal;"
-                      figma:type="vector"
-                    >
+                  <g id="path" style="mix-blend-mode:normal;">
+                    <g id="path18 fill" style="mix-blend-mode:normal;">
                       <use
                         xlink:href="#path9_fill"
                         transform="translate(1643.21 2457.88)"
@@ -375,16 +295,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                       />
                     </g>
                   </g>
-                  <g
-                    id="path"
-                    style="mix-blend-mode:normal;"
-                    figma:type="group"
-                  >
-                    <g
-                      id="path19 fill"
-                      style="mix-blend-mode:normal;"
-                      figma:type="vector"
-                    >
+                  <g id="path" style="mix-blend-mode:normal;">
+                    <g id="path19 fill" style="mix-blend-mode:normal;">
                       <use
                         xlink:href="#path10_fill"
                         transform="translate(1643.28 2496.09)"
@@ -393,16 +305,8 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
                       />
                     </g>
                   </g>
-                  <g
-                    id="path"
-                    style="mix-blend-mode:normal;"
-                    figma:type="group"
-                  >
-                    <g
-                      id="path20 fill"
-                      style="mix-blend-mode:normal;"
-                      figma:type="vector"
-                    >
+                  <g id="path" style="mix-blend-mode:normal;">
+                    <g id="path20 fill" style="mix-blend-mode:normal;">
                       <use
                         xlink:href="#path11_fill"
                         transform="translate(1641.87 2458.43)"
@@ -479,6 +383,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
           height="70px"
           viewBox="1 1 176 176"
         >
+          <title>Chrome</title>
           <style>
             .B {
               clip-path: url(#C);
@@ -670,6 +575,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
           width="70"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <title>VSCode</title>
           <mask
             height="256"
             id="mask0"
@@ -804,6 +710,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 1024 1024"
         >
+          <title>Firefox</title>
           <defs>
             <radialGradient
               id="radial-gradient"
@@ -1103,6 +1010,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMinYMin meet"
         >
+          <title>Eclipse</title>
           <defs>
             <linearGradient
               x1="50%"
@@ -1171,6 +1079,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
     <div class="dokiTool">
       <a href="https://github.com/doki-theme/doki-theme-hyper" target="_blank">
         <svg fill="none" height="60" width="63">
+          <title>Hyper.js</title>
           <mask fill="#fff" id="aa">
             <path
               d="M62.22 40.97v2.18L62.19 45a26.32 26.32 0 0 1-.36 3.99 12.77 12.77 0 0 1-6.92 9.38 13.71 13.71 0 0 1-3.83 1.26c-1.34.23-2.7.31-4.04.35-2.6.03-3.33.03-4.07.03H19.25c-2.82 0-3.44-.01-4.06-.03-1.35-.04-2.71-.12-4.04-.35a13.71 13.71 0 0 1-3.85-1.26A12.9 12.9 0 0 1 .4 48.98a26.33 26.33 0 0 1-.36-4 81.1 81.1 0 0 1-.02-1.83L0 40.97V19.03v-2.18l.03-1.84c.04-1.33.12-2.67.36-4A12.76 12.76 0 0 1 7.3 1.64 13.71 13.71 0 0 1 11.14.39c1.33-.23 2.69-.31 4.04-.35C17.78 0 18.52 0 19.25 0H42.37h-8.95 9.55c2.83 0 3.45.01 4.07.03 1.34.04 2.7.12 4.04.35 1.35.24 2.61.64 3.84 1.26a12.89 12.89 0 0 1 6.91 9.38c.24 1.32.32 2.66.36 4 .02.6.02 1.22.03 1.83v24.12z"
@@ -1216,6 +1125,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
           viewBox="0 0 544.16998 544.8642"
           version="1.1"
         >
+          <title>Vim</title>
           <g id="layer1" transform="translate(-69.980994,-160.33288)">
             <g
               id="g3699"

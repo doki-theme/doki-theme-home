@@ -3,8 +3,6 @@
   import { currentTheme } from "./ThemeStore";
 
   export let dokiTheme: DokiTheme;
-
-  // TODO: Smallify all the stickers
 </script>
 
 <div
