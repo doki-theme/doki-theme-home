@@ -28,7 +28,7 @@
     <p>
       What you have stumbled across, friend, is my passion project. As long as I
       am alive (and coding), I <em>will</em>
-      find the time to continualy improve my theme suite.
+      find the time to continually improve my theme suite.
     </p>
 
     <p>
@@ -38,7 +38,7 @@
       know if you want your name and pretty face displayed for others to see.
     </p>
 
-    <div style="padding-top: 1rem; width: 100%; text-align: right">- Alex</div>
+    <div style="padding: 1rem 0; width: 100%;">- Alex</div>
   </div>
 
   <button class="donate-button" on:click={donateAction}>

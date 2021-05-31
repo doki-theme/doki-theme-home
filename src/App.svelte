@@ -56,13 +56,11 @@
     "--selection-foreground",
     `${$currentTheme.colors.selectionForeground}`
   );
-  
+
   $: document.documentElement.style.setProperty(
     "--selection-background",
     `${$currentTheme.colors.selectionBackground}`
   );
-
-  // TODO: fix focus color outline on routing
 </script>
 
 <main>

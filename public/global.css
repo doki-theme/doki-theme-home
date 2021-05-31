@@ -125,3 +125,7 @@ button:focus {
   background: var(--selection-background); 
   color: var(--selection-foreground); 
 }
+
+*:focus {
+  outline: none;
+}
