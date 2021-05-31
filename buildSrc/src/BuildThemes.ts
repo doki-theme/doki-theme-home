@@ -45,8 +45,9 @@ function buildTemplateVariables(
   const namedColorsWithOverrides = {
     ...cleanedColors,
     ...colorsOverride,
-    editorAccentColor: dokiThemeDefinition.overrides?.editorScheme?.colors?.accentColor ||
-    dokiThemeDefinition.colors.accentColor
+    editorAccentColor:
+      dokiThemeDefinition.overrides?.editorScheme?.colors?.accentColor ||
+      dokiThemeDefinition.colors.accentColor,
   };
   return Object.entries<string>(namedColorsWithOverrides).reduce(
     (accum, [colorName, colorValue]) => ({
@@ -98,21 +99,21 @@ const getStickers = (
   dokiDefinition: MasterDokiThemeDefinition,
   themePath: string
 ) => {
-  const secondary =
-    dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
+  // const secondary =
+  //   dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
   return {
     default: {
       path: resolveStickerPath(themePath, dokiDefinition.stickers.default),
       name: dokiDefinition.stickers.default,
     },
-    ...(secondary
-      ? {
-          secondary: {
-            path: resolveStickerPath(themePath, secondary),
-            name: secondary,
-          },
-        }
-      : {}),
+    // ...(secondary
+    //   ? {
+    //       secondary: {
+    //         path: resolveStickerPath(themePath, secondary),
+    //         name: secondary,
+    //       },
+    //     }
+    //   : {}),
   };
 };
 
@@ -131,13 +132,40 @@ evaluateTemplates(
       .map((dokiTheme) => {
         const dokiDefinition = dokiTheme.definition;
         return {
-          information: omit(dokiDefinition, [
-            "colors",
-            "overrides",
-            "ui",
-            "icons",
-          ]),
-          colors: dokiTheme.templateVariables,
+          information: {
+            id: dokiDefinition.id,
+            name: dokiDefinition.name,
+            displayName: dokiDefinition.displayName,
+            dark: dokiDefinition.dark,
+          },
+          colors: {
+            constantColor: dokiTheme.templateVariables.constantColor,
+            caretRow: dokiTheme.templateVariables.caretRow,
+            infoForeground: dokiTheme.templateVariables.infoForeground,
+            baseIconColor: dokiTheme.templateVariables.baseIconColor,
+            selectionForeground: dokiTheme.templateVariables.selectionForeground,
+            headerColor: dokiTheme.templateVariables.headerColor,
+            baseBackground: dokiTheme.templateVariables.baseBackground,
+            borderColor: dokiTheme.templateVariables.borderColor,
+            buttonColor: dokiTheme.templateVariables.buttonColor,
+            selectionBackground: dokiTheme.templateVariables.selectionBackground,
+            buttonFont: dokiTheme.templateVariables.buttonFont,
+            foregroundColor: dokiTheme.templateVariables.foregroundColor,
+            highlightColor: dokiTheme.templateVariables.highlightColor,
+            accentColor: dokiTheme.templateVariables.accentColor,
+            accentColorTransparent:
+              dokiTheme.templateVariables.accentColorTransparent,
+            editorAccentColor: dokiTheme.templateVariables.editorAccentColor,
+            linkColor: dokiTheme.templateVariables.linkColor,
+            accentContrastColor: dokiTheme.templateVariables.accentContrastColor,
+            codeBlock: dokiTheme.templateVariables.codeBlock,
+            textEditorBackground: dokiTheme.templateVariables.textEditorBackground,
+            classNameColor: dokiTheme.templateVariables.classNameColor,
+            htmlTagColor: dokiTheme.templateVariables.htmlTagColor,
+            stringColor: dokiTheme.templateVariables.stringColor,
+            keyColor: dokiTheme.templateVariables.keyColor,
+            keywordColor: dokiTheme.templateVariables.keywordColor,
+          },
           stickers: dokiTheme.stickers,
           backgrounds: dokiTheme.appThemeDefinition.backgrounds,
         };

@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import type { DokiTheme } from "./Types";
 
-export const BEST_GIRL = "8c99ec4b-fda0-4ab7-95ad-a6bf80c3924b";
+export const DEFAULT_THEME = "420b0ed5-803c-4127-97e3-dae6aa1a5972";
 
 function getParameterByName(name, url = window.location.href) {
   name = name.replace(/[\[\]]/g, "\\$&");
@@ -14,11 +14,11 @@ function getParameterByName(name, url = window.location.href) {
 }
 
 const getTheme = (themeId: string) =>
-  DokiThemeDefinitions[themeId] || DokiThemeDefinitions[BEST_GIRL];
+  DokiThemeDefinitions[themeId] || DokiThemeDefinitions[DEFAULT_THEME];
 
 const createCurrentTheme = () => {
   const { subscribe, set } = writable<DokiTheme>(
-    getTheme(getParameterByName("themeId") || BEST_GIRL)
+    getTheme(getParameterByName("themeId") || DEFAULT_THEME)
   );
 
   return {
