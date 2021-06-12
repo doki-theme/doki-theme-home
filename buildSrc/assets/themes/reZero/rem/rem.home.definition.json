@@ -1,10 +1,10 @@
 {
   "id": "f770dcfc-f41e-4b49-aa17-66e9ffc208fd",
   "overrides": {},
+  "content": {},
   "backgrounds": {
     "default": {
       "anchor": "right"
     }
-  },
-  "content": {}
+  }
 }
