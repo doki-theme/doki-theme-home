@@ -3,6 +3,7 @@
   import ContentContainer from "./ContentContainer.svelte";
   import { useParams } from "svelte-navigator";
   import { getChanges } from "./JetBrainsProductUpdate";
+import Footer from "./Footer.svelte";
 
   const params = useParams();
 
@@ -24,6 +25,7 @@
       >changelog</a
     > for more details
   </p>
+  <Footer/>
   <code style="opacity: 0; font-family: 'Victor Mono'">And his name is John Cena!</code>
 </ContentContainer>
 
