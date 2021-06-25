@@ -5,9 +5,14 @@ type Change = {
 };
 
 const changes: Change[] = [
-{
+  {
+    version: "16.1.0",
+    changes: `- Better 2021.2 EAP Build Support.`,
+  },
+  {
     version: "16.0.0",
     changes: `## 5 New Themes!\n---\n\nFrom the Monogatari series:\n\n- Hanekawa Tsubasa (Dark)\n\nFrom the Yuru Camp series:\n\n- Shima Rin (Dark)\n\nFrom the Don't Toy With Me, Miss Nagatoro series:\n\n- Hayase Nagatoro (Dark)\n\nFrom the Kakegurui Series:\n\n- Jabami Yumeko (Dark)\n\nFrom the Future Diary Series\n\n- Gasai Yuno (Dark)\n\n<div style="text-align: center">\n    <img alt="v16 girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v16_girls.png"/>\n</div>\n\n---`,
+    released: true,
   },
   {
     version: "15.3.0",
