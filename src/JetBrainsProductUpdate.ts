@@ -6,6 +6,10 @@ type Change = {
 
 const changes: Change[] = [
   {
+    version: "16.2.0",
+    changes: `- Added themed [XPathView Plugin](https://plugins.jetbrains.com/plugin/12478-xpathview--xslt) configurations.\n- Added themed [CSV Plugin](https://plugins.jetbrains.com/plugin/10037-csv/) configurations.\n- Themed the IntelliJ Ultimate [Flame Graph](https://blog.jetbrains.com/idea/2020/03/profiling-tools-and-intellij-idea-ultimate/).\n- Better Rider/C# Syntax Highlighting\n- Echinda's pressed "Action Button" is more visible.\n`,
+  },
+  {
     version: "16.1.0",
     changes: `- Better 2021.2 EAP Build Support.`,
   },
