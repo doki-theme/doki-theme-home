@@ -59,14 +59,14 @@
   onDestroy(unsubscribe);
 </script>
 
-<div id="main" bind:clientWidth={width} bind:clientHeight={height}>
+<div id="main" style="position: fixed !important;" bind:clientWidth={width} bind:clientHeight={height}>
   <canvas bind:this={backgroundCanvas} id="backgroundImage" {width} {height} />
   <div class="wallpaper"/>
 </div>
 
 <style>
   #main {
-    position: fixed;
+    position: fixed !important;
     width: 100%;
     height: 100%;
     z-index: -3;
