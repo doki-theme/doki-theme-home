@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "release": "npm run buildThemes && npm run build && npm run sync",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear -s",
+    "start": "sirv public --no-clear -s --host 0.0.0.0",
     "validate": "svelte-check"
   },
   "devDependencies": {
@@ -29,9 +29,9 @@
     "typescript": "^4.0.0"
   },
   "dependencies": {
+    "@sveltejs/gestures": "^0.0.1",
     "marked": "^2.0.5",
     "sirv-cli": "^1.0.0",
     "svelte-navigator": "^3.1.5"
   }
 }
-
