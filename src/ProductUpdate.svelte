@@ -21,7 +21,6 @@ import Footer from "./Footer.svelte";
   <p>
     For a full list of changes please see the <a
       href="https://github.com/doki-theme/doki-theme-jetbrains/blob/master/changelog/CHANGELOG.md"
-      target="_blank"
       >changelog</a
     > for more details
   </p>

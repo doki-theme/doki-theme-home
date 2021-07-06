@@ -5,12 +5,12 @@
 <ContentContainer>
   <h2>About</h2>
   <blockquote>
-    This <a href="https://monokai.pro/" target="_blank">Monokai theme</a> is
+    This <a href="https://monokai.pro/">Monokai theme</a> is
     pretty cool, but you know what would be cooler? A
     <a
-      href="https://doki-doki-literature-club.fandom.com/wiki/Monika"
-      target="_blank">Monika Theme...</a
-    >
+      href="https://doki-doki-literature-club.fandom.com/wiki/Monika">
+      Monika Theme...
+      </a>
   </blockquote>
 
   <div class="preachy-speachy">
@@ -28,7 +28,7 @@
     <p>
       I also recognize that I have built something that others enjoy as
       well. You can always just send me a <a
-        href="https://saythanks.io/to/alexsimons9999%40gmail.com"
+        href="mailto:alexsimons9999@gmail.com?subject=Thanks for weebifying my development tools!"
         >nice thank you message</a
       >, your gratitude is enough for me.
     </p>
@@ -45,7 +45,6 @@
   <a
     class="donate-button"
     href="https://paypal.me/alexsimons9999?locale.x=en_US"
-    target="_blank"
   >
     Donate
   </a>
