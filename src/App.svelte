@@ -70,6 +70,11 @@
   $: document.documentElement.style.setProperty(
     "--ansi-cyan",
     `${$currentTheme.colors["terminal.ansiCyan"]}`
+  );  
+  
+  $: document.documentElement.style.setProperty(
+    "--ansi-yellow",
+    `${$currentTheme.colors["terminal.ansiYellow"]}`
   );
 </script>
 

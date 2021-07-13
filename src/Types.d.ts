@@ -43,6 +43,7 @@ export interface Colors {
   keyColor: string;
   keywordColor: string;
   "terminal.ansiCyan": string;
+  "terminal.ansiYellow": string;
 }
 export interface Stickers {
   default: DefaultOrSecondary;

@@ -1,10 +1,11 @@
 <script>
-  import ContentContainer from "./ContentContainer.svelte";
+import Badge from "./Badge.svelte";
+import ContentContainer from "./ContentContainer.svelte";
 </script>
 
 <ContentContainer>
   <div class="container">
-  <div>
+  <div class="about">
   <h2>About</h2>
   <blockquote>
     This <a href="https://monokai.pro/">Monokai theme</a> is
@@ -56,7 +57,7 @@
     <div class="hackers">
       <h4>Hackers</h4>
       <ul>
-        <li><span>Javier Garcia</span></li>
+        <li><span>Javier Garcia</span> <span class="badge"><Badge/></span></li>
       </ul>
     </div>
   </div>
@@ -64,6 +65,9 @@
 </ContentContainer>
 
 <style>
+  .badge {
+    position: absolute;
+  }
   .container {
     display: flex;
     width: 100%;
@@ -73,8 +77,20 @@
     margin: 0 auto;
   }
 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .about {
+    margin-left: 1rem;
+  }
+
   .hackers > ul > li > span {
-    color: var(--ansi-cyan)
+    color: var(--ansi-cyan);
+    font-weight: 600;
   }
 
   .donate-button {
