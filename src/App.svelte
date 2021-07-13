@@ -65,6 +65,11 @@
   $: document.documentElement.style.setProperty(
     "--link-color",
     `${$currentTheme.colors.linkColor || $currentTheme.colors.accentColor}`
+  );  
+
+  $: document.documentElement.style.setProperty(
+    "--ansi-cyan",
+    `${$currentTheme.colors["terminal.ansiCyan"]}`
   );
 </script>
 

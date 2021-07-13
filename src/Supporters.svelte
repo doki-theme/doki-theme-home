@@ -3,6 +3,8 @@
 </script>
 
 <ContentContainer>
+  <div class="container">
+  <div>
   <h2>About</h2>
   <blockquote>
     This <a href="https://monokai.pro/">Monokai theme</a> is
@@ -48,11 +50,31 @@
   >
     Donate
   </a>
+  </div>
+  <div class="supporters">
+    <h2>Supporters</h2>
+    <div class="hackers">
+      <h4>Hackers</h4>
+      <ul>
+        <li><span>Javier Garcia</span></li>
+      </ul>
+    </div>
+  </div>
+  </div>
 </ContentContainer>
 
 <style>
+  .container {
+    display: flex;
+    width: 100%;
+  }
+
   .donate-button {
     margin: 0 auto;
+  }
+
+  .hackers > ul > li > span {
+    color: var(--ansi-cyan)
   }
 
   .donate-button {
@@ -89,9 +111,14 @@
   .preachy-speachy {
     max-width: 500px;
     margin: 0 auto;
+    text-align: left;
   }
 
   p {
     padding-top: 1rem;
+  }
+
+  .supporters {
+    flex-grow: 1;
   }
 </style>
