@@ -6,8 +6,13 @@ type Change = {
 
 const changes: Change[] = [
   {
+    version: "17.1.0",
+    changes: `- Added a convenient feature that allows you to set the console font family for all Doki Themes!`,
+  },
+  {
     version: "17.0.0",
     changes: `# NekoPara Release!\n## 3 New Themes!!\n---\n- Chocola (Dark)\n- Vanilla (Dark)\n- Coconut (Dark)\n\n<div style="text-align: center">\n    <img alt="v17 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v17_girls.png"/>\n</div>\n\n---\n## Other Stuff\n`,
+    released: true,
   },
   {
     version: "16.2.0",
