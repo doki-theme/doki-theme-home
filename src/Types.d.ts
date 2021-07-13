@@ -44,6 +44,7 @@ export interface Colors {
   keywordColor: string;
   "terminal.ansiCyan": string;
   "terminal.ansiYellow": string;
+  "terminal.ansiMagenta": string;
 }
 export interface Stickers {
   default: DefaultOrSecondary;

@@ -38,7 +38,7 @@ import ContentContainer from "./ContentContainer.svelte";
     <p>
       However, if you want it known that you are a serious hacker weeb or if you
       just got spare cash to burn. Then you can send a few dollars my way. Let
-      me know if you want your name and pretty face displayed for others to see.
+      me know if you <em>don't</em> want your name displayed for others to see.
     </p>
 
     <div style="padding: 1rem 0; width: 100%;">- Alex</div>

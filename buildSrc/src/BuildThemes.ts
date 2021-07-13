@@ -167,6 +167,7 @@ evaluateTemplates(
             keywordColor: dokiTheme.templateVariables.keywordColor,
             "terminal.ansiCyan": dokiTheme.templateVariables["terminal.ansiCyan"],
             "terminal.ansiYellow": dokiTheme.templateVariables["terminal.ansiYellow"],
+            "terminal.ansiMagenta": dokiTheme.templateVariables["terminal.ansiMagenta"],
           },
           stickers: dokiTheme.stickers,
           backgrounds: dokiTheme.appThemeDefinition.backgrounds,

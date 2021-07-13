@@ -76,6 +76,11 @@
     "--ansi-yellow",
     `${$currentTheme.colors["terminal.ansiYellow"]}`
   );
+  
+  $: document.documentElement.style.setProperty(
+    "--ansi-magenta",
+    `${$currentTheme.colors["terminal.ansiMagenta"]}`
+  );
 </script>
 
 <main>

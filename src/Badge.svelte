@@ -4,8 +4,8 @@ width="12.8px" height="16px" version="1.1" viewBox="0 0 226.26 281.9" xmlns="htt
 <title>Very First Supporter!</title>
  <g transform="translate(8.0026 -1.7627)" 
  stroke="#000" stroke-linecap="round" stroke-linejoin="round">
-  <path d="m38.487 161.65-32.24 88.054c42.539-20.677 42.497-20.251 62.854 19.703l21.146-75.035z" stroke-width="8.5"/>
-  <path d="m171.77 161.65 32.24 88.054c-42.539-20.677-42.497-20.251-62.854 19.703l-21.146-75.035z" stroke-width="8.5"/>
+  <path class="red" d="m38.487 161.65-32.24 88.054c42.539-20.677 42.497-20.251 62.854 19.703l21.146-75.035z" stroke-width="8.5"/>
+  <path class="red" d="m171.77 161.65 32.24 88.054c-42.539-20.677-42.497-20.251-62.854 19.703l-21.146-75.035z" stroke-width="8.5"/>
   <circle cx="105" cy="110.35" r="94.339" stroke-width="8.5033"/>
  </g>
  <g transform="matrix(.84797 0 0 .84797 -261.03 -238.51)" style="shape-inside:url(#rect4778);white-space:pre" aria-label="1" fill="#000">
@@ -14,7 +14,13 @@ width="12.8px" height="16px" version="1.1" viewBox="0 0 226.26 281.9" xmlns="htt
 </svg>
 
 <style>
+    .red {
+        fill: var(--ansi-magenta)
+    }
+
     .first-supporter {
         fill: var(--ansi-yellow);
+        vertical-align: middle;
+        margin-left: 0.25rem;
     }
 </style>
