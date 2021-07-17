@@ -80,6 +80,11 @@
   $: document.documentElement.style.setProperty(
     "--ansi-magenta",
     `${$currentTheme.colors["terminal.ansiMagenta"]}`
+  ); 
+  
+  $: document.documentElement.style.setProperty(
+    "--ansi-green",
+    `${$currentTheme.colors["terminal.ansiGreen"]}`
   );
 </script>
 
