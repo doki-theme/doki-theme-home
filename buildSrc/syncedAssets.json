@@ -1,10 +1,10 @@
 {
-  "build/bundle.css": "cd1f7d3222f49632e5e04a39e61ebb89",
-  "build/bundle.js": "3efbbdced7e3d346baed6f4b97b7b713",
-  "build/bundle.js.map": "469a6b232681371cdda43511d2e88b28",
+  "build/bundle.css": "292514adea2df88df043c30a8c03111b",
+  "build/bundle.js": "f069ef2260ee2be06e9001ebe6df21be",
+  "build/bundle.js.map": "4ae6cb3541cc941d9553b4cbd4ee8929",
   "favicon.png": "c62ed230cbdcfc71b3fc27c232ad97a8",
-  "global.css": "9bc5bc5d51082cab8d8186dd32dc0eab",
-  "index.html": "ec2a1ee6a4847807cf70c1e6680f49b7",
+  "global.css": "330d70cd9cb45c71064553f2f9acb126",
+  "index.html": "8335278eeecbfb2b943de86059850b3b",
   "victor-mono/VictorMono-Medium.woff": "5c145a7db72ecc40494219865d9f0013",
   "victor-mono/VictorMono-MediumItalic.woff": "746d53910b51e81b6301e4040f05dbba"
 }
