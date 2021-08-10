@@ -6,8 +6,13 @@ type Change = {
 
 const changes: Change[] = [
   {
+    version: "18.1.0",
+    changes: `- Made it easier to differentiate the search & selection background colors for all **61** themes.<sup><sup>(Some days I question my current life choices....)</sup></sup>`
+  },
+  {
     version: "18.0.0",
     changes: `# NekoPara OneeSan Vol.\n## 4 New Themes!!\n---\n- Maple (Light/Dark)\n- Cinnamon (Dark)\n- Azuki (Dark)\n\n<div style="text-align: center">\n    <img alt="v18 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v18_girls.png"/>\n</div>\n\n---\n## Other Stuff\n`,
+    released: true,
   },
   {
     version: "17.2.0",
