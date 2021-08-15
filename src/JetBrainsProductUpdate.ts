@@ -6,6 +6,10 @@ type Change = {
 
 const changes: Change[] = [
   {
+    version: "18.2.1",
+    changes: `- Updates the colors used by the [IDE Features Trainer](https://plugins.jetbrains.com/plugin/8554-ide-features-trainer) plugin, for a more consistent learning experience.`
+  },
+  {
     version: "18.2.0",
     changes: `- Added localization for all people hanging out in the Russian Federation. Thank you **@Dragon-0609** for the translations!`
   },
