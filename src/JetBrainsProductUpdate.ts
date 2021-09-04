@@ -6,6 +6,10 @@ type Change = {
 
 const changes: Change[] = [
   {
+    version: "18.3.0",
+    changes: `- Added \`Discreet Mode\`, when enabled will clear and not show any anime in the IDE. Also, the theme name in the status bar will temporarily hide as well. Is integrated with the [Anime Meme Plugin](https://github.com/ani-memes/AMII#discreet-mode), for the ultimate shame hiding experience.`
+  },
+  {
     version: "18.2.1",
     changes: `- Updates the colors used by the [IDE Features Trainer](https://plugins.jetbrains.com/plugin/8554-ide-features-trainer) plugin, for a more consistent learning experience.`
   },
