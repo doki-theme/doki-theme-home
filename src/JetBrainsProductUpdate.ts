@@ -5,6 +5,11 @@ type Change = {
 };
 
 const changes: Change[] = [
+
+  {
+    version: "19.0.0",
+    changes: `# KillLaKill Alt. Themes\n\n**2 New Themes!**\n\n- Ryuko Light\n- Satsuki Dark\n\n<img alt="v19 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v19_girls.png"/>\n</div>\n\n---\n## Other Stuff`
+  },
   {
     version: "18.3.1",
     changes: `- Updated the version control uncommitted line markers on the right-hand side (next the scrollbar) to be more visible. ([#446](https://github.com/doki-theme/doki-theme-jetbrains/issues/446))`
