@@ -34,6 +34,7 @@ export interface Colors {
   accentColorTransparent: string;
   editorAccentColor: string;
   accentContrastColor?: string;
+  iconContrastColor?: string;
   linkColor?: string;
   accentContrastColor: string;
   codeBlock: string;

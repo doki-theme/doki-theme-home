@@ -6,5 +6,8 @@
     "default": {
       "anchor": "right"
     }
+  },
+  "colors": {
+    "iconContrastColor": "&headerColor&"
   }
 }

@@ -10,8 +10,11 @@
   import ProductUpdate from "./ProductUpdate.svelte";
   import Product from "./Product.svelte";
   import Products from "./Products.svelte";
+import { themeFavicon } from "./ThemedFavicon";
 
   let url = "";
+
+  $: themeFavicon($currentTheme);
 
   $: document.documentElement.style.setProperty(
     "--foreground-color",
