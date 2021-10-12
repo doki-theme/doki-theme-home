@@ -55,18 +55,32 @@
     </div>
     <div class="supporters">
       <h2>Supporters</h2>
-      <div class="hackers">
-        <p class="heading">Hackers</p>
-        <p class="description">Can't work without their Waifu.</p>
+      <div class="s-tier">
+        <p class="heading">S Tier</p>
+        <p class="description">All other themes are obsolute, <em>just Doki.</em></p>
         <ul>
-          <li>
-            <span>Javier Garcia</span> <span class="badge"><Badge /></span>
-          </li>
+          <li><img src="./supporterAssets/just_zero_two.gif" alt="Head pats for Zero Two"/>  <span title="Yeah, I'm S-Tier, get at me.">Alex Simons</span><img src="./supporterAssets/zero_two_intensifies.gif" alt="Zero Two Intensifies"/></li>
+        </ul>
+        <ul>
+        </ul>
+      </div>
+      <div class="professionals">
+        <p class="heading">Professional Tier</p>
+        <p class="description">True individuals of culture.</p>
+        <ul>
+        </ul>
+      </div>
+      <div class="hackers">
+        <p class="heading">H4ck3r T13r</p>
+        <p class="description">1337 h4x0rz w33bz.</p>
+        <ul>
+          <li><span>Javier Garcia</span> <span class="badge"><Badge /></span></li>
+          <li><span>Arimil</span></li>
         </ul>
       </div>
       <div class="enthusiasts">
-        <p class="heading">Enthusiasts</p>
-        <p class="description">Love their Waifu.</p>
+        <p class="heading">Enthusiast Tier</p>
+        <p class="description">Your support is appreciated!</p>
         <ul>
           <li><span>George Kazanjian</span></li>
         </ul>
@@ -111,15 +125,30 @@
   .hackers > ul > li > span {
     color: var(--ansi-cyan);
     font-weight: 600;
+    font-size: 1.05rem
   }
 
-  .hackers {
+  .supporters > div {
     margin-bottom: 3rem;
+  }
+
+  .s-tier > ul > li > span {
+    color: var(--ansi-yellow);
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin: 0 0.5rem;
+  }
+
+  .s-tier img {
+    width: 30px;
+    height: 30px;
+    vertical-align: text-bottom;
   }
 
   .enthusiasts > ul > li > span {
     color: var(--ansi-green);
     font-weight: 600;
+    font-size: 0.95rem
   }
 
   .donate-button {
