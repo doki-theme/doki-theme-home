@@ -11,8 +11,7 @@
     A large collection of themes built with love and care.
   </h3>
   <p>
-    Build software, push boundaries, and deliver happiness along side your
-    waifu.
+    Build software, push boundaries, and deliver happiness.
   </p>
   <code style="opacity: 0; font-family: 'Victor Mono'">And his name is John Cena!</code>
 </ContentContainer>

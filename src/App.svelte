@@ -73,6 +73,11 @@ import { themeFavicon } from "./ThemedFavicon";
   $: document.documentElement.style.setProperty(
     "--ansi-cyan",
     `${$currentTheme.colors["terminal.ansiCyan"]}`
+  );
+  
+  $: document.documentElement.style.setProperty(
+    "--ansi-blue",
+    `${$currentTheme.colors["terminal.ansiBlue"]}`
   );  
   
   $: document.documentElement.style.setProperty(

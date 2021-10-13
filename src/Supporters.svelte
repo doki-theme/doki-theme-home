@@ -36,10 +36,9 @@
           >, your gratitude is enough for me.
         </p>
         <p>
-          However, if you want it known that you are a serious hacker weeb or if
-          you just got spare cash to burn. Then you can send a few dollars my
-          way. Let me know if you <em>don't</em> want your name displayed for others
-          to see.
+          However, if you want it known that you are a serious hacker weeb. 
+          Then you can send a few dollars my way. Let me know if you <strong><em>don't</em></strong> want your name displayed for others
+          to see. <em>Generous patrons can choose their emote.</em>
         </p>
 
         <div style="padding: 1rem 0; width: 100%;">- Alex</div>
@@ -57,7 +56,7 @@
       <h2>Supporters</h2>
       <div class="s-tier">
         <p class="heading">S Tier</p>
-        <p class="description">All other themes are obsolute, <em>just Doki.</em></p>
+        <p class="description">All other themes are obsolute, <em>just Doki. 50 USD</em></p>
         <ul>
           <li><img src="./supporterAssets/just_zero_two.gif" alt="Head pats for Zero Two"/>  <span title="Yeah, I'm S-Tier, get at me.">Alex Simons</span><img src="./supporterAssets/zero_two_intensifies.gif" alt="Zero Two Intensifies"/></li>
         </ul>
@@ -66,16 +65,16 @@
       </div>
       <div class="professionals">
         <p class="heading">Professional Tier</p>
-        <p class="description">True individuals of culture.</p>
+        <p class="description">True individuals of culture. <span class="bounds">20 USD</span></p>
         <ul>
+          <li><span>Arimil</span></li>
         </ul>
       </div>
       <div class="hackers">
         <p class="heading">H4ck3r T13r</p>
-        <p class="description">1337 h4x0rz w33bz.</p>
+        <p class="description">1337 h4x0rz w33bz. <em>10 USD</em></p>
         <ul>
           <li><span>Javier Garcia</span> <span class="badge"><Badge /></span></li>
-          <li><span>Arimil</span></li>
         </ul>
       </div>
       <div class="enthusiasts">
@@ -101,6 +100,10 @@
   .heading {
     font-weight: bold;
     font-size: 1.15rem;
+  }
+
+  .bounds {
+    font-style: italic;
   }
 
   .donate-button {
@@ -140,8 +143,6 @@
   }
 
   .s-tier img {
-    width: 30px;
-    height: 30px;
     vertical-align: text-bottom;
   }
 
@@ -149,6 +150,12 @@
     color: var(--ansi-green);
     font-weight: 600;
     font-size: 0.95rem
+  }
+
+  .professionals > ul > li > span {
+    color: var(--ansi-blue);
+    font-weight: 600;
+    font-size: 1.07rem
   }
 
   .donate-button {
