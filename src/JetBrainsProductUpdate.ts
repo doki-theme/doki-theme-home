@@ -5,6 +5,10 @@ type Change = {
 };
 
 const changes: Change[] = [
+{
+    version: '21.0.0',
+    changes: `# Jahy-sama Will Not Be Discouraged!\nFeaturing the Dark World's Second in Command: Jahy!\n\n<img alt="v21 girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v21_girl.png"/>\n</div>\n\n---\n\n## Other Stuff\n\n- Updated VCS inline hint color.\n- Fixed startup issue for new users.`,
+  },
   {
     version: '20.0.0',
     changes: `# Only for Onii-Chan.\nLast addition from the NekoPara Series:\n- Minaduki Shigure (Light Theme)\n\nFrom the dumpster fire of a series, "EroManga Sensei":\n- Izumi Sagiri (Dark Theme)\n\nFrom the smaller burning trash heap, "OreImo (My little sister cannot be this cute)":\n- Kousaka Kirino (Dark Theme)\n\nAnime is trash...._and so am I_.\n\n<img alt="v20 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v20_girls.png"/>\n</div>\n\n---`,
