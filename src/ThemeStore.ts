@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 import DokiThemeDefinitions from "./DokiThemeDefinitions";
 import type { DokiTheme } from "./Types";
 
-export const DEFAULT_THEME = "420b0ed5-803c-4127-97e3-dae6aa1a5972";
+export const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
 
 function getParameterByName(name, url = window.location.href) {
   name = name.replace(/[\[\]]/g, "\\$&");
