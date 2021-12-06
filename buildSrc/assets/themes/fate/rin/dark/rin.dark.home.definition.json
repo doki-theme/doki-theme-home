@@ -2,5 +2,9 @@
   "id": "3546f7be-b84f-4b8e-8cad-effa3f4603af",
   "overrides": {},
   "content": {},
-  "backgrounds": {}
+  "backgrounds": {
+    "default": {
+      "anchor": "right"
+    }
+  }
 }
