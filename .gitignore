@@ -26,4 +26,4 @@ masterThemes/
 *.pyc
 .ipynb_checkpoints/
 
-src/DokiThemeDefinitions.ts
+DokiThemeDefinitions.ts
