@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import ContentContainer from "./ContentContainer.svelte";
   import DokiLogo from "./DokiLogo.svelte";
 </script>
