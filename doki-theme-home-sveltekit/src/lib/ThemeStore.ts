@@ -4,7 +4,7 @@ import type { DokiTheme } from "./Types";
 
 export const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
 
-function getParameterByName(name, url = window.location.href) {
+function getParameterByName(name, url = "") {
   name = name.replace(/[[\]]/g, "\\$&");
   const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
     results = regex.exec(url);
