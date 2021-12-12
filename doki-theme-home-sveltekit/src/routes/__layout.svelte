@@ -6,9 +6,12 @@
 	import { browser } from '$app/env';
 	import { currentTheme } from '$lib/ThemeStore';
 	import type { DokiTheme } from '$lib/Types';
+	import { themeFavicon } from '$lib/ThemedFavicon';
 
 	const themeSite = (dokiTheme: DokiTheme) => {
 		if (browser) {
+			themeFavicon(dokiTheme);
+
 			document.documentElement.style.setProperty(
 				'--foreground-color',
 				dokiTheme.colors.foregroundColor
