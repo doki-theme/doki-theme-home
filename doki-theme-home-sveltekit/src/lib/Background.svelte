@@ -4,13 +4,6 @@
  
   import { currentTheme } from "./ThemeStore";
 
-  // $: document.documentElement.style.setProperty(
-  //   "--theme-wallpaper",
-  //   `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
-  //     $currentTheme.stickers.default.name
-  //   }") ${$currentTheme.backgrounds?.default?.anchor || "center"} fixed`
-  // );
-
   let backgroundCanvas: HTMLCanvasElement;
   let width: number;
   let height: number;
@@ -48,15 +41,6 @@
     draw();
   });
 
-  // $: document.documentElement.style.setProperty(
-  //   "--base-background",
-  //   $currentTheme.colors.baseBackground
-  // ); 
-  
-  // $: document.documentElement.style.setProperty(
-  //   "--header-color",
-  //   $currentTheme.colors.headerColor
-  // );
 
   onDestroy(unsubscribe);
 </script>

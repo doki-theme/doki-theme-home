@@ -6,7 +6,7 @@
 <div class="menu">
   <nav class="nav-container">
     <div class="home-link">
-      <!-- <DokiLogo size={25} /> -->
+      <DokiLogo size={25} />
       <div class="nav-links">
         {#each navLinks as navLink}
           <div class="nav-link">

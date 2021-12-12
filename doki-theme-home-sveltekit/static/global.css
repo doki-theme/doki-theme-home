@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Victor Mono";
+  src: url("victor-mono/VictorMono-MediumItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Victor Mono";
+  src: url("victor-mono/VictorMono-Medium.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background-color: var(--base-background);
+  z-index: -900;
+}
+
+a:hover::after,
+fake-link:hover::after {
+  transform: scale(1);
+}
+a::after,
+fake-link::after {
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 2px;
+  bottom: -5px;
+  left: 0px;
+  background: var(--link-color);
+  transition: transform 0.3s ease 0s;
+  transform: scale(0);
+}
+
+body {
+  color: #333;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.info-foreground {
+  color: var(--info-foreground);
+}
+
+.string-color {
+  color: var(--string-color);
+}
+
+.editor-accent-color {
+  color: var(--editor-accent-color);
+}
+
+h2 {
+  font-weight: 300;
+}
+
+fake-link,
+a,
+a:visited {
+  position: relative;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+label {
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-padding: 0.4em 0;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+input:disabled {
+  color: #ccc;
+}
+
+button {
+  color: #333;
+  background-color: #f4f4f4;
+  outline: none;
+}
+
+button:disabled {
+  color: #999;
+}
+
+button:not(:disabled):active {
+  background-color: #ddd;
+}
+
+button:focus {
+  border-color: #666;
+}
+
+.italic {
+  font-style: italic;
+}
+
+code {
+  font-family: "Victor Mono", "Courier New", Courier, monospace;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color-transparent);
+}
+
+*::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-moz-selection {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
+}
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
+}
+
+*:focus {
+  outline: none;
+}
+
+.changes > ul > li {
+  line-height: 1.75rem;
+}
+
+.changes > * > img {
+  max-width: 400px;
+}

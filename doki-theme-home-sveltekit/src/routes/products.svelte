@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { currentTheme } from "$lib/ThemeStore";
 </script>
 
 <div>
@@ -18,7 +19,7 @@
           y="0px"
           viewBox="0 0 2350 2314.8"
           xml:space="preserve"
-          fill={false ? "#fff" : "#000"}
+          fill={$currentTheme.information.dark ? "#fff" : "#000"}
         >
           <title>GitHub</title>
           <path
