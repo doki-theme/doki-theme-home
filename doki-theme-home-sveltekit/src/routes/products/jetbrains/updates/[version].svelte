@@ -7,7 +7,7 @@
 	const changes = getChanges($page.params.version);
 </script>
 
-<div width={750}>
+<div class="content-container">
 	<h1>The Doki Theme: JetBrains IDEs</h1>
 
 	<h2>What's new in <code class="info-foreground italic">{$page.params.version}</code> ?</h2>
@@ -26,6 +26,12 @@
 </div>
 
 <style>
+	.content-container {
+		margin: auto;
+    text-align: center;
+    padding: 1rem;
+		max-width: 750px;
+	}
 	h1 {
 		font-weight: 300;
 	}

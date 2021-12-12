@@ -183,16 +183,23 @@ evaluateTemplates(
         accum[definition.information.id] = definition;
         return accum;
       }, {});
+
+      //todo: base css-vars
     const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
       path.resolve(repoDirectory, "doki-theme-home-sveltekit",
-       "src", "lib", "DefaultDokiThemeDefinition.ts"),
-      `export default ${
-        JSON.stringify(
-        {[DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
-          )
+        "src", "lib", "DefaultDokiThemeDefinition.ts"),
+      `export default ${JSON.stringify(
+        { [DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
+      )
       };`
+    );    
+    fs.writeFileSync(
+      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+        "src", "lib", "DokiThemeDefinitions.ts"),
+        `export default ${finalDokiDefinitions};`
     );
+    
     fs.writeFileSync(
       path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
       `export default ${finalDokiDefinitions};`
@@ -201,7 +208,7 @@ evaluateTemplates(
       const themeDefAsString = JSON.stringify(themeDef);
       fs.writeFileSync(
         path.resolve(repoDirectory, "doki-theme-home-sveltekit",
-        "static","themes", `${themeDef.information.id}.json`),
+          "static", "themes", `${themeDef.information.id}.json`),
         themeDefAsString
       );
     })
