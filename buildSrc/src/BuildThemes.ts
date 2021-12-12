@@ -119,6 +119,8 @@ const getStickers = (
 
 console.log("Preparing to generate themes.");
 
+const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
+
 evaluateTemplates(
   {
     appName: "home",
@@ -127,8 +129,7 @@ evaluateTemplates(
   createDokiTheme
 )
   .then((dokiThemes) => {
-    // write things for extension
-    const dokiThemeDefinitions = dokiThemes
+    const themeDefinitions = dokiThemes
       .map((dokiTheme) => {
         const dokiDefinition = dokiTheme.definition;
         return {
@@ -153,8 +154,7 @@ evaluateTemplates(
             foregroundColor: dokiTheme.templateVariables.foregroundColor,
             highlightColor: dokiTheme.templateVariables.highlightColor,
             accentColor: dokiTheme.templateVariables.accentColor,
-            accentColorTransparent:
-              dokiTheme.templateVariables.accentColorTransparent,
+            accentColorTransparent: dokiTheme.templateVariables.accentColorTransparent,
             editorAccentColor: dokiTheme.templateVariables.editorAccentColor,
             linkColor: dokiTheme.templateVariables.linkColor,
             accentContrastColor: dokiTheme.templateVariables.accentContrastColor,
@@ -171,21 +171,41 @@ evaluateTemplates(
             "terminal.ansiGreen": dokiTheme.templateVariables["terminal.ansiGreen"],
             "terminal.ansiBlue": dokiTheme.templateVariables["terminal.ansiBlue"],
             ...(dokiTheme.templateVariables.iconContrastColor ?
-              {iconContrastColor: dokiTheme.templateVariables.iconContrastColor} : {})
+              { iconContrastColor: dokiTheme.templateVariables.iconContrastColor } : {})
           },
           stickers: dokiTheme.stickers,
           backgrounds: dokiTheme.appThemeDefinition.backgrounds,
         };
-      })
+      });
+    // write things for extension
+    const dokiThemeDefinitions = themeDefinitions
       .reduce((accum: StringDictionary<any>, definition) => {
         accum[definition.information.id] = definition;
         return accum;
       }, {});
     const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
+      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+       "src", "lib", "DefaultDokiThemeDefinition.ts"),
+      `export default ${
+        JSON.stringify(
+        {[DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
+          )
+      };`
+    );
+    fs.writeFileSync(
       path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
       `export default ${finalDokiDefinitions};`
     );
+    themeDefinitions.forEach(themeDef => {
+      const themeDefAsString = JSON.stringify(themeDef);
+      fs.writeFileSync(
+        path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+        "static","themes", `${themeDef.information.id}.json`),
+        themeDefAsString
+      );
+    })
+
   })
   .then(() => {
     console.log("Theme Generation Complete!");

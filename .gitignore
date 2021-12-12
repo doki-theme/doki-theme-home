@@ -27,3 +27,5 @@ masterThemes/
 .ipynb_checkpoints/
 
 DokiThemeDefinitions.ts
+DefaultDokiThemeDefinition.ts
+themes/

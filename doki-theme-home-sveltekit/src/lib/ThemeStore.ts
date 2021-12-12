@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import DokiThemeDefinitions from "./DokiThemeDefinitions";
+import DokiThemeDefinitions from "./DefaultDokiThemeDefinition";
 import type { DokiTheme } from "./Types";
 
 export const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
