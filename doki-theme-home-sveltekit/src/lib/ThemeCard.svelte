@@ -297,6 +297,7 @@
     font-family: "Victor Mono", monospace;
     display: grid;
     white-space: pre;
+    text-align: left;
   }
 
   .content {

@@ -105,6 +105,7 @@
 	};
 
 	$: themeSite($currentTheme);
+	
 </script>
 
 <main>
