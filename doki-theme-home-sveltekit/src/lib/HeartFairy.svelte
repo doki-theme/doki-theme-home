@@ -1,10 +1,12 @@
 <script lang="ts">
   import { spring } from "svelte/motion";
   import { currentTheme } from "./ThemeStore";
+  import {browser} from "$app/env"
+
 
   const defaultHeartSize = 15;
   const coords = spring(
-    { x: window.innerWidth - defaultHeartSize * 2, y: defaultHeartSize },
+    { x: browser ? window.innerWidth - defaultHeartSize * 2 : 0, y: defaultHeartSize },
     {
       stiffness: 0.02,
     }

@@ -7,8 +7,8 @@ import HeartFairy from "$lib/HeartFairy.svelte";
 </script>
 
 <main>
-  <!-- <Background/> -->
-  <!-- <HeartFairy/> -->
+  <Background/>
+  <HeartFairy/>
   <Header/>
   <ContentContainer>
     <slot></slot>

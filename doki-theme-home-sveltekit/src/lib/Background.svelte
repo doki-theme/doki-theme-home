@@ -1,21 +1,23 @@
 <script lang="ts">
   
   import { onMount, afterUpdate, tick, onDestroy } from "svelte";
-
+ 
   import { currentTheme } from "./ThemeStore";
 
-  $: document.documentElement.style.setProperty(
-    "--theme-wallpaper",
-    `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
-      $currentTheme.stickers.default.name
-    }") ${$currentTheme.backgrounds?.default?.anchor || "center"} fixed`
-  );
+  // $: document.documentElement.style.setProperty(
+  //   "--theme-wallpaper",
+  //   `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
+  //     $currentTheme.stickers.default.name
+  //   }") ${$currentTheme.backgrounds?.default?.anchor || "center"} fixed`
+  // );
 
   let backgroundCanvas: HTMLCanvasElement;
   let width: number;
   let height: number;
 
   const drawBackground = () => {
+    if(!backgroundCanvas) return;
+
     const ctx = backgroundCanvas.getContext("2d");
 
     if (!ctx) return;
@@ -46,15 +48,15 @@
     draw();
   });
 
-  $: document.documentElement.style.setProperty(
-    "--base-background",
-    $currentTheme.colors.baseBackground
-  ); 
+  // $: document.documentElement.style.setProperty(
+  //   "--base-background",
+  //   $currentTheme.colors.baseBackground
+  // ); 
   
-  $: document.documentElement.style.setProperty(
-    "--header-color",
-    $currentTheme.colors.headerColor
-  );
+  // $: document.documentElement.style.setProperty(
+  //   "--header-color",
+  //   $currentTheme.colors.headerColor
+  // );
 
   onDestroy(unsubscribe);
 </script>
