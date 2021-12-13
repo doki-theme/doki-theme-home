@@ -58,6 +58,28 @@ function buildTemplateVariables(
   );
 }
 
+function buildCSSVars(colors: StringDictionary<string>) {
+  return `html {--foreground-color: ${colors.foregroundColor};
+    --button-color: ${colors.selectionBackground};
+    --button-font: ${colors.selectionForeground};
+    --accent-color: ${colors.accentColor};
+    --editor-accent-color', ${colors.editorAccentColor};
+    --info-foreground: ${colors.infoForeground};
+    --string-color: ${colors.stringColor};
+    --accent-color:ransparent', ${colors.accentColor};88
+    --selection-foreground: ${colors.selectionForeground};
+    --selection-background: ${colors.selectionBackground};
+    --link-color: ${colors.linkColor || colors.accentColor};
+    --ansi-cyan: ${colors['terminal.ansiCyan']};
+    --ansi-blue: ${colors['terminal.ansiBlue']};
+    --ansi-yellow: ${colors['terminal.ansiYellow']};
+    --ansi-magenta: ${colors['terminal.ansiMagenta']};
+    --ansi-green: ${colors['terminal.ansiGreen']};
+    --base-background: ${colors.baseBackground};
+    --header-color: ${colors.headerColor};}`
+  
+}
+
 function createDokiTheme(
   masterThemeDefinitionPath: string,
   masterThemeDefinition: MasterDokiThemeDefinition,
@@ -205,6 +227,24 @@ evaluateTemplates(
       path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
       `export default ${finalDokiDefinitions};`
     );
+
+    const defaultTheme = 
+    themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!!;
+
+    fs.writeFileSync(
+      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+        "static", "initial-styles", `default.css`),
+      buildCSSVars(defaultTheme.colors)
+    );    
+
+    themeDefinitions.forEach(dokiTheme => {
+      fs.writeFileSync(
+        path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+          "static", "initial-styles", `${dokiTheme.information.id}.css`),
+        buildCSSVars(dokiTheme.colors)
+      );
+    });
+
     themeDefinitions.forEach(themeDef => {
       const themeDefAsString = JSON.stringify(themeDef);
       fs.writeFileSync(
@@ -212,6 +252,7 @@ evaluateTemplates(
           "static", "themes", `${themeDef.information.id}.json`),
         themeDefAsString
       );
+      
     })
 
   })

@@ -11,7 +11,10 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		currentTheme.setTheme($page.query.get("id"))
+		const theme = $page.query.get("id");
+		if(theme) {
+			currentTheme.setTheme(theme)
+		}
 	});
 
 	const themeSite = (dokiTheme: DokiTheme) => {

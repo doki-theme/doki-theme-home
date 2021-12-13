@@ -1,8 +1,6 @@
 <script lang="ts">
 
   import { currentTheme } from "./ThemeStore";
-  export const prerender = false;
-
 
   function shadeHexColor(color, percent) {
     var f = parseInt(color.slice(1), 16),
