@@ -8,22 +8,6 @@ export const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
 const getTheme = (themeId: string) =>
   DokiThemeDefinitions[themeId] || DokiThemeDefinitions[DEFAULT_THEME];
 
-const getJSON = function (url, callback) {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.responseType = 'json';
-  xhr.onload = function () {
-    const status = xhr.status;
-    if (status === 200) {
-      callback(null, xhr.response);
-    } else {
-      callback(status, xhr.response);
-    }
-  };
-  xhr.send();
-};
-
-// todo: work on initial load
 const readUrl = () => {
   const url = window.location.href, name = "id";
   const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
@@ -33,26 +17,27 @@ const readUrl = () => {
   return themeId || DEFAULT_THEME;
 };
 
-const intialThemeId = browser ? readUrl(): DEFAULT_THEME
-
 const createCurrentTheme = () => {
-  const { subscribe, set } = writable<DokiTheme>(
-    getTheme(intialThemeId)
-  );
-
+  const { subscribe, set } = writable<DokiTheme>(getTheme(DEFAULT_THEME));
+  async function setCurrentTheme(themeId: string) {
+    try {
+      set(await (await fetch(`/themes/${themeId}.json`)).json());
+    } catch (e) {
+      set(getTheme(DEFAULT_THEME));
+    }
+  }
   return {
     subscribe,
+    init: async () => {
+      const intialThemeId = browser ? readUrl(): "default";
+      await setCurrentTheme(intialThemeId);
+    },
     setTheme: (themeId: string) => {
-      getJSON(`/themes/${themeId}.json`, (err, val) => {
-        if (err) {
-          // todo: log error?
-          set(getTheme(DEFAULT_THEME))
-        } else {
-          set(val)
-        }
-      });
+      setCurrentTheme(themeId);
     },
   };
 };
 
 export const currentTheme = createCurrentTheme();
+
+currentTheme.init()
