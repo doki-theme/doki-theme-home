@@ -9,7 +9,7 @@ const getTheme = (themeId: string) =>
   DokiThemeDefinitions[themeId] || DokiThemeDefinitions[DEFAULT_THEME];
 
 const readUrl = () => {
-  const url = window.location.href, name = "id";
+  const url = window.location.href, name = "themeId";
   const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
   const results = regex.exec(url);
   const themeId = results && results[2] ? 
