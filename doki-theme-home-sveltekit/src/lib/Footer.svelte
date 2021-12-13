@@ -1,6 +1,8 @@
 <script>
   import DokiLogo from "./DokiLogo.svelte";
   import { navLinks } from "./Constants";
+	import { goto } from '$app/navigation';
+
 </script>
 
 <div class="menu">
@@ -9,7 +11,7 @@
       <div class="nav-links">
         {#each navLinks as navLink}
           <div class="nav-link">
-            <a href={navLink.path}>{navLink.label}</a>
+            <a on:mouseup={()=> goto(navLink.path)}>{navLink.label}</a>
           </div>
         {/each}
       </div>
