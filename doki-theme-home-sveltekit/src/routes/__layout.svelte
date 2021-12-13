@@ -90,14 +90,11 @@
 				dokiTheme.colors.baseBackground
 			);
 
-			document.documentElement.style.setProperty(
-				'--header-color',
-				dokiTheme.colors.headerColor
-			);
+			document.documentElement.style.setProperty('--header-color', dokiTheme.colors.headerColor);
 
 			document.documentElement.style.setProperty(
 				'--theme-wallpaper',
-				`url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
+				`url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/smol/${
 					dokiTheme.stickers.default.name
 				}") ${dokiTheme.backgrounds?.default?.anchor || 'center'} fixed`
 			);
@@ -105,7 +102,6 @@
 	};
 
 	$: themeSite($currentTheme);
-
 </script>
 
 <main>
