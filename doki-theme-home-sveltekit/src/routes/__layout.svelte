@@ -4,9 +4,15 @@
 	import Header from '$lib/Header.svelte';
 	import HeartFairy from '$lib/HeartFairy.svelte';
 	import { browser } from '$app/env';
+	import { page } from '$app/stores';
 	import { currentTheme } from '$lib/ThemeStore';
 	import type { DokiTheme } from '$lib/Types';
 	import { themeFavicon } from '$lib/ThemedFavicon';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		currentTheme.setTheme($page.query.get("id"))
+	});
 
 	const themeSite = (dokiTheme: DokiTheme) => {
 		if (browser) {
