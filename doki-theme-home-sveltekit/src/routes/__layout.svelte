@@ -87,25 +87,25 @@
 
 			document.documentElement.style.setProperty(
 				'--base-background',
-				$currentTheme.colors.baseBackground
+				dokiTheme.colors.baseBackground
 			);
 
 			document.documentElement.style.setProperty(
 				'--header-color',
-				$currentTheme.colors.headerColor
+				dokiTheme.colors.headerColor
 			);
 
 			document.documentElement.style.setProperty(
 				'--theme-wallpaper',
 				`url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
-					$currentTheme.stickers.default.name
-				}") ${$currentTheme.backgrounds?.default?.anchor || 'center'} fixed`
+					dokiTheme.stickers.default.name
+				}") ${dokiTheme.backgrounds?.default?.anchor || 'center'} fixed`
 			);
 		}
 	};
 
 	$: themeSite($currentTheme);
-	
+
 </script>
 
 <main>

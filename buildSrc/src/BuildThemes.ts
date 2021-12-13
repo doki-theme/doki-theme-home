@@ -85,7 +85,7 @@ function createDokiTheme(
   }
 }
 
-function resolveStickerPath(themeDefinitionPath: string, sticker: string) {
+function resolveStickerPath(themeDefinitionPath: string, sticker: string): string {
   const stickerPath = path.resolve(
     path.resolve(themeDefinitionPath, ".."),
     sticker
@@ -103,7 +103,8 @@ const getStickers = (
   //   dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
   return {
     default: {
-      path: resolveStickerPath(themePath, dokiDefinition.stickers.default),
+      path: resolveStickerPath(themePath, dokiDefinition.stickers.default)
+      .replace(/\\/g,"/"),
       name: dokiDefinition.stickers.default,
     },
     // ...(secondary

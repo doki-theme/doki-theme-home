@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { DokiTheme } from "./Types";
-  import { currentTheme } from "./ThemeStore";
+  import { currentTheme } from "$lib/ThemeStore";
 
   export let dokiTheme: DokiTheme;
+
 </script>
 
 <div
