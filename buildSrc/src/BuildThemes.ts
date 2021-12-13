@@ -63,10 +63,10 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --button-color: ${colors.selectionBackground};
     --button-font: ${colors.selectionForeground};
     --accent-color: ${colors.accentColor};
-    --editor-accent-color', ${colors.editorAccentColor};
+    --editor-accent-color: ${colors.editorAccentColor};
     --info-foreground: ${colors.infoForeground};
     --string-color: ${colors.stringColor};
-    --accent-color:ransparent', ${colors.accentColor};88
+    --accent-color-transparent: ${colors.accentColor}88;
     --selection-foreground: ${colors.selectionForeground};
     --selection-background: ${colors.selectionBackground};
     --link-color: ${colors.linkColor || colors.accentColor};
@@ -221,6 +221,21 @@ evaluateTemplates(
       path.resolve(repoDirectory, "doki-theme-home-sveltekit",
         "src", "lib", "DokiThemeDefinitions.ts"),
         `export default ${finalDokiDefinitions};`
+    );
+    fs.writeFileSync(
+      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+        "src", "lib", "DokiThemeDefinitionsLite.ts"),
+        `export default ${
+          JSON.stringify(dokiThemes.reduce((accum: StringDictionary<any>, dokiTheme)=> {
+              accum[dokiTheme.definition.id] = {
+                a: dokiTheme.templateVariables.accentColor,
+                ...(dokiTheme.templateVariables.iconContrastColor ?
+                  { b: dokiTheme.templateVariables.iconContrastColor } : {})
+              }
+              return accum;
+          }, {})
+          )
+        };`
     );
     
     fs.writeFileSync(

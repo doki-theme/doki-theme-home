@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { DokiTheme } from "./Types";
-  import { currentTheme } from "$lib/ThemeStore";
+  import { currentTheme, currentThemeLite } from "$lib/ThemeStore";
 
   export let dokiTheme: DokiTheme;
 
@@ -20,7 +20,10 @@
   --foreground-color: ${dokiTheme.colors.foregroundColor};
   `}
   class="code-container"
-  on:mouseup={() => currentTheme.setTheme(dokiTheme.information.id)}
+  on:mouseup={() => {
+    currentThemeLite.setTheme(dokiTheme.information.id)
+    currentTheme.setTheme(dokiTheme.information.id)
+    }}
 >
   <div
     class="window"

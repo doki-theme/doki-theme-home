@@ -4,13 +4,13 @@
 	import Header from '$lib/Header.svelte';
 	import HeartFairy from '$lib/HeartFairy.svelte';
 	import { browser } from '$app/env';
-	import { currentTheme } from '$lib/ThemeStore';
-	import type { DokiTheme } from '$lib/Types';
+	import { currentTheme, currentThemeLite } from '$lib/ThemeStore';
+	import type { DokiTheme, DokiThemeLite } from '$lib/Types';
 	import { themeFavicon } from '$lib/ThemedFavicon';
 
-	const themeSite = (dokiTheme: DokiTheme) => {
+	const themeSite = (dokiTheme: DokiTheme, dokiThemeLite: DokiThemeLite) => {
 		if (browser) {
-			themeFavicon(dokiTheme);
+			themeFavicon(dokiThemeLite);
 
 			document.documentElement.style.setProperty(
 				'--foreground-color',
@@ -101,7 +101,7 @@
 		}
 	};
 
-	$: themeSite($currentTheme);
+	$: themeSite($currentTheme, $currentThemeLite);
 </script>
 
 <main>
