@@ -209,7 +209,7 @@ evaluateTemplates(
 
     const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
-      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+      path.resolve(repoDirectory,
         "src", "lib", "DefaultDokiThemeDefinition.ts"),
       `export default ${JSON.stringify(
         { [DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
@@ -217,12 +217,12 @@ evaluateTemplates(
       };`
     );
     fs.writeFileSync(
-      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+      path.resolve(repoDirectory,
         "src", "lib", "DokiThemeDefinitions.ts"),
         `export default ${finalDokiDefinitions};`
     );
     fs.writeFileSync(
-      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+      path.resolve(repoDirectory,
         "src", "lib", "DokiThemeDefinitionsLite.ts"),
         `export default ${
           JSON.stringify(dokiThemes.reduce((accum: StringDictionary<any>, dokiTheme)=> {
@@ -237,23 +237,18 @@ evaluateTemplates(
         };`
     );
 
-    fs.writeFileSync(
-      path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
-      `export default ${finalDokiDefinitions};`
-    );
-
     const defaultTheme =
     themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!!;
 
     fs.writeFileSync(
-      path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+      path.resolve(repoDirectory,
         "static", "initial-styles", `default.css`),
       buildCSSVars(defaultTheme.colors)
     );
 
     themeDefinitions.forEach(dokiTheme => {
       fs.writeFileSync(
-        path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+        path.resolve(repoDirectory,
           "static", "initial-styles", `${dokiTheme.information.id}.css`),
         buildCSSVars(dokiTheme.colors)
       );
@@ -262,13 +257,11 @@ evaluateTemplates(
     themeDefinitions.forEach(themeDef => {
       const themeDefAsString = JSON.stringify(themeDef);
       fs.writeFileSync(
-        path.resolve(repoDirectory, "doki-theme-home-sveltekit",
+        path.resolve(repoDirectory,
           "static", "themes", `${themeDef.information.id}.json`),
         themeDefAsString
       );
-
     })
-
   })
   .then(() => {
     console.log("Theme Generation Complete!");
