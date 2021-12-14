@@ -2,8 +2,9 @@
 	import DokiThemeDefinitions from '$lib/DokiThemeDefinitions';
 	import Footer from '$lib/Footer.svelte';
 	import ThemeCard from '$lib/ThemeCard.svelte';
+	import type { DokiTheme } from '$lib/Types';
 
-	const dokiThemes = Object.values(DokiThemeDefinitions).sort((a, b) => {
+	const dokiThemes: DokiTheme[] = Object.values(DokiThemeDefinitions).sort((a, b) => {
 		const aName = (a.information.dark ? 'dark' : 'light') + a.information.name;
 		const bName = (b.information.dark ? 'dark' : 'light') + b.information.name;
 		return aName.localeCompare(bName);

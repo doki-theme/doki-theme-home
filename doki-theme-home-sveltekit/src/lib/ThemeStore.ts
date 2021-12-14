@@ -21,7 +21,7 @@ const currentThemeId = isBrowser ?
   DEFAULT_THEME;
 
 const createCurrentThemeLite = () => {
-  const { subscribe, set } = writable<DokiThemeLite>(
+  const { subscribe, set } = writable<DokiThemeLite | undefined>(
     {a: "#00000000", b: "#00000000"}
   );
   function setCurrentTheme(themeId: string) {
@@ -42,7 +42,7 @@ if(isBrowser) {
 }
 
 const createCurrentTheme = () => {
-  const { subscribe, set } = writable<DokiTheme>();
+  const { subscribe, set } = writable<DokiTheme | undefined>();
   async function setCurrentTheme(themeId: string) {
     try {
       const themeResponse = await fetch(`/themes/${themeId}.json`);
