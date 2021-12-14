@@ -7,22 +7,22 @@ type Change = {
 const changes: Change[] = [
 {
     version: '22.0.0',
-    changes: `# Holiday Release!\n\n**3 New Dark Themes!**\n\n- Celebrate Christmas with Chocola from the NekoPara Series!\n  _I lied about Shigure being the last addition from NekoPara._\n\n- The 4th of July now just got even better, now that you can code with Essex from Azur Lane.\n  If you prefer a more canon experience, Essex's theme also has **secondary content** with the Eagle Union branding.\n\n- Even though I missed this year's Halloween, I've got something to look forward to in 2022.\n  Yotsuba, from The Quintessential Quintuplets, isn't 2spooky4me.\n\n<img alt="v22 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v22_girls.png"/>\n\n---\n\n### Other Stuff\n\n- Moved Tohsaka Rin's wallpaper over to the right.\n- Updated the Bookmark Mnemonic icons to be themed.\n- Themed settings tags.\n- Themed the settings menu for the EduTools plugin.\n- Updated the debugger smart step-into colors.`,
+    changes: `# Holiday Release!\n\n**3 New Dark Themes!**\n\n- Celebrate Christmas with Chocola from the NekoPara Series!\n  _I lied about Shigure being the last addition from NekoPara._\n\n- The 4th of July now just got even better, now that you can code with Essex from Azur Lane.\n  If you prefer a more canon experience, Essex's theme also has **secondary content** with the Eagle Union branding.\n\n- Even though I missed this year's Halloween, I've got something to look forward to in 2022.\n  Yotsuba, from The Quintessential Quintuplets, isn't 2spooky4me.\n\n<img alt="v22 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v22_girls_medium.png"/>\n\n---\n\n### Other Stuff\n\n- Moved Tohsaka Rin's wallpaper over to the right.\n- Updated the Bookmark Mnemonic icons to be themed.\n- Themed settings tags.\n- Themed the settings menu for the EduTools plugin.\n- Updated the debugger smart step-into colors.`,
     released: true,
   },
   {
     version: '21.0.0',
-    changes: `# Jahy-sama Will Not Be Discouraged!\nFeaturing the Dark World's Second in Command: Jahy!\n\n<img alt="v21 girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v21_girl.png"/>\n</div>\n\n---\n\n## Other Stuff\n\n- Updated VCS inline hint color.\n- Fixed startup issue for new users.`,
+    changes: `# Jahy-sama Will Not Be Discouraged!\nFeaturing the Dark World's Second in Command: Jahy!\n\n<img alt="v21 girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v21_girl_medium.png"/>\n</div>\n\n---\n\n## Other Stuff\n\n- Updated VCS inline hint color.\n- Fixed startup issue for new users.`,
     released: true,
   },
   {
     version: '20.0.0',
-    changes: `# Only for Onii-Chan.\nLast addition from the NekoPara Series:\n- Minaduki Shigure (Light Theme)\n\nFrom the dumpster fire of a series, "EroManga Sensei":\n- Izumi Sagiri (Dark Theme)\n\nFrom the smaller burning trash heap, "OreImo (My little sister cannot be this cute)":\n- Kousaka Kirino (Dark Theme)\n\nAnime is trash...._and so am I_.\n\n<img alt="v20 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v20_girls.png"/>\n</div>\n\n---`,
+    changes: `# Only for Onii-Chan.\nLast addition from the NekoPara Series:\n- Minaduki Shigure (Light Theme)\n\nFrom the dumpster fire of a series, "EroManga Sensei":\n- Izumi Sagiri (Dark Theme)\n\nFrom the smaller burning trash heap, "OreImo (My little sister cannot be this cute)":\n- Kousaka Kirino (Dark Theme)\n\nAnime is trash...._and so am I_.\n\n<img alt="v20 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v20_girls_medium.png"/>\n</div>\n\n---`,
     released: true,
   },
   {
     version: "19.0.0",
-    changes: `# KillLaKill Alt. Themes\n\n**2 New Themes!**\n\n- Ryuko Light\n- Satsuki Dark\n\n<img alt="v19 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v19_girls.png"/>\n</div>\n\n---\n## Other Stuff`
+    changes: `# KillLaKill Alt. Themes\n\n**2 New Themes!**\n\n- Ryuko Light\n- Satsuki Dark\n\n<img alt="v19 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v19_girls_medium.png"/>\n</div>\n\n---\n## Other Stuff`
   },
   {
     version: "18.3.1",
@@ -46,7 +46,7 @@ const changes: Change[] = [
   },
   {
     version: "18.0.0",
-    changes: `# NekoPara OneeSan Vol.\n## 4 New Themes!!\n---\n- Maple (Light/Dark)\n- Cinnamon (Dark)\n- Azuki (Dark)\n\n<div style="text-align: center">\n    <img alt="v18 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v18_girls.png"/>\n</div>\n\n---\n## Other Stuff\n`,
+    changes: `# NekoPara OneeSan Vol.\n## 4 New Themes!!\n---\n- Maple (Light/Dark)\n- Cinnamon (Dark)\n- Azuki (Dark)\n\n<div style="text-align: center">\n    <img alt="v18 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v18_girls_medium.png"/>\n</div>\n\n---\n## Other Stuff\n`,
     released: true,
   },
   {
@@ -59,7 +59,7 @@ const changes: Change[] = [
   },
   {
     version: "17.0.0",
-    changes: `# NekoPara Release!\n## 3 New Themes!!\n---\n- Chocola (Dark)\n- Vanilla (Dark)\n- Coconut (Dark)\n\n<div style="text-align: center">\n    <img alt="v17 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v17_girls.png"/>\n</div>\n\n---\n## Other Stuff\n`,
+    changes: `# NekoPara Release!\n## 3 New Themes!!\n---\n- Chocola (Dark)\n- Vanilla (Dark)\n- Coconut (Dark)\n\n<div style="text-align: center">\n    <img alt="v17 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v17_girls_medium.png"/>\n</div>\n\n---\n## Other Stuff\n`,
     released: true,
   },
   {
@@ -72,7 +72,7 @@ const changes: Change[] = [
   },
   {
     version: "16.0.0",
-    changes: `## 5 New Themes!\n---\n\nFrom the Monogatari series:\n\n- Hanekawa Tsubasa (Dark)\n\nFrom the Yuru Camp series:\n\n- Shima Rin (Dark)\n\nFrom the Don't Toy With Me, Miss Nagatoro series:\n\n- Hayase Nagatoro (Dark)\n\nFrom the Kakegurui Series:\n\n- Jabami Yumeko (Dark)\n\nFrom the Future Diary Series\n\n- Gasai Yuno (Dark)\n\n<div style="text-align: center">\n    <img alt="v16 girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v16_girls.png"/>\n</div>\n\n---`,
+    changes: `## 5 New Themes!\n---\n\nFrom the Monogatari series:\n\n- Hanekawa Tsubasa (Dark)\n\nFrom the Yuru Camp series:\n\n- Shima Rin (Dark)\n\nFrom the Don't Toy With Me, Miss Nagatoro series:\n\n- Hayase Nagatoro (Dark)\n\nFrom the Kakegurui Series:\n\n- Jabami Yumeko (Dark)\n\nFrom the Future Diary Series\n\n- Gasai Yuno (Dark)\n\n<div style="text-align: center">\n    <img alt="v16 girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v16_girls_medium.png"/>\n</div>\n\n---`,
     released: true,
   },
   {
