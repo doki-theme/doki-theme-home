@@ -5,9 +5,9 @@ const aws = require("aws-sdk");
 
 export const rootDirectory = path.join(__dirname, "..", "..");
 
-export const assetDirectory = path.resolve(rootDirectory, "public");
+export const assetDirectory = path.resolve(rootDirectory, "build");
 
-export const assetDirectories = ["public"];
+export const assetDirectories = ["build"];
 
 export async function walkDir(dir: string): Promise<string[]> {
   const values: Promise<string[]>[] = fs

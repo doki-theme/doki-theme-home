@@ -77,7 +77,6 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --ansi-green: ${colors['terminal.ansiGreen']};
     --base-background: ${colors.baseBackground};
     --header-color: ${colors.headerColor};}`
-
 }
 
 function createDokiTheme(
