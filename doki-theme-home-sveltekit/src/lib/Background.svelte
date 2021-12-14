@@ -24,8 +24,8 @@
     ctx.quadraticCurveTo(w / 1.85, h, w, h / 2);
     ctx.lineTo(w, h);
     ctx.lineTo(0, h);
-    ctx.fillStyle = $currentTheme.colors.headerColor;
-    ctx.strokeStyle = $currentTheme.colors.headerColor;
+    ctx.fillStyle = $currentTheme?.colors?.headerColor || "#00000000";
+    ctx.strokeStyle = $currentTheme?.colors?.headerColor || "#00000000";
     ctx.fill();
     ctx.closePath();
     ctx.stroke();

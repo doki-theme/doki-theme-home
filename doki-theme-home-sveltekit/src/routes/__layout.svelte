@@ -9,7 +9,7 @@
 	import { themeFavicon } from '$lib/ThemedFavicon';
 
 	const themeSite = (dokiTheme: DokiTheme, dokiThemeLite: DokiThemeLite) => {
-		if (browser) {
+		if (browser && dokiTheme) {
 			themeFavicon(dokiThemeLite);
 
 			document.documentElement.style.setProperty(
