@@ -1,4 +1,4 @@
-import type { DokiTheme, DokiThemeLite } from "$lib/Types";
+import type { DokiThemeLite } from "$lib/Types";
 
 // Themed logo stuffs
 function shadeHexColor(color: string, percent: number): string {
@@ -31,7 +31,7 @@ const buildSVG = (dokiTheme: DokiThemeLite, {width, height}) =>
   <path fill="${shadeHexColor(dokiTheme.a, -0.1)}" d="m40.514 17.321c-3.7651 6.6533-11.568 14.871-26.43 15.814 4.1721 4.2098 8.4613 6.4686 12.702 9.2806 4.7843-3.1725 9.6306-5.6353 14.3-10.997 3.6403-5.1332 3.0907-11.431-0.57249-14.097z" stroke-width=".2383" style="paint-order:stroke fill markers"/>
 </svg>`;
 
-/*Add svg to main document, to create 
+/*Add svg to main document, to create
   image blob, then remove it*/
 const svgUrlToPng = (svgUrl, options, callback) => {
   const svgImage = document.createElement('img');
