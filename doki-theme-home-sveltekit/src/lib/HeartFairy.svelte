@@ -14,9 +14,9 @@
 
 	const move = (x, y, size) => {
 		const xTransform = x - size / 2;
-		const yTranform = y + size;
+		const yTransform = y + size;
 
-		return `transform: translate(${xTransform}px, ${yTranform}px); position: fixed; z-index: 2; pointer-events: none;`;
+		return `transform: translate(${xTransform}px, ${yTransform}px); position: fixed; z-index: 2; pointer-events: none;`;
 	};
 </script>
 

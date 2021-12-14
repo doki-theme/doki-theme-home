@@ -27,10 +27,10 @@
 >
   <div
     class="window"
-    style={`border: 1px solid ${dokiTheme.colors.borderColor}; 
+    style={`border: 1px solid ${dokiTheme.colors.borderColor};
     --custom-hover: ${dokiTheme.colors.accentColorTransparent};
   ${
-    $currentTheme?.information?.id == dokiTheme.information.id
+    $currentTheme?.information?.id === dokiTheme.information.id
       ? "box-shadow: 0px 0px 20px" + dokiTheme.colors.accentColorTransparent
       : ""
   }`}
@@ -38,7 +38,7 @@
     <div
       class="titlebar"
       style={`background-color: ${dokiTheme.colors.headerColor};
-    color: ${dokiTheme.colors.infoForeground}; 
+    color: ${dokiTheme.colors.infoForeground};
     border-top: 1px solid ${dokiTheme.colors.borderColor};
     border-bottom: 1px solid ${dokiTheme.colors.borderColor};`}
     >

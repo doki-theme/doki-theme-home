@@ -77,7 +77,7 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --ansi-green: ${colors['terminal.ansiGreen']};
     --base-background: ${colors.baseBackground};
     --header-color: ${colors.headerColor};}`
-  
+
 }
 
 function createDokiTheme(
@@ -207,7 +207,6 @@ evaluateTemplates(
         return accum;
       }, {});
 
-      //todo: base css-vars
     const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
       path.resolve(repoDirectory, "doki-theme-home-sveltekit",
@@ -216,7 +215,7 @@ evaluateTemplates(
         { [DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
       )
       };`
-    );    
+    );
     fs.writeFileSync(
       path.resolve(repoDirectory, "doki-theme-home-sveltekit",
         "src", "lib", "DokiThemeDefinitions.ts"),
@@ -237,20 +236,20 @@ evaluateTemplates(
           )
         };`
     );
-    
+
     fs.writeFileSync(
       path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
       `export default ${finalDokiDefinitions};`
     );
 
-    const defaultTheme = 
+    const defaultTheme =
     themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!!;
 
     fs.writeFileSync(
       path.resolve(repoDirectory, "doki-theme-home-sveltekit",
         "static", "initial-styles", `default.css`),
       buildCSSVars(defaultTheme.colors)
-    );    
+    );
 
     themeDefinitions.forEach(dokiTheme => {
       fs.writeFileSync(
@@ -267,7 +266,7 @@ evaluateTemplates(
           "static", "themes", `${themeDef.information.id}.json`),
         themeDefAsString
       );
-      
+
     })
 
   })
