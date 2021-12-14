@@ -4,18 +4,13 @@
 
   import { currentTheme } from "./ThemeStore";
 
-  $: document.documentElement.style.setProperty(
-    "--theme-wallpaper",
-    `url("https://doki.assets.unthrottled.io/backgrounds/wallpapers/transparent/${
-      $currentTheme.stickers.default.name
-    }") ${$currentTheme.backgrounds?.default?.anchor || "center"} fixed`
-  );
-
   let backgroundCanvas: HTMLCanvasElement;
   let width: number;
   let height: number;
 
   const drawBackground = () => {
+    if(!backgroundCanvas) return;
+
     const ctx = backgroundCanvas.getContext("2d");
 
     if (!ctx) return;
@@ -29,8 +24,8 @@
     ctx.quadraticCurveTo(w / 1.85, h, w, h / 2);
     ctx.lineTo(w, h);
     ctx.lineTo(0, h);
-    ctx.fillStyle = $currentTheme.colors.headerColor;
-    ctx.strokeStyle = $currentTheme.colors.headerColor;
+    ctx.fillStyle = $currentTheme?.colors?.headerColor || "#00000000";
+    ctx.strokeStyle = $currentTheme?.colors?.headerColor || "#00000000";
     ctx.fill();
     ctx.closePath();
     ctx.stroke();
@@ -46,15 +41,6 @@
     draw();
   });
 
-  $: document.documentElement.style.setProperty(
-    "--base-background",
-    $currentTheme.colors.baseBackground
-  ); 
-  
-  $: document.documentElement.style.setProperty(
-    "--header-color",
-    $currentTheme.colors.headerColor
-  );
 
   onDestroy(unsubscribe);
 </script>

@@ -26,4 +26,15 @@ masterThemes/
 *.pyc
 .ipynb_checkpoints/
 
-src/DokiThemeDefinitions.ts
+DokiThemeDefinitions*
+DefaultDokiThemeDefinition.ts
+themes/
+initial-styles/
+
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*

@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { DokiTheme } from "./Types";
-  import { currentTheme } from "./ThemeStore";
+  import { currentTheme, currentThemeLite } from "$lib/ThemeStore";
 
   export let dokiTheme: DokiTheme;
+
 </script>
 
 <div
@@ -19,14 +20,17 @@
   --foreground-color: ${dokiTheme.colors.foregroundColor};
   `}
   class="code-container"
-  on:mouseup={() => currentTheme.setTheme(dokiTheme.information.id)}
+  on:mouseup={() => {
+    currentThemeLite.setTheme(dokiTheme.information.id)
+    currentTheme.setTheme(dokiTheme.information.id)
+    }}
 >
   <div
     class="window"
-    style={`border: 1px solid ${dokiTheme.colors.borderColor}; 
+    style={`border: 1px solid ${dokiTheme.colors.borderColor};
     --custom-hover: ${dokiTheme.colors.accentColorTransparent};
   ${
-    $currentTheme.information.id == dokiTheme.information.id
+    $currentTheme?.information?.id === dokiTheme.information.id
       ? "box-shadow: 0px 0px 20px" + dokiTheme.colors.accentColorTransparent
       : ""
   }`}
@@ -34,7 +38,7 @@
     <div
       class="titlebar"
       style={`background-color: ${dokiTheme.colors.headerColor};
-    color: ${dokiTheme.colors.infoForeground}; 
+    color: ${dokiTheme.colors.infoForeground};
     border-top: 1px solid ${dokiTheme.colors.borderColor};
     border-bottom: 1px solid ${dokiTheme.colors.borderColor};`}
     >
@@ -297,6 +301,7 @@
     font-family: "Victor Mono", monospace;
     display: grid;
     white-space: pre;
+    text-align: left;
   }
 
   .content {

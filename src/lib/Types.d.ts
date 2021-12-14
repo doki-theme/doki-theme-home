@@ -4,6 +4,10 @@ export interface DokiTheme {
   stickers: Stickers;
   backgrounds?: Backgrounds | null;
 }
+export interface DokiThemeLite {
+  a: string;
+  b?: string;
+}
 export interface Information {
   id: string;
   name: string;

@@ -1,9 +1,8 @@
 <script lang="ts">
-  import ContentContainer from "./ContentContainer.svelte";
-  import { currentTheme } from "./ThemeStore";
+    import { currentTheme } from "$lib/ThemeStore";
 </script>
 
-<ContentContainer>
+<div>
   <h2>Many Platforms</h2>
   <h3>Same look and Feel</h3>
   <div class="dokiTools">
@@ -20,7 +19,7 @@
           y="0px"
           viewBox="0 0 2350 2314.8"
           xml:space="preserve"
-          fill={$currentTheme.information.dark ? "#fff" : "#000"}
+          fill={$currentTheme?.information?.dark ? "#fff" : "#000"}
         >
           <title>GitHub</title>
           <path
@@ -1429,7 +1428,7 @@ c-0.5,0.5-1.2,1-2,1.2C39.8,37.1,39,37.3,38,37.3"
       </a>
     </div>
   </div>
-</ContentContainer>
+</div>
 
 <style>
   .new-icon {

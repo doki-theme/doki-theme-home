@@ -12,6 +12,5 @@
     max-width: var(--max-width);
     margin: auto;
     text-align: center;
-    padding: 1rem;
   }
 </style>

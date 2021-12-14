@@ -1,10 +1,8 @@
 <script lang="ts">
-
-  import ContentContainer from "./ContentContainer.svelte";
-  import DokiLogo from "./DokiLogo.svelte";
+  import DokiLogo from "$lib/DokiLogo.svelte";
 </script>
 
-<ContentContainer>
+<div>
   <h1>The Doki Theme</h1>
   <DokiLogo size={145} />
   <h3 class="editor-accent-color">
@@ -14,9 +12,8 @@
     Build software, push boundaries, and deliver happiness.
   </p>
   <code style="opacity: 0; font-family: 'Victor Mono'">And his name is John Cena!</code>
-</ContentContainer>
+</div>
 
-<!-- {@html marked(description)} -->
 <style>
   h1 {
     font-size: 3rem;

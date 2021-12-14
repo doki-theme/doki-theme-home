@@ -5,9 +5,6 @@
   "backgrounds": {
     "default": {
       "anchor": "right"
-    },
-    "secondary": {
-      "anchor": "right"
     }
   }
 }

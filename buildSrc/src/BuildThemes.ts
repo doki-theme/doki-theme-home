@@ -58,6 +58,27 @@ function buildTemplateVariables(
   );
 }
 
+function buildCSSVars(colors: StringDictionary<string>) {
+  return `html {--foreground-color: ${colors.foregroundColor};
+    --button-color: ${colors.selectionBackground};
+    --button-font: ${colors.selectionForeground};
+    --accent-color: ${colors.accentColor};
+    --editor-accent-color: ${colors.editorAccentColor};
+    --info-foreground: ${colors.infoForeground};
+    --string-color: ${colors.stringColor};
+    --accent-color-transparent: ${colors.accentColor}88;
+    --selection-foreground: ${colors.selectionForeground};
+    --selection-background: ${colors.selectionBackground};
+    --link-color: ${colors.linkColor || colors.accentColor};
+    --ansi-cyan: ${colors['terminal.ansiCyan']};
+    --ansi-blue: ${colors['terminal.ansiBlue']};
+    --ansi-yellow: ${colors['terminal.ansiYellow']};
+    --ansi-magenta: ${colors['terminal.ansiMagenta']};
+    --ansi-green: ${colors['terminal.ansiGreen']};
+    --base-background: ${colors.baseBackground};
+    --header-color: ${colors.headerColor};}`
+}
+
 function createDokiTheme(
   masterThemeDefinitionPath: string,
   masterThemeDefinition: MasterDokiThemeDefinition,
@@ -85,7 +106,7 @@ function createDokiTheme(
   }
 }
 
-function resolveStickerPath(themeDefinitionPath: string, sticker: string) {
+function resolveStickerPath(themeDefinitionPath: string, sticker: string): string {
   const stickerPath = path.resolve(
     path.resolve(themeDefinitionPath, ".."),
     sticker
@@ -103,7 +124,8 @@ const getStickers = (
   //   dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
   return {
     default: {
-      path: resolveStickerPath(themePath, dokiDefinition.stickers.default),
+      path: resolveStickerPath(themePath, dokiDefinition.stickers.default)
+      .replace(/\\/g,"/"),
       name: dokiDefinition.stickers.default,
     },
     // ...(secondary
@@ -119,6 +141,8 @@ const getStickers = (
 
 console.log("Preparing to generate themes.");
 
+const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
+
 evaluateTemplates(
   {
     appName: "home",
@@ -127,8 +151,7 @@ evaluateTemplates(
   createDokiTheme
 )
   .then((dokiThemes) => {
-    // write things for extension
-    const dokiThemeDefinitions = dokiThemes
+    const themeDefinitions = dokiThemes
       .map((dokiTheme) => {
         const dokiDefinition = dokiTheme.definition;
         return {
@@ -153,8 +176,7 @@ evaluateTemplates(
             foregroundColor: dokiTheme.templateVariables.foregroundColor,
             highlightColor: dokiTheme.templateVariables.highlightColor,
             accentColor: dokiTheme.templateVariables.accentColor,
-            accentColorTransparent:
-              dokiTheme.templateVariables.accentColorTransparent,
+            accentColorTransparent: dokiTheme.templateVariables.accentColorTransparent,
             editorAccentColor: dokiTheme.templateVariables.editorAccentColor,
             linkColor: dokiTheme.templateVariables.linkColor,
             accentContrastColor: dokiTheme.templateVariables.accentContrastColor,
@@ -171,21 +193,74 @@ evaluateTemplates(
             "terminal.ansiGreen": dokiTheme.templateVariables["terminal.ansiGreen"],
             "terminal.ansiBlue": dokiTheme.templateVariables["terminal.ansiBlue"],
             ...(dokiTheme.templateVariables.iconContrastColor ?
-              {iconContrastColor: dokiTheme.templateVariables.iconContrastColor} : {})
+              { iconContrastColor: dokiTheme.templateVariables.iconContrastColor } : {})
           },
           stickers: dokiTheme.stickers,
           backgrounds: dokiTheme.appThemeDefinition.backgrounds,
         };
-      })
+      });
+    // write things for extension
+    const dokiThemeDefinitions = themeDefinitions
       .reduce((accum: StringDictionary<any>, definition) => {
         accum[definition.information.id] = definition;
         return accum;
       }, {});
+
     const finalDokiDefinitions = JSON.stringify(dokiThemeDefinitions);
     fs.writeFileSync(
-      path.resolve(repoDirectory, "src", "DokiThemeDefinitions.ts"),
-      `export default ${finalDokiDefinitions};`
+      path.resolve(repoDirectory,
+        "src", "lib", "DefaultDokiThemeDefinition.ts"),
+      `export default ${JSON.stringify(
+        { [DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
+      )
+      };`
     );
+    fs.writeFileSync(
+      path.resolve(repoDirectory,
+        "src", "lib", "DokiThemeDefinitions.ts"),
+        `export default ${finalDokiDefinitions};`
+    );
+    fs.writeFileSync(
+      path.resolve(repoDirectory,
+        "src", "lib", "DokiThemeDefinitionsLite.ts"),
+        `export default ${
+          JSON.stringify(dokiThemes.reduce((accum: StringDictionary<any>, dokiTheme)=> {
+              accum[dokiTheme.definition.id] = {
+                a: dokiTheme.templateVariables.accentColor,
+                ...(dokiTheme.templateVariables.iconContrastColor ?
+                  { b: dokiTheme.templateVariables.iconContrastColor } : {})
+              }
+              return accum;
+          }, {})
+          )
+        };`
+    );
+
+    const defaultTheme =
+    themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!!;
+
+    fs.writeFileSync(
+      path.resolve(repoDirectory,
+        "static", "initial-styles", `default.css`),
+      buildCSSVars(defaultTheme.colors)
+    );
+
+    themeDefinitions.forEach(dokiTheme => {
+      fs.writeFileSync(
+        path.resolve(repoDirectory,
+          "static", "initial-styles", `${dokiTheme.information.id}.css`),
+        buildCSSVars(dokiTheme.colors)
+      );
+    });
+
+    themeDefinitions.forEach(themeDef => {
+      const themeDefAsString = JSON.stringify(themeDef);
+      fs.writeFileSync(
+        path.resolve(repoDirectory,
+          "static", "themes", `${themeDef.information.id}.json`),
+        themeDefAsString
+      );
+    })
   })
   .then(() => {
     console.log("Theme Generation Complete!");
