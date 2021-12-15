@@ -4,6 +4,9 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
+    "buildThemes": "ts-node --project buildSrc/tsconfig.json buildSrc/src/BuildThemes.ts",
+    "sync": "ts-node --project buildSrc/tsconfig.json buildSrc/src/AssetUpload.ts",
+    "release": "npm run buildThemes && npm run build && npm run sync",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
