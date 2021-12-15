@@ -4,7 +4,7 @@ type Change = {
   released?: boolean;
 };
 
-const changes: Change[] = [
+export const changes: Change[] = [
 {
     version: '22.0.0',
     changes: `# Holiday Release!\n\n**3 New Dark Themes!**\n\n- Celebrate Christmas with Chocola from the NekoPara Series!\n  _I lied about Shigure being the last addition from NekoPara._\n\n- The 4th of July now just got even better, now that you can code with Essex from Azur Lane.\n  If you prefer a more canon experience, Essex's theme also has **secondary content** with the Eagle Union branding.\n\n- Even though I missed this year's Halloween, I've got something to look forward to in 2022.\n  Yotsuba, from The Quintessential Quintuplets, isn't 2spooky4me.\n\n<img alt="v22 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v22_girls_medium.png"/>\n\n---\n\n### Other Stuff\n\n- Moved Tohsaka Rin's wallpaper over to the right.\n- Updated the Bookmark Mnemonic icons to be themed.\n- Themed settings tags.\n- Themed the settings menu for the EduTools plugin.\n- Updated the debugger smart step-into colors.`,

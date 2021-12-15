@@ -13,9 +13,12 @@ import omit from "lodash/omit";
 
 type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
 
-const fs = require("fs");
+import fs from "fs";
 
-const path = require("path");
+import path from "path";
+
+import {navLinks} from '../../src/lib/Constants';
+import {changes} from '../../src/lib/JetBrainsProductUpdate';
 
 const { repoDirectory, masterThemeDefinitionDirectoryPath } =
   resolvePaths(__dirname);
@@ -260,7 +263,19 @@ evaluateTemplates(
           "static", "themes", `${themeDef.information.id}.json`),
         themeDefAsString
       );
-    })
+    });
+
+    // write stuff for sveltekit build
+    fs.writeFileSync(
+      path.resolve(
+        repoDirectory, "routes.js"
+      ),
+      `export default ${JSON.stringify(
+        navLinks.map(nav => nav.path)
+        .concat(changes.map(change => `/products/jetbrains/updates/` + change.version))
+      )};`
+    )
+
   })
   .then(() => {
     console.log("Theme Generation Complete!");

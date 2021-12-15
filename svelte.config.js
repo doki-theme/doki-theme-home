@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
+import routes from './routes.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,6 +10,12 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		prerender :{
+			crawl: true,
+			enabled: true,
+			onError: 'continue',
+			entries: [...routes],
+		},
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte'
