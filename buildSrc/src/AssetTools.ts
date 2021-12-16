@@ -36,7 +36,7 @@ export interface StringDictionary<T> {
   [key: string]: T;
 }
 
-export const BUCKET_NAME = "doki-theme-home-nonprod";
+export const BUCKET_NAME = "doki-theme-home";
 
 export const buildS3Client = () => {
   aws.config.update({ region: "us-east-1" });
