@@ -6,9 +6,13 @@ type Change = {
 
 export const changes: Change[] = [
   {
-    version: '22.0.1',
+    version: '22.0.2',
     changes: ``,
     released: true,
+  },
+  {
+    version: '22.0.1',
+    changes: ``,
   },
   {
     version: '22.0.0',
