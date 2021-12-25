@@ -6,6 +6,10 @@ type Change = {
 
 export const changes: Change[] = [
   {
+    version: '22.0.3',
+    changes: `- Stickers no longer scale up in displays who have a higher than 100% scale setting.`,
+  },
+  {
     version: '22.0.2',
     changes: ``,
     released: true,
