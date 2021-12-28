@@ -80,6 +80,7 @@
       <p class="description">Your support is appreciated!</p>
       <ul>
         <li><span>George Kazanjian</span></li>
+        <li><span>Paulo Roberto De Andrade Ferreira</span></li>
       </ul>
     </div>
   </div>
