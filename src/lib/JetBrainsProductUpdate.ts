@@ -6,6 +6,10 @@ type Change = {
 
 export const changes: Change[] = [
   {
+    version: '22.2.0',
+    changes: `- Added the ability to put small stickers in all windows!\n- Updated Kotlin & PHP Syntax Highlighting some.\n- You can now control the \`max-width\` & \`max-height\` of stickers.\n- Stickers now change when you hit \`Apply\` in the \`Doki Theme Settings\` menu.`
+  },
+  {
     version: '22.1.0',
     changes: `- Added better support for the DataSpell product.\n- Themed the rest of the [file scopes](https://www.jetbrains.com/help/idea/configuring-scopes-and-file-colors.html).\n- Added [GrepConsole](https://plugins.jetbrains.com/plugin/7125-grep-console/) default colorings & icons.\n- Enhanced the usability of the debugger's breakpoint highlighting.\n- Fixed [Anime Meme Plugin](https://github.com/ani-memes/AMII) promotion issue.`
   },
