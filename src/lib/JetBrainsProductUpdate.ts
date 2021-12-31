@@ -6,6 +6,10 @@ type Change = {
 
 export const changes: Change[] = [
   {
+    version: '22.3.0',
+    changes: `- Added the ability to double-click movable stickers to save their relative position in the window.`
+  },
+  {
     version: '22.2.0',
     changes: `- Added the ability to put small stickers in all windows!\n- Updated Kotlin & PHP Syntax Highlighting some.\n- You can now control the \`max-width\` & \`max-height\` of stickers.\n- Stickers now change when you hit \`Apply\` in the \`Doki Theme Settings\` menu.`
   },
@@ -15,7 +19,7 @@ export const changes: Change[] = [
   },
   {
     version: '22.0.3',
-    changes: `- Stickers no longer scale up in displays who have a higher than 100% scale setting.`,
+    changes: `- Stickers no longer scale up in displays who have a higher than 100% scale setting when using the \`Ignore Scaling\` setting.`,
   },
   {
     version: '22.0.2',
