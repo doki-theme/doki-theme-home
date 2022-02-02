@@ -6,6 +6,10 @@ type Change = {
 
 export const changes: Change[] = [
   {
+    version: '74.0-1.0.0',
+    changes: `## Synapse break. Vanishment, this world!\n\n**4 New Dark Themes!**\n\n- Decimate errors in the code alongside the Wicked Lord Shingan. Let your inner fantasies go rampant with Rikka Takanashi from: "Love, Chuunibyou, and Other Delusions". \n- It is comfy time! Don't let feature requests stress you out, because you can now code with Nadeshiko from Yuru Camp. \n- A Certain Scientific RailGun go: bzzzzzzt. Zap bugs out of existence with the electromaster Mikoto Misaka.\n- Raccoon + Tanuki = one really cute cinnamon bun. Enjoy your time coding with Raphtalia from: "Rising of the Shield Hero."\n\n<div style="text-align: center"><img alt="v74 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v74_girls_medium.png"/></div>\n\n### Other Stuff\n\n- Updated Syntax Highlight & Look and Feel changes for the following legacy themes: Ibuki Dark, Astolfo, Aqua, Natsuki Light, Hatsune Miku, Christmas Chocola, Emilia Dark, Beatrice, Ram, and Rem.\n- Added 2022.1 build support.\n- Increased the usability of the Search Highlight for light themes ([#485](https://github.com/doki-theme/doki-theme-jetbrains/issues/485)).\n- Fixed sticker re-positioning when you resize your window ([#482](https://github.com/doki-theme/doki-theme-jetbrains/issues/482)).`
+  },
+  {
     version: '22.3.0',
     changes: `- Added the ability to double-click movable stickers to save their relative position in the window.`
   },

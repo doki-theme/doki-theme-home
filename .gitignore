@@ -28,7 +28,7 @@ masterThemes/
 
 DokiThemeDefinitions*
 DefaultDokiThemeDefinition.ts
-themes/
+static/themes/
 initial-styles/
 
 .DS_Store
