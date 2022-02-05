@@ -125,12 +125,19 @@ export const changes: Change[] = [
   },
 ];
 
-export const getChanges = (version: string): string => {
-  const cleanVersion = version.startsWith("v") ? version.substr(1) : version;
+export const getChanges = (
+  version: string,
+  previousVersion?: string,
+): string => {
+  const cleanPreviousVersion = !!previousVersion &&
+    (previousVersion.startsWith("v") ? previousVersion.substring(1) : previousVersion);
+  const releaseIdentifier = (change: Change) =>
+    !previousVersion ? !!change.released : change.version == cleanPreviousVersion
+  const cleanVersion = version.startsWith("v") ? version.substring(1) : version;
   return changes.reduce(
     (accum, change) => {
       if (accum.foundVersion && !accum.foundLaterRelease) {
-        const foundLaterRelease = !!change.released;
+        const foundLaterRelease = releaseIdentifier(change);
         return {
           ...accum,
           foundLaterRelease,

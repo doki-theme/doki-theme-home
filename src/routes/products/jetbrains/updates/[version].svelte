@@ -2,9 +2,9 @@
 	import marked from 'marked';
 	import { getChanges } from '$lib/JetBrainsProductUpdate';
 	import Footer from '$lib/Footer.svelte';
-  import {page} from "$app/stores"
+	import { page } from '$app/stores';
 
-	const changes = getChanges($page.params.version);
+	const changes = getChanges($page.params.version, $page.query.get('previousVersion'));
 </script>
 
 <div class="content-container">
@@ -28,8 +28,8 @@
 <style>
 	.content-container {
 		margin: auto;
-    text-align: center;
-    padding: 1rem;
+		text-align: center;
+		padding: 1rem;
 		max-width: 750px;
 	}
 	h1 {
