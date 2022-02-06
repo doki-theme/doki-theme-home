@@ -35,7 +35,7 @@ const uploadUnsyncedAssets = (
 
         if (
           !fileType &&
-          (filePath.endsWith(".map") || filePath.endsWith(".txt"))
+          (filePath.endsWith(".map") || filePath.endsWith(".txt") || filePath.endsWith(".gitkeep"))
         ) {
           return { mime: "text/plain" };
         }
