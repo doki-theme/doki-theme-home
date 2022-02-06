@@ -212,5 +212,3 @@ Promise.all(scanDirectories())
         console.log("Asset sync complete!");
       });
   });
-
-export function yeet() {}

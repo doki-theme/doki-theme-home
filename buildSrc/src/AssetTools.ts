@@ -45,5 +45,5 @@ export const buildS3Client = () => {
 
 export const getSyncedAssets = () =>
   JSON.parse(
-    fs.readFileSync(path.join(rootDirectory, "syncedAssets.json"), "utf-8")
+    fs.readFileSync(path.join(rootDirectory, 'buildSrc', "syncedAssets.json"), "utf-8")
   );

@@ -7,12 +7,12 @@ type Change = {
 export const changes: Change[] = [
   {
     version: '74.1-1.0.2',
-    changes: `- Fixed issue when sticker is turned off and window is resized, or when project starts. Thank you for all who reported the issue! ([#489](https://github.com/doki-theme/doki-theme-jetbrains/issues/489))\n- Increased usability of showing code coverage from tests in the editor.`
+    changes: `## v74.1-1.0.2\n- Fixed issue when sticker is turned off and window is resized, or when project starts. Thank you for all who reported the issue! ([#489](https://github.com/doki-theme/doki-theme-jetbrains/issues/489))\n- Increased usability of showing code coverage from tests in the editor.\n\n---\n## v74.1-1.0.0`
   },
   {
     version: '74.1-1.0.0',
     changes: `## Synapse break. Vanishment, this world!\n\n**4 New Dark Themes!**\n\n- Decimate errors in the code alongside the Wicked Lord Shingan. Let your inner fantasies go rampant with Rikka Takanashi from: "Love, Chuunibyou, and Other Delusions". \n- It is comfy time! Don't let feature requests stress you out, because you can now code with Nadeshiko from Yuru Camp. \n- A Certain Scientific RailGun go: bzzzzzzt. Zap bugs out of existence with the electromaster Mikoto Misaka.\n- Raccoon + Tanuki = one really cute cinnamon bun. Enjoy your time coding with Raphtalia from: "Rising of the Shield Hero."\n\n<div style="text-align: center"><img alt="v74 girls" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v74_girls_medium.png"/></div>\n\n### Other Stuff\n\n- Updated Syntax Highlight & Look and Feel changes for the following legacy themes: Ibuki Dark, Astolfo, Aqua, Natsuki Light, Hatsune Miku, Christmas Chocola, Emilia Dark, Beatrice, Ram, and Rem.\n- Added 2022.1 build support.\n- Increased the usability of the Search Highlight for light themes ([#485](https://github.com/doki-theme/doki-theme-jetbrains/issues/485)).\n- Fixed sticker re-positioning when you resize your window ([#482](https://github.com/doki-theme/doki-theme-jetbrains/issues/482)).`,
-    released: true,
+    // todo: change back to released after bug fix is out for a while (also fix new version's changes message.)
   },
   {
     version: '22.3.0',
@@ -132,12 +132,9 @@ export const changes: Change[] = [
 
 export const getChanges = (
   version: string,
-  previousVersion?: string,
 ): string => {
-  const cleanPreviousVersion = !!previousVersion &&
-    (previousVersion.startsWith("v") ? previousVersion.substring(1) : previousVersion);
   const releaseIdentifier = (change: Change) =>
-    !previousVersion ? !!change.released : change.version == cleanPreviousVersion
+    !!change.released
   const cleanVersion = version.startsWith("v") ? version.substring(1) : version;
   return changes.reduce(
     (accum, change) => {

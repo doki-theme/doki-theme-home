@@ -4,7 +4,7 @@
 	import Footer from '$lib/Footer.svelte';
 	import { page } from '$app/stores';
 
-	const changes = getChanges($page.params.version, $page.query.get('previousVersion'));
+	const changes = getChanges($page.params.version);
 </script>
 
 <div class="content-container">
