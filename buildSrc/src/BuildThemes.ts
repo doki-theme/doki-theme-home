@@ -127,9 +127,9 @@ const getStickers = (
   //   dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
   return {
     default: {
-      path: resolveStickerPath(themePath, dokiDefinition.stickers.default)
+      path: resolveStickerPath(themePath, dokiDefinition.stickers.default.name)
       .replace(/\\/g,"/"),
-      name: dokiDefinition.stickers.default,
+      name: dokiDefinition.stickers.default.name,
     },
     // ...(secondary
     //   ? {
@@ -199,7 +199,7 @@ evaluateTemplates(
               { iconContrastColor: dokiTheme.templateVariables.iconContrastColor } : {})
           },
           stickers: dokiTheme.stickers,
-          backgrounds: dokiTheme.appThemeDefinition.backgrounds,
+          backgrounds: dokiDefinition.stickers,
         };
       });
     // write things for extension

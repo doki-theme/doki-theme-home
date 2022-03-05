@@ -16,9 +16,6 @@ const config = {
 			onError: 'continue',
 			entries: [...routes],
 		},
-
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
 	}
 };
 
