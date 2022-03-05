@@ -2,10 +2,8 @@ import { readJson, walkDir } from "doki-build-source";
 import path from "path";
 import fs from "fs";
 
-console.log(path.resolve('.'));
-
 walkDir(path.resolve('.','assets','themes'))
-  .then((files) => files.filter((file) => file.endsWith("vsCode.definition.json"))
+  .then((files) => files.filter((file) => file.endsWith("home.definition.json"))
   )
   .then((dokiFileDefinitionPaths) => {
     return {
