@@ -73,6 +73,7 @@
       <p class="description">1337 h4x0rz w33bz. <em>10 USD</em></p>
       <ul>
         <li><span>Javier Garcia</span> <span class="badge"><Badge /></span></li>
+        <li><span>Brandon Huang</span></li>
       </ul>
     </div>
     <div class="enthusiasts">

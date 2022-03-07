@@ -10,6 +10,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		trailingSlash: 'always',
 		prerender :{
 			crawl: true,
 			enabled: true,
