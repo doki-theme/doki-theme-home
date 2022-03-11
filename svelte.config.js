@@ -12,6 +12,7 @@ const config = {
 		adapter: adapter(),
 		trailingSlash: 'always',
 		prerender :{
+			default: true,
 			crawl: true,
 			enabled: true,
 			onError: 'continue',

@@ -56,7 +56,7 @@
       <p class="heading">S Tier</p>
       <p class="description">All other themes are obsolute, <em>just Doki. 50 USD</em></p>
       <ul>
-        <li><img src="./supporterAssets/just_zero_two.gif" alt="Head pats for Zero Two"/>  <span title="Yeah, I'm S-Tier, get at me.">Alex Simons</span><img src="./supporterAssets/zero_two_intensifies.gif" alt="Zero Two Intensifies"/></li>
+        <li><img src="/supporterAssets/just_zero_two.gif" alt="Head pats for Zero Two"/>  <span title="Yeah, I'm S-Tier, get at me.">Alex Simons</span><img src="/supporterAssets/zero_two_intensifies.gif" alt="Zero Two Intensifies"/></li>
       </ul>
       <ul>
       </ul>

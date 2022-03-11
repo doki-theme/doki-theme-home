@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
+    "build": "node ../kit/packages/kit/src/cli.js build",
     "buildThemes": "ts-node --project buildSrc/tsconfig.json buildSrc/src/BuildThemes.ts",
     "sync": "ts-node --project buildSrc/tsconfig.json buildSrc/src/AssetUpload.ts",
     "release": "npm run buildThemes && npm run build && npm run sync",
@@ -29,10 +29,16 @@
     "svelte-check": "^2.2.6",
     "svelte-preprocess": "^4.9.4",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "devalue": "^2.0.1"
   },
   "dependencies": {
     "marked": "^2.0.5"
   },
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "overrides": {
+      "@sveltejs/kit": "../kit/packages/kit"
+    }
+  }
 }
