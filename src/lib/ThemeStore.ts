@@ -6,23 +6,17 @@ import type { DokiTheme, DokiThemeLite } from "./Types";
 
 export const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
 
-const readUrl = () => {
-  const url = window.location.href, name = "themeId";
-  const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-  const results = regex.exec(url);
-  const themeId = results && results[2] ?
-    decodeURIComponent(results[2].replace(/\+/g, " ")) : DEFAULT_THEME;
-  return themeId;
-};
-
 const isBrowser = typeof window !== 'undefined';
 const currentThemeId = isBrowser ?
-  readUrl() :
+  readQueryParamValue("themeId") || DEFAULT_THEME :
   DEFAULT_THEME;
+const showWallpaperParam = isBrowser ?
+  readQueryParamValue("showWallpaper") != "false" :
+  true;
 
 const createCurrentThemeLite = () => {
   const { subscribe, set } = writable<DokiThemeLite | undefined>(
-    {a: "#00000000", b: "#00000000"}
+    { a: "#00000000", b: "#00000000" }
   );
   function setCurrentTheme(themeId: string) {
     set(DokiThemeDefinitionsLite[themeId] ||
@@ -35,10 +29,26 @@ const createCurrentThemeLite = () => {
     },
   };
 };
-export const currentThemeLite = createCurrentThemeLite();
 
-if(isBrowser) {
+const createShowWallpaper = () => {
+  const { subscribe, set } = writable<boolean>(true);
+  function setShowWallpaper(showWallpaper: boolean) {
+    set(showWallpaper);
+  }
+  return {
+    subscribe,
+    setShowWallpaper: (showWallpaper: boolean) => {
+      setShowWallpaper(showWallpaper);
+    },
+  };
+};
+
+export const currentThemeLite = createCurrentThemeLite();
+export const showWallpaper = createShowWallpaper();
+
+if (isBrowser) {
   currentThemeLite.setTheme(currentThemeId);
+  showWallpaper.setShowWallpaper(showWallpaperParam);
 }
 
 const createCurrentTheme = () => {
@@ -61,6 +71,16 @@ const createCurrentTheme = () => {
 };
 
 export const currentTheme = createCurrentTheme();
-if(isBrowser) {
+if (isBrowser) {
   currentTheme.setTheme(currentThemeId);
 }
+
+function readQueryParamValue(name: string) {
+  const url = window.location.href;
+  const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+  const results = regex.exec(url);
+  const themeId = results && results[2] &&
+    decodeURIComponent(results[2].replace(/\+/g, " "));
+  return themeId;
+}
+

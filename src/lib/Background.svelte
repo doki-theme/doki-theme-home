@@ -2,7 +2,7 @@
 
   import { onMount, afterUpdate, tick, onDestroy } from "svelte";
 
-  import { currentTheme } from "./ThemeStore";
+  import { currentTheme, showWallpaper } from "./ThemeStore";
 
   let backgroundCanvas: HTMLCanvasElement;
   let width: number;
@@ -41,13 +41,14 @@
     draw();
   });
 
+  const wallpaperStyle = $showWallpaper == true ? "" : "display: none"
 
   onDestroy(unsubscribe);
 </script>
 
 <div id="main" style="position: fixed !important;" bind:clientWidth={width} bind:clientHeight={height}>
   <canvas bind:this={backgroundCanvas} id="backgroundImage" {width} {height} />
-  <div class="wallpaper"/>
+  <div style={wallpaperStyle} class="wallpaper"/>
 </div>
 
 <style>
