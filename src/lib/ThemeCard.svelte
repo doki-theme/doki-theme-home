@@ -33,7 +33,7 @@
     --custom-hover: ${dokiTheme.colors.accentColorTransparent};
   ${
     $currentTheme?.information?.id === dokiTheme.information.id
-      ? "box-shadow: 0px 0px 20px" + dokiTheme.colors.accentColorTransparent
+      ? `border: solid ${dokiTheme.colors.accentColor} 2px;box-shadow: 0px 0px 20px` + dokiTheme.colors.accentColorTransparent
       : ""
   }`}
   >
