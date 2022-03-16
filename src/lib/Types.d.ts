@@ -33,6 +33,7 @@ export interface Colors {
   selectionBackground: string;
   buttonFont: string;
   foregroundColor: string;
+  foregroundColorEditor: string;
   highlightColor: string;
   accentColor: string;
   accentColorTransparent: string;

@@ -177,6 +177,7 @@ evaluateTemplates(
             selectionBackground: dokiTheme.templateVariables.selectionBackground,
             buttonFont: dokiTheme.templateVariables.buttonFont,
             foregroundColor: dokiTheme.templateVariables.foregroundColor,
+            foregroundColorEditor: dokiTheme.templateVariables.foregroundColorEditor,
             highlightColor: dokiTheme.templateVariables.highlightColor,
             accentColor: dokiTheme.templateVariables.accentColor,
             accentColorTransparent: dokiTheme.templateVariables.accentColorTransparent,

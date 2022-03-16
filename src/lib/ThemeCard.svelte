@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { DokiTheme } from "./Types";
-  import { currentTheme, currentThemeLite } from "$lib/ThemeStore";
+  import { currentTheme, currentThemeLite, showWallpaper } from "$lib/ThemeStore";
 
   export let dokiTheme: DokiTheme;
 
+  const wallpaperStyle = $showWallpaper == true ? "" : "background-image: none !important;"
+  
 </script>
 
 <div
@@ -40,7 +42,7 @@
       style={`background-color: ${dokiTheme.colors.headerColor};
     color: ${dokiTheme.colors.infoForeground};
     border-top: 1px solid ${dokiTheme.colors.borderColor};
-    border-bottom: 1px solid ${dokiTheme.colors.borderColor};`}
+    border-bottom: 1px solid ${dokiTheme.colors.borderColor};${wallpaperStyle}`}
     >
       <div class="buttons">
         <div class="close">
@@ -58,7 +60,7 @@
     <div
       class="content"
       style={`background-color: ${dokiTheme.colors.textEditorBackground};
-      color: ${dokiTheme.colors.foregroundColor}`}
+      color: ${dokiTheme.colors.foregroundColorEditor};${wallpaperStyle}`}
     >
       <div class="tabs">
         <div class="tab active">DokiThemePreview.svelte</div>
@@ -136,6 +138,7 @@
 
   .tabs {
     display: flex;
+    color: var(--foreground-color);
   }
 
   .active {
