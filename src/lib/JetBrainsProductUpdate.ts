@@ -6,8 +6,13 @@ type Change = {
 
 export const changes: Change[] = [
   {
+    version: '74.2-1.0.5',
+    changes: `- Fixed issue with multiple background images displaying over the update notifcation when the Doki Theme's wallpaper is activated ([#499](https://github.com/doki-theme/doki-theme-jetbrains/issues/499))`
+  },
+  {
     version: '74.2-1.0.4',
-    changes: `- Better Cucumber & Gherkin support\n- Enhanced [Quick Documentation](https://www.jetbrains.com/help/idea/2021.3/documentation-tool-window.html) a bit.\n- Darkened Nino's Theme some, Lightened Raphtalia's accent color a bit, and made Yukino's unused color more usable.\n`
+    changes: `- Better Cucumber & Gherkin support\n- Enhanced [Quick Documentation](https://www.jetbrains.com/help/idea/2021.3/documentation-tool-window.html) a bit.\n- Darkened Nino's Theme some, Lightened Raphtalia's accent color a bit, and made Yukino's unused color more usable.\n`,
+    released: true,
   },
   {
     version: '74.1-1.0.3',
