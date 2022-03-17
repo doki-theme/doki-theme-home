@@ -7,7 +7,7 @@ type Change = {
 export const changes: Change[] = [
   {
     version: '74.2-1.0.5',
-    changes: `- Fixed issue with multiple background images displaying over the update notifcation when the Doki Theme's wallpaper is activated ([#499](https://github.com/doki-theme/doki-theme-jetbrains/issues/499))`
+    changes: `- Fixed issue with multiple background images displaying over the update notification when the Doki Theme's wallpaper is activated ([#499](https://github.com/doki-theme/doki-theme-jetbrains/issues/499))`
   },
   {
     version: '74.2-1.0.4',
