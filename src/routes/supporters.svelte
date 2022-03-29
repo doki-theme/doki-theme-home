@@ -1,5 +1,6 @@
 <script>
   import Badge from "$lib/Badge.svelte";
+import Crown from "$lib/Crown.svelte";
 </script>
 
  <div class="container">
@@ -31,12 +32,12 @@
         well. You can always just send me a <a
           href="mailto:alexsimons9999@gmail.com?subject=Thanks for weebifying my development tools!"
           >nice thank you message</a
-        >, your gratitude is enough for me.
+        >. Tell me about how these themes help your day better. Your gratitude and enthusiasm is enough for me.
       </p>
       <p>
         However, if you want it known that you are a serious hacker weeb. 
         Then you can send a few dollars my way. Let me know if you <strong><em>don't</em></strong> want your name displayed for others
-        to see. <em>Generous patrons can choose their emote.</em>
+        to see. Also tell me your favorite theme!
       </p>
 
       <div style="padding: 1rem 0; width: 100%;">- Alex</div>
@@ -56,6 +57,7 @@
       <p class="heading">S Tier</p>
       <p class="description">All other themes are obsolute, <em>just Doki. 50 USD</em></p>
       <ul>
+        <li><img src="/supporterAssets/ram_spin.gif" alt="Ram Spin"/>  <span><span class="crown"><Crown /></span>Mikko Ohtamaa</span><img src="/supporterAssets/rem_spin.gif" alt="Rem Spin"/></li>
         <li><img src="/supporterAssets/just_zero_two.gif" alt="Head pats for Zero Two"/>  <span title="Yeah, I'm S-Tier, get at me.">Alex Simons</span><img src="/supporterAssets/zero_two_intensifies.gif" alt="Zero Two Intensifies"/></li>
       </ul>
       <ul>
@@ -88,7 +90,11 @@
 </div>
 
 <style>
-  .badge {
+  .crown {
+    position: absolute;
+    margin-top: -0.75rem;
+  }
+  .badge{
     position: absolute;
   }
   .container {
@@ -132,6 +138,10 @@
 
   .supporters > div {
     margin-bottom: 3rem;
+  }
+
+  .s-tier > ul > li  {
+    margin-bottom: 0.5rem;
   }
 
   .s-tier > ul > li > span {
