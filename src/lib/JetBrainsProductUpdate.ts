@@ -6,6 +6,10 @@ type Change = {
 
 export const changes: Change[] = [
   {
+    version: '78.0-1.0.6',
+    changes: `<div align='center'><h1>The Boys</h1></div>\n\n_I'm trying to bring in a bit of inclusion._\n\n**4 New Dark Themes!**\n\n- I can already hear you now, "Rimiru Tempest, from 'That Time I Got Reincarnated as a Slime', is not a boy. They are the best genderless slime, get your facts correct." Yeah well....shut up.\n- Next, is one of the S ranked heroes in the 'One Punch Man' universe, Genos.\n- After that, is the smug smile of Yukihira Soma from Shokugeki no Soma. \n- Lastly, I am going to be honest, I haven't seen Haikyu. I just wanted a Indigo & Orange based theme. So here is Hinata Shoyo.\n\n<div style="text-align: center"><img alt="v78 Bois" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/v78_bois_medium.png"/></div>\n\n### Other Stuff\n\n- Updated some of Rory, Ram, & Rem's syntax highlighting colors to be more usable.\n- Update tree drag-and-drop colorings to be themed.\n- Better GO language syntax highlighting support.`
+  },
+  {
     version: '74.2-1.0.5',
     changes: `- Fixed issue with multiple background images displaying over the update notification when the Doki Theme's wallpaper is activated ([#499](https://github.com/doki-theme/doki-theme-jetbrains/issues/499))`
   },
