@@ -9,6 +9,7 @@ specifiers:
   '@types/marked': ^2.0.3
   '@typescript-eslint/eslint-plugin': ^4.31.1
   '@typescript-eslint/parser': ^4.31.1
+  devalue: ^2.0.1
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.1
@@ -30,6 +31,7 @@ devDependencies:
   '@types/marked': 2.0.5
   '@typescript-eslint/eslint-plugin': 4.33.0_65e88d2733f36d3624b406e590cf0b3b
   '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@4.6.2
+  devalue: 2.0.1
   eslint: 7.32.0
   eslint-config-prettier: 8.5.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.1_eslint@7.32.0+svelte@3.46.4
@@ -447,6 +449,10 @@ packages:
   /detect-indent/6.1.0:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
     engines: {node: '>=8'}
+    dev: true
+
+  /devalue/2.0.1:
+    resolution: {integrity: sha512-I2TiqT5iWBEyB8GRfTDP0hiLZ0YeDJZ+upDxjBfOC2lebO5LezQMv7QvIUTzdb64jQyAKLf1AHADtGN+jw6v8Q==}
     dev: true
 
   /dir-glob/3.0.1:
