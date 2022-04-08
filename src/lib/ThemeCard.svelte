@@ -20,6 +20,7 @@
   --class-name-color: ${dokiTheme.colors.classNameColor};
   --constant-color: ${dokiTheme.colors.constantColor};
   --foreground-color: ${dokiTheme.colors.foregroundColor};
+  --editor-foreground-color: ${dokiTheme.colors.foregroundColorEditor};
   `}
   class="code-container"
   on:mouseup={() => {
@@ -73,8 +74,8 @@
          <div><span>&lt;</span><span class="html-tag-color">div</span> <span class="key-color"></span><span class="editor-accent-color italic">class</span><span>=</span><span class="string-color">&quot;sticker-container&quot;</span><span>&gt;</span></div>
          <div><span>&lt;</span><span class="html-tag-color">img</span></div>
          <div style="margin-left: 1rem"><span class="editor-accent-color italic">class</span><span>=</span><span class="string-color">&quot;sticker&quot;</span><br/></div>
-         <div style="margin-left: 1rem"><span class="editor-accent-color italic">alt</span><span>=</span><span>&lbrace;</span><span class="string-color">`</span><span>$</span><span>&lbrace;</span><span class="key-color">dokiTheme</span><span>.</span><span class="key-color">information</span><span class="foreground-color">.name</span><span>&rbrace;</span><span class="string-color">&#39;s Sticker`</span><span>&rbrace;</span></div>
-         <div style="margin-left: 1rem"><span class="editor-accent-color italic">src</span><span>=</span><span>&lbrace;</span><span class="key-color">dokiTheme</span><span>.</span><span class="key-color">stickers</span><span>.</span><span class="key-color">default</span><span class="foreground-color">.path</span><span>&rbrace;</span><span>/</span><span>&gt;</span> </div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color italic">alt</span><span>=</span><span>&lbrace;</span><span class="string-color">`</span><span>$</span><span>&lbrace;</span><span class="key-color">dokiTheme</span><span>.</span><span class="key-color">information</span><span class="editor-foreground-color">.name</span><span>&rbrace;</span><span class="string-color">&#39;s Sticker`</span><span>&rbrace;</span></div>
+         <div style="margin-left: 1rem"><span class="editor-accent-color italic">src</span><span>=</span><span>&lbrace;</span><span class="key-color">dokiTheme</span><span>.</span><span class="key-color">stickers</span><span>.</span><span class="key-color">default</span><span class="editor-foreground-color">.path</span><span>&rbrace;</span><span>/</span><span>&gt;</span> </div>
          <div><span>&lt;/</span><span class="html-tag-color">div</span><span>&gt;</span></div>
          <div><span>&lt;</span><span class="html-tag-color">style</span><span>&gt;</span> </div>
          <div style="margin-left: 1rem"><span class="editor-accent-color italic">:root</span> <span>&lbrace;</span> <span class="class-name-color">--code-window-height</span><span>:</span> <span class="constant-color">400</span><span class="keyword-color">px</span><span>;</span> <span>&rbrace;</span></div>
@@ -104,8 +105,8 @@
     font-style: italic;
   }
 
-  .foreground-color {
-    color: var(--foreground-color);
+  .editor-foreground-color {
+    color: var(--editor-foreground-color);
   }
 
   .highlight-color {
