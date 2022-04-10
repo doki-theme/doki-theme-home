@@ -17,8 +17,8 @@ import fs from "fs";
 
 import path from "path";
 
-import {navLinks} from '../../src/lib/Constants';
-import {changes} from '../../src/lib/JetBrainsProductUpdate';
+import {navLinks} from '../../common/src/Constants';
+import {changes} from '../../common/src/JetBrainsChanges';
 
 const { repoDirectory, masterThemeDefinitionDirectoryPath } =
   resolvePaths(__dirname);

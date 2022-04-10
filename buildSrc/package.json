@@ -31,5 +31,6 @@
   },
   "scripts": {
     "buildThemes": "ts-node ./src/BuildThemes.ts"
-  }
+  },
+  "type": "commonjs"
 }

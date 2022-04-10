@@ -1,6 +1,6 @@
 <script>
 	import DokiLogo from './DokiLogo.svelte';
-	import { navLinks } from './Constants';
+	import { navLinks } from '../../common/src/Constants';
 	import { goto } from '$app/navigation';
 </script>
 
