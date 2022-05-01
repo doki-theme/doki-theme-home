@@ -7,8 +7,13 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '78.1-1.0.8',
+    changes: `<div align='center'><h1>Major Legacy Theme Updates</h1></div>\n\n\n- **Major Updates** to syntax highlighting colors to these themes: \n  - Asuna Dark \n  - Beatrice\n  - Emilia Light.\n  - Ibuki Light\n  - Monika Dark/Light \n  - Natsuki Dark/Light\n  - Sayori Dark/Light\n  - Yuri Dark/Light\n- Minor syntax highlighting updates to these themes: Nakano Miku, Megumin, Mai Dark, Ryuko Dark, Tohsaka Rin,\n  Rias: Crimson, Mai Light, and Asuna Light\n- Small syntax highlighting usability updates to these themes: Zero Two Dark, Yukino, Hanekawa,\n  Nagatoro, Rei, Astolfo, Echidna, Shima Rin, Sonoda Umi, Kurisu, & Ishtar Dark\n- Made the background art brighter for: Satsuki Dark & Asuna Dark\n- Made background art dimmer for: Yuri Light.\n- Added a link to install [Theme Randomizer](https://plugins.jetbrains.com/plugin/16107-theme-randomizer) from settings.\n\n#### Motivation\n\nI am in a position where I will now regularly be using my light themes more often. I am also planning on adding more.\nMost of my light themes were created a long time ago and my tastes have evolved over time.\nI have taken the time to revisit a fair number of my legacy themes, light and dark.\nIf you want the old syntax highlighting back, then feel free to reach\nout [in this discussion thread](https://github.com/doki-theme/doki-theme-jetbrains/discussions/509).\nI will provide you assets and instructions on how to revert the color scheme back.\n\nThank you for your understanding!\n`,
+  },
+  {
     version: '78.0-1.0.7',
     changes: ``,
+    released: true,
   }, 
   {
     version: '78.0-1.0.6',
