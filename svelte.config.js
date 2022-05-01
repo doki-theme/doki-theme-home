@@ -18,6 +18,13 @@ const config = {
 			onError: 'continue',
 			entries: [...routes],
 		},
+		vite: {
+			server: {
+				fs: {
+					allow: ['common']
+				}
+			}
+		}
 	}
 };
 
