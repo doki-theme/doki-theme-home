@@ -1,8 +1,21 @@
 <script lang="ts">
 	import { currentThemeLite } from '$lib/ThemeStore';
 
+
+
+
+
+
+
+
+
+
+	
+
+
+	
 	function shadeHexColor(color, percent) {
-    if(color === "#00000000") return color;
+		if (color === '#00000000') return color;
 		var f = parseInt(color.slice(1), 16),
 			t = percent < 0 ? 0 : 255,
 			p = percent < 0 ? percent * -1 : percent,
