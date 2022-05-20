@@ -1,18 +1,5 @@
 <script lang="ts">
 	import { currentThemeLite } from '$lib/ThemeStore';
-
-
-
-
-
-
-
-
-
-
-	
-
-
 	
 	function shadeHexColor(color, percent) {
 		if (color === '#00000000') return color;
