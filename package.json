@@ -37,8 +37,6 @@
   },
   "type": "module",
   "pnpm": {
-    "overrides": {
-      "@sveltejs/kit": "../kit/packages/kit"
-    }
+    "overrides": {}
   }
 }
