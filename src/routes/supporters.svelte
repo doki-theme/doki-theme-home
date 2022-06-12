@@ -76,6 +76,7 @@ import Crown from "$lib/Crown.svelte";
       <ul>
         <li><span>Javier Garcia</span> <span class="badge"><Badge /></span></li>
         <li><span>Brandon Huang</span></li>
+        <li><span>Frank Krissmann</span></li>
       </ul>
     </div>
     <div class="enthusiasts">
