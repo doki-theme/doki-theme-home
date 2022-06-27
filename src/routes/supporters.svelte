@@ -85,6 +85,7 @@ import Crown from "$lib/Crown.svelte";
       <ul>
         <li><span>George Kazanjian</span></li>
         <li><span>Paulo Roberto De Andrade Ferreira</span></li>
+        <li><span>James Leung</span></li>
       </ul>
     </div>
   </div>
