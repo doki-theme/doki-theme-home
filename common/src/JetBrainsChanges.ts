@@ -7,8 +7,13 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.0-1.3.0',
+    changes: `<div style="text-align: center; margin-top: 3.5rem;"><h3>Best Girl just got <em>better</em>. ❤️</h3><img alt="Best Girl" style="max-width: 700px; border-radius: 0.5rem" src="https://doki.assets.unthrottled.io/misc/best_girl_medium.png"/><br/><br/><em>Zero Two's Not Just A Cutie. ;)</em></div>\n\n**4 New Themes!**\n\n- I decided that I didn't have enough Zero Two themes, so I fixed that. She now has new top-tier dark hacker theme: \`Obsidian\`. I also felt like Red Zero Two doesn't get enough attention, so I added a light \`Sakura\` theme which features her as she was as a child. I also renamed Zero Two's existing dark & light themes to \`Rose\` & \`Lily\` respectively.\n- It wouldn't be the _Darling_ release if I didn't include Hiro as well. (Dark Theme)\n- This is also the first release with a duo theme! (Nao's doesn't count, I just wanted the melon meme.) So just to pad my Zero Two theme stats, I added a Hiro & Zero Two couples' dark theme.\n\n### Other Stuff\n\n- Desaturated Itsuki's theme a bit.\n- Adjusted CC's inlay color.`
+  },
+  {
     version: '84.2-1.3.0',
-    changes: ``
+    changes: ``,
+    released: true,
   },
   {
     version: '84.1-1.2.1',

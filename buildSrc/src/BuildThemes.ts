@@ -123,28 +123,19 @@ const getStickers = (
   dokiDefinition: MasterDokiThemeDefinition,
   themePath: string
 ) => {
-  // const secondary =
-  //   dokiDefinition.stickers.secondary || dokiDefinition.stickers.normal;
   return {
     default: {
       path: resolveStickerPath(themePath, dokiDefinition.stickers.default.name)
       .replace(/\\/g,"/"),
       name: dokiDefinition.stickers.default.name,
     },
-    // ...(secondary
-    //   ? {
-    //       secondary: {
-    //         path: resolveStickerPath(themePath, secondary),
-    //         name: secondary,
-    //       },
-    //     }
-    //   : {}),
   };
 };
 
 console.log("Preparing to generate themes.");
 
-const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
+// Zero Two Obsidian
+const DEFAULT_THEME = "13adffd9-acbe-47af-8101-fa71269a4c5c";
 
 evaluateTemplates(
   {
@@ -241,7 +232,7 @@ evaluateTemplates(
     );
 
     const defaultTheme =
-    themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!!;
+    themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!;
 
     fs.writeFileSync(
       path.resolve(repoDirectory,

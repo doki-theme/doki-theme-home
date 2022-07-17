@@ -12,24 +12,24 @@
   font-style: normal;
 }
 
-html {--foreground-color: #d7d7d7;
-  --button-color: #480F0F;
+html {--foreground-color: #bbbbbb;
+  --button-color: #174a2e;
   --button-font: #fbfbfb;
-  --accent-color: #D53232;
-  --editor-accent-color: #2D96EA;
-  --info-foreground: #ad9e6e;
-  --string-color: #f3b085;
-  --accent-color-transparent: #D5323288;
+  --accent-color: #1ecd86;
+  --editor-accent-color: #66FA36;
+  --info-foreground: #5c9077;
+  --string-color: #39e6a6;
+  --accent-color-transparent: #1ecd8688;
   --selection-foreground: #fbfbfb;
-  --selection-background: #480F0F;
-  --link-color: #D53232;
+  --selection-background: #174a2e;
+  --link-color: #1ecd86;
   --ansi-cyan: #75D7EC;
   --ansi-blue: #9B6BDF;
   --ansi-yellow: #EFA554;
   --ansi-magenta: #E64747;
   --ansi-green: #42E66C;
-  --base-background: #002446;
-  --header-color: #00203e;}
+  --base-background: #1a0c12;
+  --header-color: #150a0e;}
 
 html,
 body {

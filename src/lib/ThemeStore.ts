@@ -4,7 +4,8 @@ import DefaultDokiThemeDefinition from "./DefaultDokiThemeDefinition";
 
 import type { DokiTheme, DokiThemeLite } from "./Types";
 
-export const DEFAULT_THEME = "e55e70ea-454b-47ef-9270-d46390dd2769";
+// Zero Two Obsidian
+export const DEFAULT_THEME = "13adffd9-acbe-47af-8101-fa71269a4c5c";
 
 const isBrowser = typeof window !== 'undefined';
 const currentThemeId = isBrowser ?
