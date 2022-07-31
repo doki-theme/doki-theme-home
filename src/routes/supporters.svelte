@@ -68,6 +68,7 @@ import Crown from "$lib/Crown.svelte";
       <p class="description">True individuals of culture. <span class="bounds">20 USD</span></p>
       <ul>
         <li><span>Arimil</span></li>
+        <li><span>Durval Pires</span></li>
       </ul>
     </div>
     <div class="hackers">
