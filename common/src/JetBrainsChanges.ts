@@ -6,6 +6,10 @@ export type Change = {
 
 
 export const changes: Change[] = [
+ {
+    version: '88.1-1.5.1',
+    changes: "- Added the initial support for the 2022.3 platform."
+  },
   {
     version: '88.1-1.5.0',
     changes: "- Made the vertical code folding lines, in the gutter, visible again. If you want them gone, like they were before, you can turn them off by going to the setting \"`Editor` > `General` > `Code Folding` > `Show code folding outline`\"."
