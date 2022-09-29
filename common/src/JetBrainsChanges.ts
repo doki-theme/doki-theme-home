@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.1-1.5.3',
+    changes: ""
+  },
+  {
     version: '88.1-1.5.2',
     changes: ""
   },
