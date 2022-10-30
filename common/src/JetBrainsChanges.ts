@@ -6,6 +6,10 @@ export type Change = {
 
 
 export const changes: Change[] = [
+{
+    version: '88.1-1.5.4',
+    changes: ""
+  },
   {
     version: '88.1-1.5.3',
     changes: ""
@@ -16,7 +20,7 @@ export const changes: Change[] = [
   },
   {
     version: '88.1-1.5.1',
-    changes: "- Added the initial support for the 2022.3 platform."
+    changes: "- Added the initial support for the 2022.3 platform.\n- Potentially fixed icon loading issue at start up."
   },
   {
     version: '88.1-1.5.0',
