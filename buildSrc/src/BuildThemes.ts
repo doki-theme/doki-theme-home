@@ -17,8 +17,8 @@ import fs from "fs";
 
 import path from "path";
 
-import {navLinks} from '../../common/src/Constants';
-import {changes} from '../../common/src/JetBrainsChanges';
+import { navLinks } from '../../common/src/Constants';
+import { changes } from '../../common/src/JetBrainsChanges';
 
 const { repoDirectory, masterThemeDefinitionDirectoryPath } =
   resolvePaths(__dirname);
@@ -126,7 +126,7 @@ const getStickers = (
   return {
     default: {
       path: resolveStickerPath(themePath, dokiDefinition.stickers.default.name)
-      .replace(/\\/g,"/"),
+        .replace(/\\/g, "/"),
       name: dokiDefinition.stickers.default.name,
     },
   };
@@ -182,6 +182,8 @@ evaluateTemplates(
             stringColor: dokiTheme.templateVariables.stringColor,
             keyColor: dokiTheme.templateVariables.keyColor,
             keywordColor: dokiTheme.templateVariables.keywordColor,
+            dokiLogoAccent: dokiTheme.templateVariables.dokiLogoAccent,
+            dokiLogoAccentContrast: dokiTheme.templateVariables.dokiLogoAccentContrast,
             "terminal.ansiCyan": dokiTheme.templateVariables["terminal.ansiCyan"],
             "terminal.ansiYellow": dokiTheme.templateVariables["terminal.ansiYellow"],
             "terminal.ansiMagenta": dokiTheme.templateVariables["terminal.ansiMagenta"],
@@ -213,26 +215,24 @@ evaluateTemplates(
     fs.writeFileSync(
       path.resolve(repoDirectory,
         "src", "lib", "DokiThemeDefinitions.ts"),
-        `export default ${finalDokiDefinitions};`
+      `export default ${finalDokiDefinitions};`
     );
     fs.writeFileSync(
       path.resolve(repoDirectory,
         "src", "lib", "DokiThemeDefinitionsLite.ts"),
-        `export default ${
-          JSON.stringify(dokiThemes.reduce((accum: StringDictionary<any>, dokiTheme)=> {
-              accum[dokiTheme.definition.id] = {
-                a: dokiTheme.templateVariables.accentColor,
-                ...(dokiTheme.templateVariables.iconContrastColor ?
-                  { b: dokiTheme.templateVariables.iconContrastColor } : {})
-              }
-              return accum;
-          }, {})
-          )
-        };`
+      `export default ${JSON.stringify(dokiThemes.reduce((accum: StringDictionary<any>, dokiTheme) => {
+        accum[dokiTheme.definition.id] = {
+          a: dokiTheme.templateVariables.dokiLogoAccent,
+          b: dokiTheme.templateVariables.dokiLogoAccentContrast,
+        }
+        return accum;
+      }, {})
+      )
+      };`
     );
 
     const defaultTheme =
-    themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!;
+      themeDefinitions.find(dokiTheme => dokiTheme.information.id === DEFAULT_THEME)!;
 
     fs.writeFileSync(
       path.resolve(repoDirectory,
@@ -264,7 +264,7 @@ evaluateTemplates(
       ),
       `export default ${JSON.stringify(
         navLinks.map(nav => nav.path)
-        .concat(changes.map(change => `/products/jetbrains/updates/` + change.version))
+          .concat(changes.map(change => `/products/jetbrains/updates/` + change.version))
       )};`
     )
 

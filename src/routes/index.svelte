@@ -3,7 +3,7 @@
 </script>
 
 <div>
-  <h1>The Doki Theme</h1>
+  <h1>Doki Theme</h1>
   <DokiLogo size={145} />
   <h3 class="editor-accent-color">
     A large collection of themes built with love and care.

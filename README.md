@@ -1,4 +1,4 @@
-The Doki Theme Home
+Doki Theme Home
 ---
 
 Want to know more?

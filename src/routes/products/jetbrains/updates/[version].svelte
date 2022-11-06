@@ -8,7 +8,7 @@
 </script>
 
 <div class="content-container">
-	<h1>The Doki Theme: JetBrains IDEs</h1>
+	<h1>Doki Theme: JetBrains IDEs</h1>
 
 	<h2>What's new in <code class="info-foreground italic">{$page.params.version}</code> ?</h2>
 	<div class="changes">
