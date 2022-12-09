@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.3-1.7.2',
+    changes: ""
+  },
+  {
     version: '88.3-1.7.1',
     changes: ""
   },
@@ -28,7 +32,7 @@ export const changes: Change[] = [
   },
   {
     version: '88.2-1.6.0',
-    changes: `<div align="center">\n<img src="https://doki.assets.unthrottled.io/misc/doki_icons_logo.png" width="256" height="256" alt="Doki Theme Icons"></img>\n</div>\n\n- Removed the legacy Material Icons. Please install the [Doki Theme Icons](https://github.com/doki-theme/doki-theme-icons-jetbrains) in its place. \n- Renamed plugin to \`Doki Theme\` & updated plugin logo.\n- Zero Two's Obsidian theme is now the default for new users.\n- Updated Chocola's Xmas theme.\n- Made Natsuki's & Tohru's ANSI green color more usable.\n- Themed the \`Version Control Marker Popup\`\n- Restored the selected radio button for all light themes.\n- Themed the segmented buttons, so various settings UI components look better.\n- Added the initial experimental UI (New UI) support.\n- Raised lowest supported build to 2022.2 to support Java 17.\n- Source code is compiled for Java 17.\n`
+    changes: `<div align="center">\n<img src="https://doki.assets.unthrottled.io/misc/doki_icons_logo.png" width="256" height="256" alt="Doki Theme Icons"></img>\n</div>\n\n- Removed the legacy Material Icons. Please install the [Doki Theme Icons](https://github.com/doki-theme/doki-theme-icons-jetbrains) in its place. \n- Renamed plugin to \`Doki Theme\` & updated plugin logo.\n- Zero Two's Obsidian theme is now the default for new users.\n- Updated Chocola's Xmas theme.\n- Made Natsuki's & Tohru's ANSI green color more usable.\n- Themed the \`Version Control Marker Popup\`\n- Restored the selected radio button for all light themes.\n- Themed the segmented buttons, so various settings UI components look better.\n- Added the initial experimental UI (New UI) support.\n- Raised lowest supported build to 2022.2 to support Java 17.\n- Source code is compiled for Java 17.\n-Themed the progress indicator track bar.\n`
   },
   {
     version: '88.1-1.5.4',
