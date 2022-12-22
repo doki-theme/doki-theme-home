@@ -7,6 +7,15 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.3-1.8.1',
+    changes: "- Fixed issue with global font override not being applied after IDE was restarted."
+  },
+  {
+    version: '88.3-1.8.0',
+    changes: "",
+    released: true
+  },
+  {
     version: '88.3-1.7.2',
     changes: ""
   },
@@ -32,7 +41,7 @@ export const changes: Change[] = [
   },
   {
     version: '88.2-1.6.0',
-    changes: `<div align="center">\n<img src="https://doki.assets.unthrottled.io/misc/doki_icons_logo.png" width="256" height="256" alt="Doki Theme Icons"></img>\n</div>\n\n- Removed the legacy Material Icons. Please install the [Doki Theme Icons](https://github.com/doki-theme/doki-theme-icons-jetbrains) in its place. \n- Renamed plugin to \`Doki Theme\` & updated plugin logo.\n- Zero Two's Obsidian theme is now the default for new users.\n- Updated Chocola's Xmas theme.\n- Made Natsuki's & Tohru's ANSI green color more usable.\n- Themed the \`Version Control Marker Popup\`\n- Restored the selected radio button for all light themes.\n- Themed the segmented buttons, so various settings UI components look better.\n- Added the initial experimental UI (New UI) support.\n- Raised lowest supported build to 2022.2 to support Java 17.\n- Source code is compiled for Java 17.\n-Themed the progress indicator track bar.\n`
+    changes: `<div align="center">\n<img src="https://doki.assets.unthrottled.io/misc/doki_icons_logo.png" width="256" height="256" alt="Doki Theme Icons"></img>\n</div>\n\n- Removed the legacy Material Icons. Please install the [Doki Theme Icons](https://github.com/doki-theme/doki-theme-icons-jetbrains) in its place. \n- Renamed plugin to \`Doki Theme\` & updated plugin logo.\n- Zero Two's Obsidian theme is now the default for new users.\n- Updated Chocola's Xmas theme.\n- Made Natsuki's & Tohru's ANSI green color more usable.\n- Themed the \`Version Control Marker Popup\`\n- Restored the selected radio button for all light themes.\n- Themed the segmented buttons, so various settings UI components look better.\n- Added the initial experimental UI (New UI) support.\n- Raised lowest supported build to 2022.2 to support Java 17.\n- Source code is compiled for Java 17.\n-Themed the progress indicator track bar.\n- Removed Frameless mode as it's supported by the platform now.\n- Migrated away from various internal methods where replacement was available.\n`
   },
   {
     version: '88.1-1.5.4',
