@@ -46,6 +46,7 @@ export interface Colors {
   textEditorBackground: string;
   classNameColor: string;
   htmlTagColor: string;
+  iconBlendCompliment: string;
   stringColor: string;
   keyColor: string;
   keywordColor: string;

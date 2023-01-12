@@ -1,5 +1,6 @@
 <script>
   import Badge from "$lib/Badge.svelte";
+  import Bolt from "$lib/Bolt.svelte";
 import Crown from "$lib/Crown.svelte";
 </script>
 
@@ -67,6 +68,7 @@ import Crown from "$lib/Crown.svelte";
       <p class="heading">Professional Tier</p>
       <p class="description">True individuals of culture. <span class="bounds">20 USD</span></p>
       <ul>
+        <li><span><Bolt /></span><span>Henry Shen</span><span><Bolt /></span></li>
         <li><span>Arimil</span></li>
         <li><span>Durval Pires</span></li>
       </ul>
@@ -75,7 +77,7 @@ import Crown from "$lib/Crown.svelte";
       <p class="heading">H4ck3r T13r</p>
       <p class="description">1337 h4x0rz w33bz. <em>10 USD</em></p>
       <ul>
-        <li><span>Javier Garcia</span> <span class="badge"><Badge /></span></li>
+        <li><span>Javier Garcia</span><span class="badge"><Badge /></span></li>
         <li><span>Brandon Huang</span></li>
         <li><span>Frank Krissmann</span></li>
       </ul>

@@ -56,6 +56,11 @@
 			);
 
 			document.documentElement.style.setProperty(
+				'--icon-blend-compliment',
+				`${dokiTheme.colors.iconBlendCompliment}`
+			);
+
+			document.documentElement.style.setProperty(
 				'--link-color',
 				`${dokiTheme.colors.linkColor || dokiTheme.colors.accentColor}`
 			);

@@ -72,6 +72,7 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --accent-color-transparent: ${colors.accentColor}88;
     --selection-foreground: ${colors.selectionForeground};
     --selection-background: ${colors.selectionBackground};
+    --icon-blend-compliment: ${colors.iconBlendCompliment};
     --link-color: ${colors.linkColor || colors.accentColor};
     --ansi-cyan: ${colors['terminal.ansiCyan']};
     --ansi-blue: ${colors['terminal.ansiBlue']};
@@ -182,6 +183,7 @@ evaluateTemplates(
             stringColor: dokiTheme.templateVariables.stringColor,
             keyColor: dokiTheme.templateVariables.keyColor,
             keywordColor: dokiTheme.templateVariables.keywordColor,
+            iconBlendCompliment: dokiTheme.templateVariables.iconBlendCompliment,
             dokiLogoAccent: dokiTheme.templateVariables.dokiLogoAccent,
             dokiLogoAccentContrast: dokiTheme.templateVariables.dokiLogoAccentContrast,
             "terminal.ansiCyan": dokiTheme.templateVariables["terminal.ansiCyan"],
