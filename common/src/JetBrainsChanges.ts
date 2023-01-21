@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.3-1.8.2',
+    changes: "- Added the initial 2023.1 build support."
+  },
+  {
     version: '88.3-1.8.1',
     changes: "- Fixed issue with global font override not being applied after IDE was restarted."
   },
