@@ -71,6 +71,7 @@ import Crown from "$lib/Crown.svelte";
         <li><span><Bolt /></span><span>Henry Shen</span><span><Bolt /></span></li>
         <li><span>Arimil</span></li>
         <li><span>Durval Pires</span></li>
+        <li><span>Davide Bergamini</span></li>
       </ul>
     </div>
     <div class="hackers">
