@@ -6,6 +6,10 @@ export type Change = {
 
 
 export const changes: Change[] = [
+{
+    version: '88.3-1.8.3',
+    changes: "- Updated the border color of the `Code Lense` feature."
+  },
   {
     version: '88.3-1.8.2',
     changes: "- Added the initial 2023.1 build support."
