@@ -6,7 +6,11 @@ export type Change = {
 
 
 export const changes: Change[] = [
-{
+  {
+    version: '88.3-1.9.0',
+    changes: "- Vertically aligned the editor search text input on the new UI.\n- Allow custom stickers to remain on IDE for non-Doki themes."
+  },
+  {
     version: '88.3-1.8.3',
     changes: "- Updated the border color of the `Code Lense` feature."
   },
