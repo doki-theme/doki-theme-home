@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.3-1.9.1',
+    changes: "- Themed New UI Scrollbars in Rider to be consistent.\n- Fixed the settings window in builds `231.6890.12`+",
+  },
+  {
     version: '88.3-1.9.0',
     changes: "- Vertically aligned the editor search text input on the new UI.\n- Allow custom stickers to remain on IDE for non-Doki themes."
   },
