@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.3-1.9.2',
+    changes: "- Themed New UI header button hover color.\n- Updated New UI project tree spacing to mirror JetBrains' defaults.",
+  },
+  {
     version: '88.3-1.9.1',
     changes: "- Themed New UI Scrollbars in Rider to be consistent.\n- Fixed the settings window in builds `231.6890.12`+",
   },
