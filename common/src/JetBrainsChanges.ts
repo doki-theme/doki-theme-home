@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.3-1.9.3',
+    changes: "- Themed New UI Main Toolbar button pressed color.",
+  },
+  {
     version: '88.3-1.9.2',
     changes: "- Themed New UI header button hover color.\n- Updated New UI project tree spacing to mirror JetBrains' defaults.",
   },
