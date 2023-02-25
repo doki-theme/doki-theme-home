@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.4-1.9.4',
+    changes: `- Made Light Theme's checkboxes & radio buttons more usable.\n- Sigure's list item selection is readable now.\n- Updated Sagiri's syntax highlight to avoid looking like an error.`,
+  },
+  {
     version: '88.3-1.9.3',
     changes: "- Themed New UI Main Toolbar button pressed color.",
   },
