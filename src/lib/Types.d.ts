@@ -43,6 +43,12 @@ export interface Colors {
   headerColor: string;
   highlightColor: string;
   htmlTagColor: string;
+  iconAccent: string;
+  iconAccentCompliment: string;
+  iconBaseBlend: string;
+  iconSecondaryBlend: string;
+  iconBlendContrast: string;
+  iconDiversification: string;
   iconBlendCompliment: string;
   iconContrastColor?: string;
   infoForeground: string;

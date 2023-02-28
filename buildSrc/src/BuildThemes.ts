@@ -17,10 +17,10 @@ import fs from "fs";
 
 import path from "path";
 
-import { navLinks } from '../../common/src/Constants';
-import { changes } from '../../common/src/JetBrainsChanges';
+import {navLinks} from '../../common/src/Constants';
+import {changes} from '../../common/src/JetBrainsChanges';
 
-const { repoDirectory, masterThemeDefinitionDirectoryPath } =
+const {repoDirectory, masterThemeDefinitionDirectoryPath} =
   resolvePaths(__dirname);
 
 // todo: dis
@@ -62,6 +62,7 @@ function buildTemplateVariables(
 }
 
 function buildCSSVars(colors: StringDictionary<string>) {
+  // language=CSS
   return `html {--foreground-color: ${colors.foregroundColor};
     --button-color: ${colors.selectionBackground};
     --button-font: ${colors.selectionForeground};
@@ -72,6 +73,12 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --accent-color-transparent: ${colors.accentColor}88;
     --selection-foreground: ${colors.selectionForeground};
     --selection-background: ${colors.selectionBackground};
+    --icon-accent: ${colors.iconAccent};
+    --icon-accent-compliment: ${colors.iconAccentCompliment};
+    --icon-base-blend: ${colors.iconBaseBlend};
+    --icon-secondary-blend: ${colors.iconSecondaryBlend};
+    --icon-blend-contrast: ${colors.iconBlendContrast};
+    --icon-diversification: ${colors.iconDiversification};
     --icon-blend-compliment: ${colors.iconBlendCompliment};
     --link-color: ${colors.linkColor || colors.accentColor};
     --ansi-cyan: ${colors['terminal.ansiCyan']};
@@ -183,16 +190,22 @@ evaluateTemplates(
             stringColor: dokiTheme.templateVariables.stringColor,
             keyColor: dokiTheme.templateVariables.keyColor,
             keywordColor: dokiTheme.templateVariables.keywordColor,
-            iconBlendCompliment: dokiTheme.templateVariables.iconBlendCompliment,
             dokiLogoAccent: dokiTheme.templateVariables.dokiLogoAccent,
             dokiLogoAccentContrast: dokiTheme.templateVariables.dokiLogoAccentContrast,
+            iconAccent: dokiTheme.templateVariables.iconAccent,
+            iconAccentCompliment: dokiTheme.templateVariables.iconAccentCompliment,
+            iconBaseBlend: dokiTheme.templateVariables.iconBaseBlend,
+            iconSecondaryBlend: dokiTheme.templateVariables.iconSecondaryBlend,
+            iconBlendContrast: dokiTheme.templateVariables.iconBlendContrast,
+            iconBlendCompliment: dokiTheme.templateVariables.iconBlendCompliment,
+            iconDiversification: dokiTheme.templateVariables.iconDiversification,
             "terminal.ansiCyan": dokiTheme.templateVariables["terminal.ansiCyan"],
             "terminal.ansiYellow": dokiTheme.templateVariables["terminal.ansiYellow"],
             "terminal.ansiMagenta": dokiTheme.templateVariables["terminal.ansiMagenta"],
             "terminal.ansiGreen": dokiTheme.templateVariables["terminal.ansiGreen"],
             "terminal.ansiBlue": dokiTheme.templateVariables["terminal.ansiBlue"],
             ...(dokiTheme.templateVariables.iconContrastColor ?
-              { iconContrastColor: dokiTheme.templateVariables.iconContrastColor } : {})
+              {iconContrastColor: dokiTheme.templateVariables.iconContrastColor} : {})
           },
           stickers: dokiTheme.stickers,
           backgrounds: dokiDefinition.stickers,
@@ -210,7 +223,7 @@ evaluateTemplates(
       path.resolve(repoDirectory,
         "src", "lib", "DefaultDokiThemeDefinition.ts"),
       `export default ${JSON.stringify(
-        { [DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME] },
+        {[DEFAULT_THEME]: dokiThemeDefinitions[DEFAULT_THEME]},
       )
       };`
     );
@@ -223,12 +236,12 @@ evaluateTemplates(
       path.resolve(repoDirectory,
         "src", "lib", "DokiThemeDefinitionsLite.ts"),
       `export default ${JSON.stringify(dokiThemes.reduce((accum: StringDictionary<any>, dokiTheme) => {
-        accum[dokiTheme.definition.id] = {
-          a: dokiTheme.templateVariables.dokiLogoAccent,
-          b: dokiTheme.templateVariables.dokiLogoAccentContrast,
-        }
-        return accum;
-      }, {})
+          accum[dokiTheme.definition.id] = {
+            a: dokiTheme.templateVariables.dokiLogoAccent,
+            b: dokiTheme.templateVariables.dokiLogoAccentContrast,
+          }
+          return accum;
+        }, {})
       )
       };`
     );
