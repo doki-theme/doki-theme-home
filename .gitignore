@@ -28,6 +28,7 @@ masterThemes/
 
 DokiThemeDefinitions*
 DefaultDokiThemeDefinition.ts
+DokiThemeIcons.ts
 static/themes/
 initial-styles/
 

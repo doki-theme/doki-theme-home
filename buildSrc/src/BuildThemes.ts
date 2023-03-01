@@ -6,10 +6,13 @@ import {
   MasterDokiThemeDefinition,
   resolveColor,
   resolvePaths,
-  StringDictionary,
+  StringDictionary, walkDir,
 } from "doki-build-source";
 
-import omit from "lodash/omit";
+import deepClone from "lodash/cloneDeep";
+import xmlParser from "xml2js";
+import builder from "xmlbuilder";
+
 
 type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
 
@@ -22,6 +25,118 @@ import {changes} from '../../common/src/JetBrainsChanges';
 
 const {repoDirectory, masterThemeDefinitionDirectoryPath} =
   resolvePaths(__dirname);
+
+const iconSourceDir = path.resolve(__dirname, "..", "..", "iconSource");
+const iconsDir = path.resolve(iconSourceDir, "icons");
+const appTemplatesDirectoryPath = path.resolve(iconSourceDir, 'buildSrc', 'assets', 'templates');
+const exportedIconsDir = path.join(iconsDir, "exported");
+const oneOffsIconsDir = path.join(iconsDir, "oneOffs");
+const iconSourceGeneratedIconsDir = path.join(iconsDir, "generated");
+
+
+const hexToNamedIconColor: StringDictionary<string> = JSON.parse(fs.readFileSync(
+  path.join(appTemplatesDirectoryPath, 'icon.palette.template.json'), {
+    encoding: 'utf-8',
+  }
+))
+
+function toKebabCase(str: string) {
+  return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
+const hexToNamedColorCSSVar = Object.entries(hexToNamedIconColor)
+  .reduce<StringDictionary<string>>((accum, [hex, namedColor]) => {
+    accum[hex] = `--${toKebabCase(namedColor)}`;
+    return accum;
+  }, {})
+
+
+class SVGSupplier {
+  constructor(private readonly svgNameToPatho: StringDictionary<string>) {
+  }
+
+  async getSVGAsXml(svgName: string): Promise<any> {
+    const iconName = svgName;
+    const svgPath =
+      this.svgNameToPatho[iconName] || path.join(iconSourceGeneratedIconsDir, iconName);
+    if (!fs.existsSync(svgPath)) {
+      throw new Error(`Hey silly, you forgot to export ${iconName}`);
+    }
+
+    return await toXml(
+      fs.readFileSync(svgPath, {encoding: "utf-8"})
+    )
+  }
+}
+
+const parser = new xmlParser.Parser({
+  explicitChildren: true,
+  mergeAttrs: false,
+  preserveChildrenOrder: true,
+});
+
+const toXml = (xml1: string): Promise<any> => parser.parseStringPromise(xml1);
+
+function constructSVG(root: any, children: any[]) {
+  if (!children) {
+    return;
+  }
+
+  for (const child of children) {
+    const childNode = root.ele(child["#name"], child.$ || {});
+    constructSVG(childNode, child.$$);
+  }
+}
+
+function buildXml(workingCopy: any): string {
+  const svg = workingCopy.svg;
+  const root = builder.create(svg["#name"]);
+
+  Object.entries(svg.$).forEach(([attributeKey, attributeValue]) =>
+    root.att(attributeKey, attributeValue)
+  );
+
+  constructSVG(root, svg.$$);
+
+  return root.end({pretty: false});
+}
+
+function updateIconFill(nonBaseGuts: any) {
+  const fillProvider: (color: string) => string =
+    (color) => {
+      const cssVar = hexToNamedColorCSSVar[color];
+      if (cssVar) {
+        return `var(${cssVar})`
+      }
+      return color
+    }
+  addAttributes(nonBaseGuts, node => {
+    const fillToUse = fillProvider(node.fill);
+    if (node.fill && node.fill !== 'none') {
+      node.fill = fillToUse;
+    }
+    if (node.stroke && node.stroke !== 'none') {
+      node.stroke = fillToUse
+    }
+  });
+}
+
+function addAttributes(nonBaseGuts: StringDictionary<any>, attributeProvider: (node: any) => void) {
+  if (!nonBaseGuts) {
+    return;
+  }
+
+  if (!nonBaseGuts.$) {
+    nonBaseGuts.$ = {};
+  }
+
+  attributeProvider(nonBaseGuts.$);
+
+  (nonBaseGuts.$$ || []).forEach((item: any) => {
+    addAttributes(item, attributeProvider);
+  });
+}
+
 
 // todo: dis
 type DokiThemeHome = {
@@ -63,7 +178,8 @@ function buildTemplateVariables(
 
 function buildCSSVars(colors: StringDictionary<string>) {
   // language=CSS
-  return `html {--foreground-color: ${colors.foregroundColor};
+  return `html {
+    --foreground-color: ${colors.foregroundColor};
     --button-color: ${colors.selectionBackground};
     --button-font: ${colors.selectionForeground};
     --accent-color: ${colors.accentColor};
@@ -87,7 +203,8 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --ansi-magenta: ${colors['terminal.ansiMagenta']};
     --ansi-green: ${colors['terminal.ansiGreen']};
     --base-background: ${colors.baseBackground};
-    --header-color: ${colors.headerColor};}`
+    --header-color: ${colors.headerColor};
+  }`
 }
 
 function createDokiTheme(
@@ -152,7 +269,7 @@ evaluateTemplates(
   },
   createDokiTheme
 )
-  .then((dokiThemes) => {
+  .then(async (dokiThemes) => {
     const themeDefinitions = dokiThemes
       .map((dokiTheme) => {
         const dokiDefinition = dokiTheme.definition;
@@ -284,6 +401,58 @@ evaluateTemplates(
     )
 
   })
+  .then(async () => {
+    const icons = await Promise.all([
+      walkDir(exportedIconsDir),
+      walkDir(oneOffsIconsDir),
+    ])
+      .then(allIcons => allIcons
+        .reduce((accum, next) => accum.concat(next))
+        .filter(iconPath => iconPath.endsWith('.svg'))
+      );
+
+    const svgNameToPatho = icons.reduce((accum, generatedIconPath) => {
+      const svgName = generatedIconPath.substring(generatedIconPath.lastIndexOf(path.sep) + 1);
+      accum[svgName] = generatedIconPath;
+      return accum;
+    }, {} as StringDictionary<string>);
+    const svgSupplier = new SVGSupplier(svgNameToPatho);
+
+    const svgNameAndValues = await sequentiallyIterate(
+      Object.keys(svgNameToPatho),
+      async (svgName) => {
+        const svgAsXML = await svgSupplier.getSVGAsXml(svgName);
+        const workingCopy = deepClone(svgAsXML);
+
+        updateIconFill(workingCopy.svg);
+
+        return {
+          svgName,
+          svg: buildXml(workingCopy)
+        };
+      }
+    );
+
+    svgNameAndValues.sort((a, b) => a.svgName.localeCompare(b.svgName));
+
+    fs.writeFileSync(
+      path.resolve(repoDirectory,
+        "src", "lib", "DokiThemeIcons.ts"),
+      `export default ${JSON.stringify(svgNameAndValues)};`
+    );
+  })
   .then(() => {
     console.log("Theme Generation Complete!");
   });
+
+
+function sequentiallyIterate<T, R>(items: T[], mapping: (t: T) => Promise<R>): Promise<R[]> {
+  return items.reduce(
+    (accum: Promise<R[]>, next: T) => accum.then(stuff =>
+      mapping(next).then(mapped => {
+        stuff.push(mapped);
+        return stuff;
+      })),
+    Promise.resolve<R[]>([])
+  )
+}
