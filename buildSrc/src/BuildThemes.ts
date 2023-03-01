@@ -6,22 +6,22 @@ import {
   MasterDokiThemeDefinition,
   resolveColor,
   resolvePaths,
-  StringDictionary, walkDir,
+  StringDictionary,
+  walkDir,
 } from "doki-build-source";
 
 import deepClone from "lodash/cloneDeep";
 import xmlParser from "xml2js";
 import builder from "xmlbuilder";
-
-
-type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
-
 import fs from "fs";
 
 import path from "path";
 
 import {navLinks} from '../../common/src/Constants';
 import {changes} from '../../common/src/JetBrainsChanges';
+
+
+type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
 
 const {repoDirectory, masterThemeDefinitionDirectoryPath} =
   resolvePaths(__dirname);
@@ -108,15 +108,14 @@ function updateIconFill(nonBaseGuts: any) {
       if (cssVar) {
         return `var(${cssVar})`
       }
-      return color
+      return color;
     }
   addAttributes(nonBaseGuts, node => {
-    const fillToUse = fillProvider(node.fill);
     if (node.fill && node.fill !== 'none') {
-      node.fill = fillToUse;
+      node.fill = fillProvider(node.fill);
     }
     if (node.stroke && node.stroke !== 'none') {
-      node.stroke = fillToUse
+      node.stroke = fillProvider(node.stroke)
     }
   });
 }
