@@ -4,6 +4,14 @@
 </script>
 
 <div style="margin: 0 2rem;">
+  <div style="width: 100%; text-align: center; margin-bottom: 3rem;">
+    <h2><a class="attribution-link" href="https://github.com/doki-theme/doki-theme-icons#attribution-requirements"
+    >Attribution Requirements</a
+    ></h2>
+    <a class="attribution-link" href="https://github.com/doki-theme/doki-theme-icons/blob/main/LICENSE-GRAPHICS"
+    >License</a
+    >
+  </div>
 	<div class="container">
     {#each DokiThemeIcons as dokiIcon}
       <div class="icon-container" title="{dokiIcon.svgName}">
