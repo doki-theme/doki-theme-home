@@ -6,6 +6,7 @@ import {
   MasterDokiThemeDefinition,
   resolveColor,
   resolvePaths,
+  shadeHexColor,
   StringDictionary,
   walkDir,
 } from "doki-build-source";
@@ -50,6 +51,9 @@ const hexToNamedIconColor: StringDictionary<string> = JSON.parse(fs.readFileSync
 delete hexToNamedIconColor['#1ecd86'];
 delete hexToNamedIconColor['#106e49'];
 
+const darkerColor = 'iconSecondaryBlendDarker';
+hexToNamedIconColor['#776bc4'] = darkerColor;
+
 function toKebabCase(str: string) {
   return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
@@ -59,7 +63,6 @@ const hexToNamedColorCSSVar = Object.entries(hexToNamedIconColor)
     accum[hex] = `--${toKebabCase(namedColor)}`;
     return accum;
   }, {})
-
 
 
 class SVGSupplier {
@@ -203,6 +206,7 @@ function buildCSSVars(colors: StringDictionary<string>) {
     --icon-accent-compliment: ${colors.iconAccentCompliment};
     --icon-base-blend: ${colors.iconBaseBlend};
     --icon-secondary-blend: ${colors.iconSecondaryBlend};
+    --icon-secondary-blend-darker: ${colors.iconSecondaryBlendDarker};
     --icon-blend-contrast: ${colors.iconBlendContrast};
     --icon-diversification: ${colors.iconDiversification};
     --icon-blend-compliment: ${colors.iconBlendCompliment};
@@ -323,6 +327,7 @@ evaluateTemplates(
             iconAccentCompliment: dokiTheme.templateVariables.iconAccentCompliment,
             iconBaseBlend: dokiTheme.templateVariables.iconBaseBlend,
             iconSecondaryBlend: dokiTheme.templateVariables.iconSecondaryBlend,
+            [darkerColor]: shadeHexColor(dokiTheme.templateVariables.iconSecondaryBlend, 0.5),
             iconBlendContrast: dokiTheme.templateVariables.iconBlendContrast,
             iconBlendCompliment: dokiTheme.templateVariables.iconBlendCompliment,
             iconDiversification: dokiTheme.templateVariables.iconDiversification,
@@ -423,10 +428,10 @@ evaluateTemplates(
 
     const svgNameToPatho = icons
       .reduce((accum, generatedIconPath) => {
-      const svgName = generatedIconPath.substring(generatedIconPath.lastIndexOf(path.sep) + 1);
-      accum[svgName] = generatedIconPath;
-      return accum;
-    }, {} as StringDictionary<string>);
+        const svgName = generatedIconPath.substring(generatedIconPath.lastIndexOf(path.sep) + 1);
+        accum[svgName] = generatedIconPath;
+        return accum;
+      }, {} as StringDictionary<string>);
     const svgSupplier = new SVGSupplier(svgNameToPatho);
 
     const svgNameAndValues = await sequentiallyIterate(

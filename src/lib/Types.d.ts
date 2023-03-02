@@ -47,6 +47,7 @@ export interface Colors {
   iconAccentCompliment: string;
   iconBaseBlend: string;
   iconSecondaryBlend: string;
+  iconSecondaryBlendDarker: string;
   iconBlendContrast: string;
   iconDiversification: string;
   iconBlendCompliment: string;

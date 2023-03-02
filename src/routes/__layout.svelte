@@ -33,6 +33,7 @@
       document.documentElement.style.setProperty('--icon-accent-compliment', dokiTheme.colors.iconAccentCompliment);
       document.documentElement.style.setProperty('--icon-base-blend', dokiTheme.colors.iconBaseBlend);
       document.documentElement.style.setProperty('--icon-secondary-blend', dokiTheme.colors.iconSecondaryBlend);
+      document.documentElement.style.setProperty('--icon-secondary-blend-darker', dokiTheme.colors.iconSecondaryBlendDarker);
       document.documentElement.style.setProperty('--icon-blend-contrast', dokiTheme.colors.iconBlendContrast);
       document.documentElement.style.setProperty('--icon-diversification', dokiTheme.colors.iconDiversification);
       document.documentElement.style.setProperty('--icon-blend-compliment', dokiTheme.colors.iconBlendCompliment);
