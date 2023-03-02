@@ -131,6 +131,9 @@ function updateIconFill(nonBaseGuts: any) {
     if (node.stroke && node.stroke !== 'none') {
       node.stroke = fillProvider(node.stroke)
     }
+    if (node['stop-color'] && node['stop-color'] !== 'none') {
+      node['stop-color'] = fillProvider(node['stop-color'])
+    }
   });
 }
 
