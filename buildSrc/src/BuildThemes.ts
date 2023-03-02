@@ -46,6 +46,10 @@ const hexToNamedIconColor: StringDictionary<string> = JSON.parse(fs.readFileSync
   }
 ))
 
+// these don't change for each theme
+delete hexToNamedIconColor['#1ecd86'];
+delete hexToNamedIconColor['#106e49'];
+
 function toKebabCase(str: string) {
   return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
@@ -55,6 +59,7 @@ const hexToNamedColorCSSVar = Object.entries(hexToNamedIconColor)
     accum[hex] = `--${toKebabCase(namedColor)}`;
     return accum;
   }, {})
+
 
 
 class SVGSupplier {
