@@ -26,6 +26,12 @@ type AppDokiThemeDefinition = BaseAppDokiThemeDefinition;
 const {repoDirectory, masterThemeDefinitionDirectoryPath} =
   resolvePaths(__dirname);
 
+const blackListedIcons = new Set([
+  'arrow_right.svg',
+  'circle.svg',
+  'vim.svg'
+]);
+
 const iconSourceDir = path.resolve(__dirname, "..", "..", "iconSource");
 const iconsDir = path.resolve(iconSourceDir, "icons");
 const appTemplatesDirectoryPath = path.resolve(iconSourceDir, 'buildSrc', 'assets', 'templates');
@@ -410,7 +416,8 @@ evaluateTemplates(
         .filter(iconPath => iconPath.endsWith('.svg'))
       );
 
-    const svgNameToPatho = icons.reduce((accum, generatedIconPath) => {
+    const svgNameToPatho = icons
+      .reduce((accum, generatedIconPath) => {
       const svgName = generatedIconPath.substring(generatedIconPath.lastIndexOf(path.sep) + 1);
       accum[svgName] = generatedIconPath;
       return accum;
@@ -418,7 +425,8 @@ evaluateTemplates(
     const svgSupplier = new SVGSupplier(svgNameToPatho);
 
     const svgNameAndValues = await sequentiallyIterate(
-      Object.keys(svgNameToPatho),
+      Object.keys(svgNameToPatho)
+        .filter(svgName => !blackListedIcons.has(svgName)),
       async (svgName) => {
         const svgAsXML = await svgSupplier.getSVGAsXml(svgName);
         const workingCopy = deepClone(svgAsXML);
