@@ -7,6 +7,10 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.5-1.9.6',
+    changes: `- Migrated to newer platform APIs.\n- Raised the lowest supported version to 2022.3`,
+  },
+  {
     version: '88.5-1.9.5',
     changes: `- Made Non-Functional & Non-User-facing code cleanup updates.`,
   },
