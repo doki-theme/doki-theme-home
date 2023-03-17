@@ -56,8 +56,9 @@ import Crown from "$lib/Crown.svelte";
     <h2>Supporters</h2>
     <div class="s-tier">
       <p class="heading">S Tier</p>
-      <p class="description">All other themes are obsolute, <em>just Doki. 50 USD</em></p>
+      <p class="description">All other themes are obsolete, <em>just Doki. 50 USD</em></p>
       <ul>
+        <li><img src="/supporterAssets/senko.gif" alt="Senko-san"/>  <span><span></span>Louis Gaube</span><img src="/supporterAssets/senko_loaf.png" alt="Senko-loaf"/></li>
         <li><img src="/supporterAssets/ram_spin.gif" alt="Ram Spin"/>  <span><span class="crown"><Crown /></span>Mikko Ohtamaa</span><img src="/supporterAssets/rem_spin.gif" alt="Rem Spin"/></li>
         <li><img src="/supporterAssets/just_zero_two.gif" alt="Head pats for Zero Two"/>  <span title="Yeah, I'm S-Tier, get at me.">Alex Simons</span><img src="/supporterAssets/zero_two_intensifies.gif" alt="Zero Two Intensifies"/></li>
       </ul>
