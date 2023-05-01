@@ -7,8 +7,13 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.5-1.10.0',
+    changes: `- Added sticker placement to the welcome window.`,
+  },
+  {
     version: '88.5-1.9.7',
     changes: `- More usable Mnemonic Bookmarks.`,
+    released: true
   },
   {
     version: '88.5-1.9.6',
