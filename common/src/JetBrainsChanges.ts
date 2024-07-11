@@ -7,12 +7,17 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.5-1.14.0',
+    changes: `# Doki Theme Is Back Baby!\n- Sorry if you missed it, I had to jump through hoops to get it to be published to the marketplace again. That and my family has been taking a lot of my time, so this was depriortized. Enjoy the plugin again! <3\n- Added initial 2024.2 build support.`,
+  },
+  {
     version: '88.5-1.13.0',
     changes: `- Added initial 2024.1 build support.`,
   },
   {
     version: '88.5-1.11.0',
     changes: `- Added initial 2023.2 build support.`,
+    released: true,
   },
   {
     version: '88.5-1.10.0',
