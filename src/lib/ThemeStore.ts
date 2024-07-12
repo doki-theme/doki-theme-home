@@ -11,9 +11,6 @@ const isBrowser = typeof window !== 'undefined';
 const currentThemeId = isBrowser ?
   readQueryParamValue("themeId") || DEFAULT_THEME :
   DEFAULT_THEME;
-const showWallpaperParam = isBrowser ?
-  readQueryParamValue("showWallpaper") != "false" :
-  true;
 
 const createCurrentThemeLite = () => {
   const { subscribe, set } = writable<DokiThemeLite | undefined>(
@@ -31,25 +28,10 @@ const createCurrentThemeLite = () => {
   };
 };
 
-const createShowWallpaper = () => {
-  const { subscribe, set } = writable<boolean>(true);
-  function setShowWallpaper(showWallpaper: boolean) {
-    set(showWallpaper);
-  }
-  return {
-    subscribe,
-    setShowWallpaper: (showWallpaper: boolean) => {
-      setShowWallpaper(showWallpaper);
-    },
-  };
-};
-
 export const currentThemeLite = createCurrentThemeLite();
-export const showWallpaper = createShowWallpaper();
 
 if (isBrowser) {
   currentThemeLite.setTheme(currentThemeId);
-  showWallpaper.setShowWallpaper(showWallpaperParam);
 }
 
 const createCurrentTheme = () => {
