@@ -75,6 +75,7 @@ import Crown from "$lib/Crown.svelte";
         <li><span>Davide Bergamini</span></li>
         <li><span>nopeless</span></li>
         <li><span>Stephen Vernyi</span></li>
+        <li><span>madmod</span></li>
       </ul>
     </div>
     <div class="hackers">
