@@ -86,6 +86,7 @@ import Crown from "$lib/Crown.svelte";
         <li><span>Brandon Huang</span></li>
         <li><span>Frank Krissmann</span></li>
         <li><span>Francesco Marocchi</span></li>
+        <li><span>Krystian Sadowski</span></li>
       </ul>
     </div>
     <div class="enthusiasts">
