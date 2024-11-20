@@ -7,8 +7,13 @@ export type Change = {
 
 export const changes: Change[] = [
   {
+    version: '88.5-1.15.0',
+    changes: '- Lowest supported version is now 2024.3\n- Compiles to the 2024.3 build',
+  },
+  {
     version: '88.5-1.14.1',
     changes: '',
+    released: true,
   },
   {
     version: '88.5-1.14.0',
