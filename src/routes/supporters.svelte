@@ -76,6 +76,7 @@ import Crown from "$lib/Crown.svelte";
         <li><span>nopeless</span></li>
         <li><span>Stephen Vernyi</span></li>
         <li><span>madmod</span></li>
+        <li><span>theDeniZ</span></li>
       </ul>
     </div>
     <div class="hackers">
@@ -87,6 +88,7 @@ import Crown from "$lib/Crown.svelte";
         <li><span>Frank Krissmann</span></li>
         <li><span>Francesco Marocchi</span></li>
         <li><span>Krystian Sadowski</span></li>
+        <li><span>Cristian Placintar</span></li>
       </ul>
     </div>
     <div class="enthusiasts">
